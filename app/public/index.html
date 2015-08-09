@@ -2,21 +2,37 @@
 <html ng-app="NflPredictionsApp">
 
 <head>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
     <script src="js/angular.min.js"></script>
     <script src="js/app.min.js"></script>
 </head>
 
 <body>
     <header>
-
+        <div class="logo-wrapper">
+            <a class="logo" href="#"></a>
+        </div>
     </header>
-
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Menu 1</a>
+            </li>
+            <li>
+                <a href="#">Menu 2</a>
+            </li>
+            <li>
+                <a href="#">Menu 3</a>
+            </li>
+            <li>
+                <a href="#">Menu 4</a>
+            </li>
+        </ul>
+    </nav>
     <div class="main-content" ng-controller="RootCtrl">
         <p>{{msg}}</p>
     </div>
-
     <footer>
-
     </footer>
 </body>
 

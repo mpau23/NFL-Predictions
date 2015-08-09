@@ -1,3 +1,9 @@
-assets/src/bower_components/
-assets/src/npm_modules/
-
+bower_components
+node_modules
+.sass-cache
+bower_components/
+node_modules/
+.sass-cache/
+bower_components/**/*
+node_modules/**/*
+.sass-cache/**/*

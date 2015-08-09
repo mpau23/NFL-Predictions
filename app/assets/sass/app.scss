@@ -1,0 +1,74 @@
+@import "normalize";
+@import "compass/css3";
+@import "partials/grid";
+@include font-face("Endzone", font-files("font.ttf"));
+html {
+    position: relative;
+    font-size: 16px;
+}
+
+body {
+    @include container($max-width);
+    min-width: 320px;
+    margin: 5px;
+}
+
+header,
+footer {
+    @include span(full);
+    background-color: #012D5E;
+    position: relative;
+}
+
+header {
+    height: 100px;
+    .logo-wrapper {
+        @include span(full);
+        height: 100%;
+        a {
+            display: block;
+            margin: 0 auto;
+            height: 100%;
+            width: 100px;
+            background-image: url(../images/nfl-logo.min.svg);
+            background-size: 100px 100px;
+        }
+    }
+}
+
+nav {
+    @include span(full);
+    background-color: #E50000;
+    height: 44px;
+    ul {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        li {
+            @include span(3);
+            padding: 0;
+            height: 100%;
+            &:last-child {
+                @include span(3 last);
+            }
+            a {
+                line-height: 44px;
+                padding: 0 10px;
+                font-size: 12px;
+                list-style: none;
+                text-decoration: none;
+                font-family: "Endzone";
+                color: #fff;
+            }
+        }
+    }
+}
+
+.main-content {
+    @include span(full);
+    background-color: #fff;
+}
+
+footer {
+    height: 50px;
+}
