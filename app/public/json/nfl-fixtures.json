@@ -1,0 +1,2308 @@
+{
+    "currentWeek": "1",
+    "Schedule": [{
+        "gameId": "1",
+        "gameWeek": "1",
+        "gameDate": "2015-09-10",
+        "awayTeam": "PIT",
+        "homeTeam": "NE",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "2",
+        "gameWeek": "1",
+        "gameDate": "2015-09-13",
+        "awayTeam": "GB",
+        "homeTeam": "CHI",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "3",
+        "gameWeek": "1",
+        "gameDate": "2015-09-13",
+        "awayTeam": "KC",
+        "homeTeam": "HOU",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "4",
+        "gameWeek": "1",
+        "gameDate": "2015-09-13",
+        "awayTeam": "CLE",
+        "homeTeam": "NYJ",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "5",
+        "gameWeek": "1",
+        "gameDate": "2015-09-13",
+        "awayTeam": "IND",
+        "homeTeam": "BUF",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "6",
+        "gameWeek": "1",
+        "gameDate": "2015-09-13",
+        "awayTeam": "MIA",
+        "homeTeam": "WAS",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "7",
+        "gameWeek": "1",
+        "gameDate": "2015-09-13",
+        "awayTeam": "CAR",
+        "homeTeam": "JAC",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "8",
+        "gameWeek": "1",
+        "gameDate": "2015-09-13",
+        "awayTeam": "SEA",
+        "homeTeam": "STL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "9",
+        "gameWeek": "1",
+        "gameDate": "2015-09-13",
+        "awayTeam": "NO",
+        "homeTeam": "ARI",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "10",
+        "gameWeek": "1",
+        "gameDate": "2015-09-13",
+        "awayTeam": "DET",
+        "homeTeam": "SD",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "11",
+        "gameWeek": "1",
+        "gameDate": "2015-09-13",
+        "awayTeam": "TEN",
+        "homeTeam": "TB",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "12",
+        "gameWeek": "1",
+        "gameDate": "2015-09-13",
+        "awayTeam": "CIN",
+        "homeTeam": "OAK",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "13",
+        "gameWeek": "1",
+        "gameDate": "2015-09-13",
+        "awayTeam": "BAL",
+        "homeTeam": "DEN",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "14",
+        "gameWeek": "1",
+        "gameDate": "2015-09-13",
+        "awayTeam": "NYG",
+        "homeTeam": "DAL",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "15",
+        "gameWeek": "1",
+        "gameDate": "2015-09-14",
+        "awayTeam": "PHI",
+        "homeTeam": "ATL",
+        "gameTimeET": "7:10 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "16",
+        "gameWeek": "1",
+        "gameDate": "2015-09-14",
+        "awayTeam": "MIN",
+        "homeTeam": "SF",
+        "gameTimeET": "10:20 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "17",
+        "gameWeek": "2",
+        "gameDate": "2015-09-17",
+        "awayTeam": "DEN",
+        "homeTeam": "KC",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "18",
+        "gameWeek": "2",
+        "gameDate": "2015-09-20",
+        "awayTeam": "HOU",
+        "homeTeam": "CAR",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "19",
+        "gameWeek": "2",
+        "gameDate": "2015-09-20",
+        "awayTeam": "SF",
+        "homeTeam": "PIT",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "20",
+        "gameWeek": "2",
+        "gameDate": "2015-09-20",
+        "awayTeam": "TB",
+        "homeTeam": "NO",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "21",
+        "gameWeek": "2",
+        "gameDate": "2015-09-20",
+        "awayTeam": "DET",
+        "homeTeam": "MIN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "22",
+        "gameWeek": "2",
+        "gameDate": "2015-09-20",
+        "awayTeam": "ARI",
+        "homeTeam": "CHI",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "23",
+        "gameWeek": "2",
+        "gameDate": "2015-09-20",
+        "awayTeam": "NE",
+        "homeTeam": "BUF",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "24",
+        "gameWeek": "2",
+        "gameDate": "2015-09-20",
+        "awayTeam": "SD",
+        "homeTeam": "CIN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "25",
+        "gameWeek": "2",
+        "gameDate": "2015-09-20",
+        "awayTeam": "TEN",
+        "homeTeam": "CLE",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "26",
+        "gameWeek": "2",
+        "gameDate": "2015-09-20",
+        "awayTeam": "ATL",
+        "homeTeam": "NYG",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "27",
+        "gameWeek": "2",
+        "gameDate": "2015-09-20",
+        "awayTeam": "STL",
+        "homeTeam": "WAS",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "28",
+        "gameWeek": "2",
+        "gameDate": "2015-09-20",
+        "awayTeam": "MIA",
+        "homeTeam": "JAC",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "29",
+        "gameWeek": "2",
+        "gameDate": "2015-09-20",
+        "awayTeam": "BAL",
+        "homeTeam": "OAK",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "30",
+        "gameWeek": "2",
+        "gameDate": "2015-09-20",
+        "awayTeam": "DAL",
+        "homeTeam": "PHI",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "31",
+        "gameWeek": "2",
+        "gameDate": "2015-09-20",
+        "awayTeam": "SEA",
+        "homeTeam": "GB",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "32",
+        "gameWeek": "2",
+        "gameDate": "2015-09-21",
+        "awayTeam": "NYJ",
+        "homeTeam": "IND",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "33",
+        "gameWeek": "3",
+        "gameDate": "2015-09-24",
+        "awayTeam": "WAS",
+        "homeTeam": "NYG",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "34",
+        "gameWeek": "3",
+        "gameDate": "2015-09-27",
+        "awayTeam": "ATL",
+        "homeTeam": "DAL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "35",
+        "gameWeek": "3",
+        "gameDate": "2015-09-27",
+        "awayTeam": "IND",
+        "homeTeam": "TEN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "36",
+        "gameWeek": "3",
+        "gameDate": "2015-09-27",
+        "awayTeam": "OAK",
+        "homeTeam": "CLE",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "37",
+        "gameWeek": "3",
+        "gameDate": "2015-09-27",
+        "awayTeam": "CIN",
+        "homeTeam": "BAL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "38",
+        "gameWeek": "3",
+        "gameDate": "2015-09-27",
+        "awayTeam": "JAC",
+        "homeTeam": "NE",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "39",
+        "gameWeek": "3",
+        "gameDate": "2015-09-27",
+        "awayTeam": "NO",
+        "homeTeam": "CAR",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "40",
+        "gameWeek": "3",
+        "gameDate": "2015-09-27",
+        "awayTeam": "PHI",
+        "homeTeam": "NYJ",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "41",
+        "gameWeek": "3",
+        "gameDate": "2015-09-27",
+        "awayTeam": "TB",
+        "homeTeam": "HOU",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "42",
+        "gameWeek": "3",
+        "gameDate": "2015-09-27",
+        "awayTeam": "SD",
+        "homeTeam": "MIN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "43",
+        "gameWeek": "3",
+        "gameDate": "2015-09-27",
+        "awayTeam": "PIT",
+        "homeTeam": "STL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "44",
+        "gameWeek": "3",
+        "gameDate": "2015-09-27",
+        "awayTeam": "SF",
+        "homeTeam": "ARI",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "45",
+        "gameWeek": "3",
+        "gameDate": "2015-09-27",
+        "awayTeam": "BUF",
+        "homeTeam": "MIA",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "46",
+        "gameWeek": "3",
+        "gameDate": "2015-09-27",
+        "awayTeam": "CHI",
+        "homeTeam": "SEA",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "47",
+        "gameWeek": "3",
+        "gameDate": "2015-09-27",
+        "awayTeam": "DEN",
+        "homeTeam": "DET",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "48",
+        "gameWeek": "3",
+        "gameDate": "2015-09-28",
+        "awayTeam": "KC",
+        "homeTeam": "GB",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "49",
+        "gameWeek": "4",
+        "gameDate": "2015-10-01",
+        "awayTeam": "BAL",
+        "homeTeam": "PIT",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "50",
+        "gameWeek": "4",
+        "gameDate": "2015-10-04",
+        "awayTeam": "NYJ",
+        "homeTeam": "MIA",
+        "gameTimeET": "9:30 AM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "51",
+        "gameWeek": "4",
+        "gameDate": "2015-10-04",
+        "awayTeam": "JAC",
+        "homeTeam": "IND",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "52",
+        "gameWeek": "4",
+        "gameDate": "2015-10-04",
+        "awayTeam": "NYG",
+        "homeTeam": "BUF",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "53",
+        "gameWeek": "4",
+        "gameDate": "2015-10-04",
+        "awayTeam": "CAR",
+        "homeTeam": "TB",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "54",
+        "gameWeek": "4",
+        "gameDate": "2015-10-04",
+        "awayTeam": "PHI",
+        "homeTeam": "WAS",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "55",
+        "gameWeek": "4",
+        "gameDate": "2015-10-04",
+        "awayTeam": "OAK",
+        "homeTeam": "CHI",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "56",
+        "gameWeek": "4",
+        "gameDate": "2015-10-04",
+        "awayTeam": "HOU",
+        "homeTeam": "ATL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "57",
+        "gameWeek": "4",
+        "gameDate": "2015-10-04",
+        "awayTeam": "KC",
+        "homeTeam": "CIN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "58",
+        "gameWeek": "4",
+        "gameDate": "2015-10-04",
+        "awayTeam": "CLE",
+        "homeTeam": "SD",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "59",
+        "gameWeek": "4",
+        "gameDate": "2015-10-04",
+        "awayTeam": "GB",
+        "homeTeam": "SF",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "60",
+        "gameWeek": "4",
+        "gameDate": "2015-10-04",
+        "awayTeam": "STL",
+        "homeTeam": "ARI",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "61",
+        "gameWeek": "4",
+        "gameDate": "2015-10-04",
+        "awayTeam": "MIN",
+        "homeTeam": "DEN",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "62",
+        "gameWeek": "4",
+        "gameDate": "2015-10-04",
+        "awayTeam": "DAL",
+        "homeTeam": "NO",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "63",
+        "gameWeek": "4",
+        "gameDate": "2015-10-05",
+        "awayTeam": "DET",
+        "homeTeam": "SEA",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "64",
+        "gameWeek": "5",
+        "gameDate": "2015-10-08",
+        "awayTeam": "IND",
+        "homeTeam": "HOU",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "65",
+        "gameWeek": "5",
+        "gameDate": "2015-10-11",
+        "awayTeam": "CHI",
+        "homeTeam": "KC",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "66",
+        "gameWeek": "5",
+        "gameDate": "2015-10-11",
+        "awayTeam": "SEA",
+        "homeTeam": "CIN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "67",
+        "gameWeek": "5",
+        "gameDate": "2015-10-11",
+        "awayTeam": "WAS",
+        "homeTeam": "ATL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "68",
+        "gameWeek": "5",
+        "gameDate": "2015-10-11",
+        "awayTeam": "JAC",
+        "homeTeam": "TB",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "69",
+        "gameWeek": "5",
+        "gameDate": "2015-10-11",
+        "awayTeam": "NO",
+        "homeTeam": "PHI",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "70",
+        "gameWeek": "5",
+        "gameDate": "2015-10-11",
+        "awayTeam": "CLE",
+        "homeTeam": "BAL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "71",
+        "gameWeek": "5",
+        "gameDate": "2015-10-11",
+        "awayTeam": "STL",
+        "homeTeam": "GB",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "72",
+        "gameWeek": "5",
+        "gameDate": "2015-10-11",
+        "awayTeam": "BUF",
+        "homeTeam": "TEN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "73",
+        "gameWeek": "5",
+        "gameDate": "2015-10-11",
+        "awayTeam": "ARI",
+        "homeTeam": "DET",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "74",
+        "gameWeek": "5",
+        "gameDate": "2015-10-11",
+        "awayTeam": "NE",
+        "homeTeam": "DAL",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "75",
+        "gameWeek": "5",
+        "gameDate": "2015-10-11",
+        "awayTeam": "DEN",
+        "homeTeam": "OAK",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "76",
+        "gameWeek": "5",
+        "gameDate": "2015-10-11",
+        "awayTeam": "SF",
+        "homeTeam": "NYG",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "77",
+        "gameWeek": "5",
+        "gameDate": "2015-10-12",
+        "awayTeam": "PIT",
+        "homeTeam": "SD",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "78",
+        "gameWeek": "6",
+        "gameDate": "2015-10-15",
+        "awayTeam": "ATL",
+        "homeTeam": "NO",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "79",
+        "gameWeek": "6",
+        "gameDate": "2015-10-18",
+        "awayTeam": "WAS",
+        "homeTeam": "NYJ",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "80",
+        "gameWeek": "6",
+        "gameDate": "2015-10-18",
+        "awayTeam": "ARI",
+        "homeTeam": "PIT",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "81",
+        "gameWeek": "6",
+        "gameDate": "2015-10-18",
+        "awayTeam": "KC",
+        "homeTeam": "MIN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "82",
+        "gameWeek": "6",
+        "gameDate": "2015-10-18",
+        "awayTeam": "CIN",
+        "homeTeam": "BUF",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "83",
+        "gameWeek": "6",
+        "gameDate": "2015-10-18",
+        "awayTeam": "CHI",
+        "homeTeam": "DET",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "84",
+        "gameWeek": "6",
+        "gameDate": "2015-10-18",
+        "awayTeam": "DEN",
+        "homeTeam": "CLE",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "85",
+        "gameWeek": "6",
+        "gameDate": "2015-10-18",
+        "awayTeam": "HOU",
+        "homeTeam": "JAC",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "86",
+        "gameWeek": "6",
+        "gameDate": "2015-10-18",
+        "awayTeam": "MIA",
+        "homeTeam": "TEN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "87",
+        "gameWeek": "6",
+        "gameDate": "2015-10-18",
+        "awayTeam": "CAR",
+        "homeTeam": "SEA",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "88",
+        "gameWeek": "6",
+        "gameDate": "2015-10-18",
+        "awayTeam": "SD",
+        "homeTeam": "GB",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "89",
+        "gameWeek": "6",
+        "gameDate": "2015-10-18",
+        "awayTeam": "BAL",
+        "homeTeam": "SF",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "90",
+        "gameWeek": "6",
+        "gameDate": "2015-10-18",
+        "awayTeam": "NE",
+        "homeTeam": "IND",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "91",
+        "gameWeek": "6",
+        "gameDate": "2015-10-19",
+        "awayTeam": "NYG",
+        "homeTeam": "PHI",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "92",
+        "gameWeek": "7",
+        "gameDate": "2015-10-22",
+        "awayTeam": "SEA",
+        "homeTeam": "SF",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "93",
+        "gameWeek": "7",
+        "gameDate": "2015-10-25",
+        "awayTeam": "BUF",
+        "homeTeam": "JAC",
+        "gameTimeET": "9:30 AM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "94",
+        "gameWeek": "7",
+        "gameDate": "2015-10-25",
+        "awayTeam": "TB",
+        "homeTeam": "WAS",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "95",
+        "gameWeek": "7",
+        "gameDate": "2015-10-25",
+        "awayTeam": "ATL",
+        "homeTeam": "TEN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "96",
+        "gameWeek": "7",
+        "gameDate": "2015-10-25",
+        "awayTeam": "NO",
+        "homeTeam": "IND",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "97",
+        "gameWeek": "7",
+        "gameDate": "2015-10-25",
+        "awayTeam": "MIN",
+        "homeTeam": "DET",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "98",
+        "gameWeek": "7",
+        "gameDate": "2015-10-25",
+        "awayTeam": "PIT",
+        "homeTeam": "KC",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "99",
+        "gameWeek": "7",
+        "gameDate": "2015-10-25",
+        "awayTeam": "CLE",
+        "homeTeam": "STL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "100",
+        "gameWeek": "7",
+        "gameDate": "2015-10-25",
+        "awayTeam": "HOU",
+        "homeTeam": "MIA",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "101",
+        "gameWeek": "7",
+        "gameDate": "2015-10-25",
+        "awayTeam": "NYJ",
+        "homeTeam": "NE",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "102",
+        "gameWeek": "7",
+        "gameDate": "2015-10-25",
+        "awayTeam": "OAK",
+        "homeTeam": "SD",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "103",
+        "gameWeek": "7",
+        "gameDate": "2015-10-25",
+        "awayTeam": "DAL",
+        "homeTeam": "NYG",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "104",
+        "gameWeek": "7",
+        "gameDate": "2015-10-25",
+        "awayTeam": "PHI",
+        "homeTeam": "CAR",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "105",
+        "gameWeek": "7",
+        "gameDate": "2015-10-26",
+        "awayTeam": "BAL",
+        "homeTeam": "ARI",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "106",
+        "gameWeek": "8",
+        "gameDate": "2015-10-29",
+        "awayTeam": "MIA",
+        "homeTeam": "NE",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "107",
+        "gameWeek": "8",
+        "gameDate": "2015-11-01",
+        "awayTeam": "DET",
+        "homeTeam": "KC",
+        "gameTimeET": "9:30 AM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "108",
+        "gameWeek": "8",
+        "gameDate": "2015-11-01",
+        "awayTeam": "TB",
+        "homeTeam": "ATL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "109",
+        "gameWeek": "8",
+        "gameDate": "2015-11-01",
+        "awayTeam": "ARI",
+        "homeTeam": "CLE",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "110",
+        "gameWeek": "8",
+        "gameDate": "2015-11-01",
+        "awayTeam": "SF",
+        "homeTeam": "STL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "111",
+        "gameWeek": "8",
+        "gameDate": "2015-11-01",
+        "awayTeam": "NYG",
+        "homeTeam": "NO",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "112",
+        "gameWeek": "8",
+        "gameDate": "2015-11-01",
+        "awayTeam": "MIN",
+        "homeTeam": "CHI",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "113",
+        "gameWeek": "8",
+        "gameDate": "2015-11-01",
+        "awayTeam": "SD",
+        "homeTeam": "BAL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "114",
+        "gameWeek": "8",
+        "gameDate": "2015-11-01",
+        "awayTeam": "CIN",
+        "homeTeam": "PIT",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "115",
+        "gameWeek": "8",
+        "gameDate": "2015-11-01",
+        "awayTeam": "TEN",
+        "homeTeam": "HOU",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "116",
+        "gameWeek": "8",
+        "gameDate": "2015-11-01",
+        "awayTeam": "NYJ",
+        "homeTeam": "OAK",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "117",
+        "gameWeek": "8",
+        "gameDate": "2015-11-01",
+        "awayTeam": "SEA",
+        "homeTeam": "DAL",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "118",
+        "gameWeek": "8",
+        "gameDate": "2015-11-01",
+        "awayTeam": "GB",
+        "homeTeam": "DEN",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "119",
+        "gameWeek": "8",
+        "gameDate": "2015-11-02",
+        "awayTeam": "IND",
+        "homeTeam": "CAR",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "120",
+        "gameWeek": "9",
+        "gameDate": "2015-11-05",
+        "awayTeam": "CLE",
+        "homeTeam": "CIN",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "NFL",
+        "winner": ""
+    }, {
+        "gameId": "121",
+        "gameWeek": "9",
+        "gameDate": "2015-11-08",
+        "awayTeam": "GB",
+        "homeTeam": "CAR",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "122",
+        "gameWeek": "9",
+        "gameDate": "2015-11-08",
+        "awayTeam": "WAS",
+        "homeTeam": "NE",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "123",
+        "gameWeek": "9",
+        "gameDate": "2015-11-08",
+        "awayTeam": "TEN",
+        "homeTeam": "NO",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "124",
+        "gameWeek": "9",
+        "gameDate": "2015-11-08",
+        "awayTeam": "MIA",
+        "homeTeam": "BUF",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "125",
+        "gameWeek": "9",
+        "gameDate": "2015-11-08",
+        "awayTeam": "STL",
+        "homeTeam": "MIN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "126",
+        "gameWeek": "9",
+        "gameDate": "2015-11-08",
+        "awayTeam": "JAC",
+        "homeTeam": "NYJ",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "127",
+        "gameWeek": "9",
+        "gameDate": "2015-11-08",
+        "awayTeam": "OAK",
+        "homeTeam": "PIT",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "128",
+        "gameWeek": "9",
+        "gameDate": "2015-11-08",
+        "awayTeam": "NYG",
+        "homeTeam": "TB",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "129",
+        "gameWeek": "9",
+        "gameDate": "2015-11-08",
+        "awayTeam": "ATL",
+        "homeTeam": "SF",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "130",
+        "gameWeek": "9",
+        "gameDate": "2015-11-08",
+        "awayTeam": "DEN",
+        "homeTeam": "IND",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "131",
+        "gameWeek": "9",
+        "gameDate": "2015-11-08",
+        "awayTeam": "PHI",
+        "homeTeam": "DAL",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "132",
+        "gameWeek": "9",
+        "gameDate": "2015-11-09",
+        "awayTeam": "CHI",
+        "homeTeam": "SD",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "133",
+        "gameWeek": "10",
+        "gameDate": "2015-11-12",
+        "awayTeam": "BUF",
+        "homeTeam": "NYJ",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "NFL",
+        "winner": ""
+    }, {
+        "gameId": "134",
+        "gameWeek": "10",
+        "gameDate": "2015-11-15",
+        "awayTeam": "DET",
+        "homeTeam": "GB",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "135",
+        "gameWeek": "10",
+        "gameDate": "2015-11-15",
+        "awayTeam": "DAL",
+        "homeTeam": "TB",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "136",
+        "gameWeek": "10",
+        "gameDate": "2015-11-15",
+        "awayTeam": "CAR",
+        "homeTeam": "TEN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "137",
+        "gameWeek": "10",
+        "gameDate": "2015-11-15",
+        "awayTeam": "CHI",
+        "homeTeam": "STL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "138",
+        "gameWeek": "10",
+        "gameDate": "2015-11-15",
+        "awayTeam": "NO",
+        "homeTeam": "WAS",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "139",
+        "gameWeek": "10",
+        "gameDate": "2015-11-15",
+        "awayTeam": "MIA",
+        "homeTeam": "PHI",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "140",
+        "gameWeek": "10",
+        "gameDate": "2015-11-15",
+        "awayTeam": "CLE",
+        "homeTeam": "PIT",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "141",
+        "gameWeek": "10",
+        "gameDate": "2015-11-15",
+        "awayTeam": "JAC",
+        "homeTeam": "BAL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "142",
+        "gameWeek": "10",
+        "gameDate": "2015-11-15",
+        "awayTeam": "MIN",
+        "homeTeam": "OAK",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "143",
+        "gameWeek": "10",
+        "gameDate": "2015-11-15",
+        "awayTeam": "NE",
+        "homeTeam": "NYG",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "144",
+        "gameWeek": "10",
+        "gameDate": "2015-11-15",
+        "awayTeam": "KC",
+        "homeTeam": "DEN",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "145",
+        "gameWeek": "10",
+        "gameDate": "2015-11-15",
+        "awayTeam": "ARI",
+        "homeTeam": "SEA",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "146",
+        "gameWeek": "10",
+        "gameDate": "2015-11-16",
+        "awayTeam": "HOU",
+        "homeTeam": "CIN",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "147",
+        "gameWeek": "11",
+        "gameDate": "2015-11-19",
+        "awayTeam": "TEN",
+        "homeTeam": "JAC",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "NFL",
+        "winner": ""
+    }, {
+        "gameId": "148",
+        "gameWeek": "11",
+        "gameDate": "2015-11-22",
+        "awayTeam": "OAK",
+        "homeTeam": "DET",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "149",
+        "gameWeek": "11",
+        "gameDate": "2015-11-22",
+        "awayTeam": "IND",
+        "homeTeam": "ATL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "150",
+        "gameWeek": "11",
+        "gameDate": "2015-11-22",
+        "awayTeam": "NYJ",
+        "homeTeam": "HOU",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "151",
+        "gameWeek": "11",
+        "gameDate": "2015-11-22",
+        "awayTeam": "TB",
+        "homeTeam": "PHI",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "152",
+        "gameWeek": "11",
+        "gameDate": "2015-11-22",
+        "awayTeam": "DEN",
+        "homeTeam": "CHI",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "153",
+        "gameWeek": "11",
+        "gameDate": "2015-11-22",
+        "awayTeam": "GB",
+        "homeTeam": "MIN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "154",
+        "gameWeek": "11",
+        "gameDate": "2015-11-22",
+        "awayTeam": "STL",
+        "homeTeam": "BAL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "155",
+        "gameWeek": "11",
+        "gameDate": "2015-11-22",
+        "awayTeam": "DAL",
+        "homeTeam": "MIA",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "156",
+        "gameWeek": "11",
+        "gameDate": "2015-11-22",
+        "awayTeam": "WAS",
+        "homeTeam": "CAR",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "157",
+        "gameWeek": "11",
+        "gameDate": "2015-11-22",
+        "awayTeam": "CIN",
+        "homeTeam": "ARI",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "158",
+        "gameWeek": "11",
+        "gameDate": "2015-11-22",
+        "awayTeam": "SF",
+        "homeTeam": "SEA",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "159",
+        "gameWeek": "11",
+        "gameDate": "2015-11-22",
+        "awayTeam": "KC",
+        "homeTeam": "SD",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "160",
+        "gameWeek": "11",
+        "gameDate": "2015-11-23",
+        "awayTeam": "BUF",
+        "homeTeam": "NE",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "161",
+        "gameWeek": "12",
+        "gameDate": "2015-11-26",
+        "awayTeam": "PHI",
+        "homeTeam": "DET",
+        "gameTimeET": "12:30 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "162",
+        "gameWeek": "12",
+        "gameDate": "2015-11-26",
+        "awayTeam": "CAR",
+        "homeTeam": "DAL",
+        "gameTimeET": "4:30 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "163",
+        "gameWeek": "12",
+        "gameDate": "2015-11-26",
+        "awayTeam": "CHI",
+        "homeTeam": "GB",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "164",
+        "gameWeek": "12",
+        "gameDate": "2015-11-29",
+        "awayTeam": "OAK",
+        "homeTeam": "TEN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "165",
+        "gameWeek": "12",
+        "gameDate": "2015-11-29",
+        "awayTeam": "BUF",
+        "homeTeam": "KC",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "166",
+        "gameWeek": "12",
+        "gameDate": "2015-11-29",
+        "awayTeam": "TB",
+        "homeTeam": "IND",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "167",
+        "gameWeek": "12",
+        "gameDate": "2015-11-29",
+        "awayTeam": "NYG",
+        "homeTeam": "WAS",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "168",
+        "gameWeek": "12",
+        "gameDate": "2015-11-29",
+        "awayTeam": "NO",
+        "homeTeam": "HOU",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "169",
+        "gameWeek": "12",
+        "gameDate": "2015-11-29",
+        "awayTeam": "MIN",
+        "homeTeam": "ATL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "170",
+        "gameWeek": "12",
+        "gameDate": "2015-11-29",
+        "awayTeam": "STL",
+        "homeTeam": "CIN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "171",
+        "gameWeek": "12",
+        "gameDate": "2015-11-29",
+        "awayTeam": "SD",
+        "homeTeam": "JAC",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "172",
+        "gameWeek": "12",
+        "gameDate": "2015-11-29",
+        "awayTeam": "MIA",
+        "homeTeam": "NYJ",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "173",
+        "gameWeek": "12",
+        "gameDate": "2015-11-29",
+        "awayTeam": "ARI",
+        "homeTeam": "SF",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "174",
+        "gameWeek": "12",
+        "gameDate": "2015-11-29",
+        "awayTeam": "PIT",
+        "homeTeam": "SEA",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "175",
+        "gameWeek": "12",
+        "gameDate": "2015-11-29",
+        "awayTeam": "NE",
+        "homeTeam": "DEN",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "176",
+        "gameWeek": "12",
+        "gameDate": "2015-11-30",
+        "awayTeam": "BAL",
+        "homeTeam": "CLE",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "177",
+        "gameWeek": "13",
+        "gameDate": "2015-12-03",
+        "awayTeam": "GB",
+        "homeTeam": "DET",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "178",
+        "gameWeek": "13",
+        "gameDate": "2015-12-06",
+        "awayTeam": "NYJ",
+        "homeTeam": "NYG",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "179",
+        "gameWeek": "13",
+        "gameDate": "2015-12-06",
+        "awayTeam": "ARI",
+        "homeTeam": "STL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "180",
+        "gameWeek": "13",
+        "gameDate": "2015-12-06",
+        "awayTeam": "ATL",
+        "homeTeam": "TB",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "181",
+        "gameWeek": "13",
+        "gameDate": "2015-12-06",
+        "awayTeam": "CAR",
+        "homeTeam": "NO",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "182",
+        "gameWeek": "13",
+        "gameDate": "2015-12-06",
+        "awayTeam": "SEA",
+        "homeTeam": "MIN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "183",
+        "gameWeek": "13",
+        "gameDate": "2015-12-06",
+        "awayTeam": "HOU",
+        "homeTeam": "BUF",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "184",
+        "gameWeek": "13",
+        "gameDate": "2015-12-06",
+        "awayTeam": "BAL",
+        "homeTeam": "MIA",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "185",
+        "gameWeek": "13",
+        "gameDate": "2015-12-06",
+        "awayTeam": "CIN",
+        "homeTeam": "CLE",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "186",
+        "gameWeek": "13",
+        "gameDate": "2015-12-06",
+        "awayTeam": "JAC",
+        "homeTeam": "TEN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "187",
+        "gameWeek": "13",
+        "gameDate": "2015-12-06",
+        "awayTeam": "SF",
+        "homeTeam": "CHI",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "188",
+        "gameWeek": "13",
+        "gameDate": "2015-12-06",
+        "awayTeam": "DEN",
+        "homeTeam": "SD",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "189",
+        "gameWeek": "13",
+        "gameDate": "2015-12-06",
+        "awayTeam": "KC",
+        "homeTeam": "OAK",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "190",
+        "gameWeek": "13",
+        "gameDate": "2015-12-06",
+        "awayTeam": "PHI",
+        "homeTeam": "NE",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "191",
+        "gameWeek": "13",
+        "gameDate": "2015-12-06",
+        "awayTeam": "IND",
+        "homeTeam": "PIT",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "192",
+        "gameWeek": "13",
+        "gameDate": "2015-12-07",
+        "awayTeam": "DAL",
+        "homeTeam": "WAS",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "193",
+        "gameWeek": "14",
+        "gameDate": "2015-12-10",
+        "awayTeam": "MIN",
+        "homeTeam": "ARI",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "NFL",
+        "winner": ""
+    }, {
+        "gameId": "194",
+        "gameWeek": "14",
+        "gameDate": "2015-12-13",
+        "awayTeam": "BUF",
+        "homeTeam": "PHI",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "195",
+        "gameWeek": "14",
+        "gameDate": "2015-12-13",
+        "awayTeam": "SF",
+        "homeTeam": "CLE",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "196",
+        "gameWeek": "14",
+        "gameDate": "2015-12-13",
+        "awayTeam": "DET",
+        "homeTeam": "STL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "197",
+        "gameWeek": "14",
+        "gameDate": "2015-12-13",
+        "awayTeam": "NO",
+        "homeTeam": "TB",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "198",
+        "gameWeek": "14",
+        "gameDate": "2015-12-13",
+        "awayTeam": "TEN",
+        "homeTeam": "NYJ",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "199",
+        "gameWeek": "14",
+        "gameDate": "2015-12-13",
+        "awayTeam": "PIT",
+        "homeTeam": "CIN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "200",
+        "gameWeek": "14",
+        "gameDate": "2015-12-13",
+        "awayTeam": "NE",
+        "homeTeam": "HOU",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "201",
+        "gameWeek": "14",
+        "gameDate": "2015-12-13",
+        "awayTeam": "IND",
+        "homeTeam": "JAC",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "202",
+        "gameWeek": "14",
+        "gameDate": "2015-12-13",
+        "awayTeam": "SD",
+        "homeTeam": "KC",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "203",
+        "gameWeek": "14",
+        "gameDate": "2015-12-13",
+        "awayTeam": "WAS",
+        "homeTeam": "CHI",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "204",
+        "gameWeek": "14",
+        "gameDate": "2015-12-13",
+        "awayTeam": "ATL",
+        "homeTeam": "CAR",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "205",
+        "gameWeek": "14",
+        "gameDate": "2015-12-13",
+        "awayTeam": "OAK",
+        "homeTeam": "DEN",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "206",
+        "gameWeek": "14",
+        "gameDate": "2015-12-13",
+        "awayTeam": "DAL",
+        "homeTeam": "GB",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "207",
+        "gameWeek": "14",
+        "gameDate": "2015-12-13",
+        "awayTeam": "SEA",
+        "homeTeam": "BAL",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "208",
+        "gameWeek": "14",
+        "gameDate": "2015-12-14",
+        "awayTeam": "NYG",
+        "homeTeam": "MIA",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "209",
+        "gameWeek": "15",
+        "gameDate": "2015-12-17",
+        "awayTeam": "TB",
+        "homeTeam": "STL",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "NFL",
+        "winner": ""
+    }, {
+        "gameId": "210",
+        "gameWeek": "15",
+        "gameDate": "2015-12-19",
+        "awayTeam": "NYJ",
+        "homeTeam": "DAL",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "NFL",
+        "winner": ""
+    }, {
+        "gameId": "211",
+        "gameWeek": "15",
+        "gameDate": "2015-12-20",
+        "awayTeam": "CHI",
+        "homeTeam": "MIN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "212",
+        "gameWeek": "15",
+        "gameDate": "2015-12-20",
+        "awayTeam": "ATL",
+        "homeTeam": "JAC",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "213",
+        "gameWeek": "15",
+        "gameDate": "2015-12-20",
+        "awayTeam": "HOU",
+        "homeTeam": "IND",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "214",
+        "gameWeek": "15",
+        "gameDate": "2015-12-20",
+        "awayTeam": "ARI",
+        "homeTeam": "PHI",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "215",
+        "gameWeek": "15",
+        "gameDate": "2015-12-20",
+        "awayTeam": "CAR",
+        "homeTeam": "NYG",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "216",
+        "gameWeek": "15",
+        "gameDate": "2015-12-20",
+        "awayTeam": "TEN",
+        "homeTeam": "NE",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "217",
+        "gameWeek": "15",
+        "gameDate": "2015-12-20",
+        "awayTeam": "BUF",
+        "homeTeam": "WAS",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "218",
+        "gameWeek": "15",
+        "gameDate": "2015-12-20",
+        "awayTeam": "KC",
+        "homeTeam": "BAL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "219",
+        "gameWeek": "15",
+        "gameDate": "2015-12-20",
+        "awayTeam": "CLE",
+        "homeTeam": "SEA",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "220",
+        "gameWeek": "15",
+        "gameDate": "2015-12-20",
+        "awayTeam": "GB",
+        "homeTeam": "OAK",
+        "gameTimeET": "4:05 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "221",
+        "gameWeek": "15",
+        "gameDate": "2015-12-20",
+        "awayTeam": "DEN",
+        "homeTeam": "PIT",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "222",
+        "gameWeek": "15",
+        "gameDate": "2015-12-20",
+        "awayTeam": "MIA",
+        "homeTeam": "SD",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "223",
+        "gameWeek": "15",
+        "gameDate": "2015-12-20",
+        "awayTeam": "CIN",
+        "homeTeam": "SF",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "224",
+        "gameWeek": "15",
+        "gameDate": "2015-12-21",
+        "awayTeam": "DET",
+        "homeTeam": "NO",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "225",
+        "gameWeek": "16",
+        "gameDate": "2015-12-24",
+        "awayTeam": "SD",
+        "homeTeam": "OAK",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "NFL",
+        "winner": ""
+    }, {
+        "gameId": "226",
+        "gameWeek": "16",
+        "gameDate": "2015-12-26",
+        "awayTeam": "WAS",
+        "homeTeam": "PHI",
+        "gameTimeET": "8:25 PM",
+        "tvStation": "NFL",
+        "winner": ""
+    }, {
+        "gameId": "227",
+        "gameWeek": "16",
+        "gameDate": "2015-12-27",
+        "awayTeam": "NE",
+        "homeTeam": "NYJ",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "228",
+        "gameWeek": "16",
+        "gameDate": "2015-12-27",
+        "awayTeam": "HOU",
+        "homeTeam": "TEN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "229",
+        "gameWeek": "16",
+        "gameDate": "2015-12-27",
+        "awayTeam": "CLE",
+        "homeTeam": "KC",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "230",
+        "gameWeek": "16",
+        "gameDate": "2015-12-27",
+        "awayTeam": "IND",
+        "homeTeam": "MIA",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "231",
+        "gameWeek": "16",
+        "gameDate": "2015-12-27",
+        "awayTeam": "JAC",
+        "homeTeam": "NO",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "232",
+        "gameWeek": "16",
+        "gameDate": "2015-12-27",
+        "awayTeam": "SF",
+        "homeTeam": "DET",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "233",
+        "gameWeek": "16",
+        "gameDate": "2015-12-27",
+        "awayTeam": "DAL",
+        "homeTeam": "BUF",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "234",
+        "gameWeek": "16",
+        "gameDate": "2015-12-27",
+        "awayTeam": "CHI",
+        "homeTeam": "TB",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "235",
+        "gameWeek": "16",
+        "gameDate": "2015-12-27",
+        "awayTeam": "CAR",
+        "homeTeam": "ATL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "236",
+        "gameWeek": "16",
+        "gameDate": "2015-12-27",
+        "awayTeam": "NYG",
+        "homeTeam": "MIN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "237",
+        "gameWeek": "16",
+        "gameDate": "2015-12-27",
+        "awayTeam": "STL",
+        "homeTeam": "SEA",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "238",
+        "gameWeek": "16",
+        "gameDate": "2015-12-27",
+        "awayTeam": "GB",
+        "homeTeam": "ARI",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "239",
+        "gameWeek": "16",
+        "gameDate": "2015-12-27",
+        "awayTeam": "PIT",
+        "homeTeam": "BAL",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "NBC",
+        "winner": ""
+    }, {
+        "gameId": "240",
+        "gameWeek": "16",
+        "gameDate": "2015-12-28",
+        "awayTeam": "CIN",
+        "homeTeam": "DEN",
+        "gameTimeET": "8:30 PM",
+        "tvStation": "ESPN",
+        "winner": ""
+    }, {
+        "gameId": "241",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "NYJ",
+        "homeTeam": "BUF",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "242",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "NE",
+        "homeTeam": "MIA",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "243",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "TB",
+        "homeTeam": "CAR",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "244",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "NO",
+        "homeTeam": "ATL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "245",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "BAL",
+        "homeTeam": "CIN",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "246",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "PIT",
+        "homeTeam": "CLE",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "247",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "JAC",
+        "homeTeam": "HOU",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "248",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "TEN",
+        "homeTeam": "IND",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "249",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "OAK",
+        "homeTeam": "KC",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "250",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "WAS",
+        "homeTeam": "DAL",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "251",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "PHI",
+        "homeTeam": "NYG",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "252",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "DET",
+        "homeTeam": "CHI",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "253",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "MIN",
+        "homeTeam": "GB",
+        "gameTimeET": "1:00 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "254",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "SD",
+        "homeTeam": "DEN",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "CBS",
+        "winner": ""
+    }, {
+        "gameId": "255",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "SEA",
+        "homeTeam": "ARI",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }, {
+        "gameId": "256",
+        "gameWeek": "17",
+        "gameDate": "2016-01-03",
+        "awayTeam": "STL",
+        "homeTeam": "SF",
+        "gameTimeET": "4:25 PM",
+        "tvStation": "FOX",
+        "winner": ""
+    }]
+}
