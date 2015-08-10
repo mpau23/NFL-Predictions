@@ -7,8 +7,7 @@ var gulp = require('gulp'),
     compass = require('gulp-compass'),
     path = require('path'),
     minifyCss = require('gulp-minify-css'),
-    svgmin = require('gulp-svgmin')
-;
+    svgmin = require('gulp-svgmin');
 
 gulp.task('bower', function() {
     return gulp.src(bower(), {
@@ -22,7 +21,10 @@ gulp.task('bower', function() {
 });
 
 gulp.task('appJs', function() {
-    return gulp.src('./app/components/**/*.js')
+    return gulp.src([
+            './app/controllers/*.js',
+            './app/classes/*.js'
+        ])
         .pipe(concat('app.js'))
         .pipe(uglify())
         .pipe(rename({

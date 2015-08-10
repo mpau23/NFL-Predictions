@@ -30,7 +30,9 @@
         </ul>
     </nav>
     <div class="main-content" ng-controller="RootCtrl">
-        <p>{{msg}}</p>
+        <p ng-repeat="team in teams">
+            {{team.displayName}}&nbsp;({{team.id}})
+        </p>
     </div>
     <footer>
     </footer>
