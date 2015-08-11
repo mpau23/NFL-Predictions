@@ -1,8 +1,14 @@
 //Initialize application
-var NflPredictionsApp = angular.module('NflPredictionsApp', []);
+var NflPredictionsApp = angular.module('NflPredictionsApp', ["ui.router"]);
 
 //Root controller for application
-NflPredictionsApp.controller('RootCtrl', ['$scope', '$http', 'Team', function($scope, $http, Team) {
+NflPredictionsApp.controller('RootCtrl', ['$scope', function($scope) {
+
+    $scope.author = "Miren Pau";
+
+}]);
+
+NflPredictionsApp.controller('TeamsCtrl', ['$scope', '$http', 'Team', function($scope, $http, Team) {
 
     $scope.teams = getTeams();
 
@@ -26,3 +32,4 @@ NflPredictionsApp.controller('RootCtrl', ['$scope', '$http', 'Team', function($s
     }
 
 }]);
+

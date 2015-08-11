@@ -4,7 +4,8 @@
   "dependencies": {
     "angular": "~1.4.3",
     "jquery": "~2.1.4",
-    "normalize.css": "~3.0.3"
+    "normalize.css": "~3.0.3",
+    "ui-router": "~0.2.15"
   },
   "overrides": {
     "angular": {
@@ -12,6 +13,9 @@
     },
     "jquery": {
       "main": "dist/*.min.js"
+    },
+    "ui-router": {
+      "main": "release/*.min.js"
     }
   }
 }

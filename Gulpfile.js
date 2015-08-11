@@ -22,8 +22,9 @@ gulp.task('bower', function() {
 
 gulp.task('appJs', function() {
     return gulp.src([
-            './app/controllers/*.js',
-            './app/classes/*.js'
+            './app/src/controllers/*.js',
+            './app/src/classes/*.js',
+            './app/src/*.js'
         ])
         .pipe(concat('app.js'))
         .pipe(uglify())

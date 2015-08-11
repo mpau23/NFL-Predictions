@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
     <script src="js/app.min.js"></script>
 </head>
 
@@ -13,15 +14,9 @@
             <a class="logo" href="#"></a>
         </div>
     </header>
-    <nav>
-    </nav>
-    <div class="main-content" ng-controller="RootCtrl">
-        <p ng-repeat="team in teams">
-            {{team.displayName}}&nbsp;({{team.id}})
-        </p>
-    </div>
-    <footer>
-    </footer>
+    <nav> </nav>
+    <div ui-view> </div>
+    <footer> </footer>
 </body>
 
 </html>
