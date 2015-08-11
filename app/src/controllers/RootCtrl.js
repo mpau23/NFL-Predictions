@@ -1,6 +1,3 @@
-//Initialize application
-var NflPredictionsApp = angular.module('NflPredictionsApp', ["ui.router"]);
-
 //Root controller for application
 NflPredictionsApp.controller('RootCtrl', ['$scope', function($scope) {
 
