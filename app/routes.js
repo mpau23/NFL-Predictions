@@ -19,12 +19,12 @@ var Player = require('./db/tables/player');
                 if (err)
                     res.send(err);
 
-                res.json(player); // return all nerds in JSON format
+                res.json(player); // return all players in JSON format
             });
         });
 
         // route to handle creating goes here (app.post)
-        // route to handle delete goes here (app.delete)
+        // route to handle deletes goes here (app.delete)
 
         // frontend routes =========================================================
         // route to handle all angular requests
