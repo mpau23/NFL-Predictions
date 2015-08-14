@@ -3,6 +3,11 @@ var mongoose = require('mongoose');
 
 // define our table
 // module.exports allows us to pass this to other files when it is called
-module.exports = mongoose.model('Player', {
-    name : {type : String, default: ''}
+
+var Schema = mongoose.Schema;
+
+var PlayerSchema = new Schema({
+    "name": String
 });
+
+module.exports = mongoose.model('Player', PlayerSchema);

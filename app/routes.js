@@ -1,7 +1,7 @@
  // app/routes.js
 
 // grab the nerd model we just created
-var Player = require('./db/tables/player');
+var Player = require('./db/tables/Player');
 
     module.exports = function(app) {
 
@@ -14,6 +14,7 @@ var Player = require('./db/tables/player');
             // use mongoose to get all nerds in the database
             Player.find(function(err, player) {
 
+console.log(player);
                 // if there is an error retrieving, send the error. 
                                 // nothing after res.send(err) will execute
                 if (err)
