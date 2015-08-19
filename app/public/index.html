@@ -5,6 +5,7 @@
     <base href="/">
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <script src="js/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/angular-ui-router.min.js"></script>
     <script type="text/javascript">
     //Initialize application
@@ -21,7 +22,24 @@
     </header>
     <nav> </nav>
     <div ui-view> </div>
-    <footer> </footer>
+
+    <footer>
+        <input name="name" id="input-name" type="text" />
+        <input name="submit" id="input-submit" type="button" />
+    </footer>
+
+
+    <script type="text/javascript">
+    jQuery('#input-submit').on('click', function() {
+        jQuery.post("/api/player", {
+            "name": jQuery('#input-name').val()
+        }, function(data) {
+            console.log("Post resposne:");
+            console.dir(data);
+        });
+
+    });
+    </script>
 </body>
 
 </html>
