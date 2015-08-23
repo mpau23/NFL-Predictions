@@ -10,8 +10,9 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$http', '$q', 'Game', func
             .then(function(response) {
 
                 angular.forEach(response.data, function(value, key) {
-                    console.log(value._id);
-                    gamesArray.push(new Game(value._id, value.week, "", "", value.awayTeam._id, value.homeTeam._id));
+                    date = new Date(value.date);
+                    date.setHours(date.getHours()+5);
+                    gamesArray.push(new Game(value._id, value.week, date.toString(), "", value.awayTeam._id, value.homeTeam._id));
                 });
 
                 $scope.games = gamesArray;
