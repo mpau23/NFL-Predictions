@@ -1,38 +1,64 @@
  // app/routes.js
 
- // grab the nerd model we just created
- var Player = require('./db/tables/Player');
- var Game = require('./db/tables/Game');
- var Team = require('./db/tables/Team');
- var Prediction = require('./db/tables/Prediction');
+ var Player = require('./db/tables/PlayerTable');
+ var Game = require('./db/tables/GameTable');
+ var Team = require('./db/tables/TeamTable');
+ var Prediction = require('./db/tables/PredictionTable');
 
  module.exports = function(app) {
 
-     // server routes ===========================================================
-     // handle things like api calls
-     // authentication routes
+     //GET Requests
 
-     // sample api route
      app.get('/api/player', function(req, res) {
-         // use mongoose to get all nerds in the database
-
-        console.log("im here");
 
          Player.find(function(err, player) {
 
-             // if there is an error retrieving, send the error. 
-             // nothing after res.send(err) will execute
              if (err)
                  res.send(err);
 
-             res.json(player); // return all players in JSON format
+             res.json(player);
          });
      });
 
+     app.get('/api/team', function(req, res) {
+
+         Team.find(function(err, team) {
+
+             if (err)
+                 res.send(err);
+
+             res.json(team);
+         });
+     });
+
+     app.get('/api/team/:code', function(req, res) {
+
+         Team.findById(req.params.code, function(err, team) {
+
+             if (err)
+                 res.send(err);
+
+             res.json(team);
+         });
+     });
+
+     app.get('/api/game', function(req, res) {
+
+         Game.find({})
+             .populate('awayTeam')
+             .populate('homeTeam')
+             .exec(function(err, game) {
+                 if (err)
+                     res.send(err);
+
+                 res.json(game);
+             });
+
+     });
+
+     //POST Requests
 
      app.post('/api/player', function(req, res) {
-         
-         console.log("im in");
 
          var player;
 
@@ -51,13 +77,53 @@
          return res.send(player);
      });
 
-     // route to handle creating goes here (app.post)
-     // route to handle deletes goes here (app.delete)
+     app.post('/api/team', function(req, res) {
 
-     // frontend routes =========================================================
-     // route to handle all angular requests
+         var team;
+
+         team = new Team({
+             _id: req.body.code,
+             shortName: req.body.shortName,
+             fullName: req.body.fullName
+         });
+
+         team.save(function(err) {
+             if (!err) {
+                 return console.log("created");
+             } else {
+                 return console.log(err);
+             }
+         });
+
+         return res.send(team);
+     });
+
+
+     app.post('/api/game', function(req, res) {
+
+         var game;
+
+         game = new Game({
+             _id: req.body.id,
+             week: req.body.week,
+             homeTeam: req.body.homeTeam,
+             awayTeam: req.body.awayTeam,
+             date: req.body.date
+         });
+
+         game.save(function(err) {
+             if (!err) {
+                 return console.log("created");
+             } else {
+                 return console.log(err);
+             }
+         });
+
+         return res.send(game);
+     });
+
      app.get('*', function(req, res) {
-         res.sendFile(__dirname + '/public/index.html'); // load our public/index.html file
+         res.sendFile(__dirname + '/public/index.html');
      });
 
  };

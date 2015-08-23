@@ -13,7 +13,7 @@ NflPredictionsApp.controller('TeamsCtrl', ['$scope', '$http', 'Team', function($
                 jsonData = teams.data.NFLTeams;
 
                 angular.forEach(jsonData, function(value, key) {
-                    teamsArray.push(new Team(value.code, value.fullName));
+                    teamsArray.push(new Team(value.code, value.shortName, value.fullName));
                 });
 
             });

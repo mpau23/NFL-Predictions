@@ -1,5 +1,8 @@
-<div class="main-content" ng-controller="TeamsCtrl">
-    <p ng-repeat="team in teams">
-        {{team.displayName}}&nbsp;({{team.id}})
+<div class="main-content">
+    <p ng-repeat="team in teams" class="team-wrapper">
+        <span class="full">{{team.fullName}}</span>
+        <span class="code">{{team.code}}</span>
+        <span class="short">{{team.shortName}}</span>
     </p>
+    <input name="submit" id="input-team" type="button" />
 </div>

@@ -22,24 +22,6 @@
     </header>
     <nav> </nav>
     <div ui-view> </div>
-
-    <footer>
-        <input name="name" id="input-name" type="text" />
-        <input name="submit" id="input-submit" type="button" />
-    </footer>
-
-
-    <script type="text/javascript">
-    jQuery('#input-submit').on('click', function() {
-        jQuery.post("/api/player", {
-            "name": jQuery('#input-name').val()
-        }, function(data) {
-            console.log("Post resposne:");
-            console.dir(data);
-        });
-
-    });
-    </script>
 </body>
 
 </html>

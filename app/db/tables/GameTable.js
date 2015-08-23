@@ -7,18 +7,18 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var GameSchema = new Schema({
+    _id: Number,
     week: Number,
-    time: Date,
-    homeScore: Number,
-    awayScore: Number,
     homeTeam: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: 'Team'
     },
     awayTeam: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: 'Team'
-    }
+    },
+    date: Date
+
 });
 
-module.exports = mongoose.model('Game', PlayerSchema);
+module.exports = mongoose.model('Game', GameSchema);

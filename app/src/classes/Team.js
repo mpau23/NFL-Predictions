@@ -1,17 +1,10 @@
 NflPredictionsApp.factory('Team', function() {
 
     // instantiate our initial object
-    var Team = function(code, name) {
-        this.id = code;
-        this.displayName = name;
-    };
-
-    Team.prototype.id = function() {
-        return this.id;
-    };
-
-    Team.prototype.displayName = function() {
-        return this.displayName;
+    var Team = function(code, shortName, fullName) {
+        this.code = code;
+        this.shortName = shortName;
+        this.fullName = fullName;
     };
 
     return Team;

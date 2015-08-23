@@ -7,7 +7,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var TeamSchema = new Schema({
-    name: String
+    _id: String,
+    shortName: String,
+    fullName: String,
+    games: {
+        type: Schema.Types.ObjectId,
+        ref: 'Game'
+    }
 });
 
 module.exports = mongoose.model('Team', TeamSchema);

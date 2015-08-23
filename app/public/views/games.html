@@ -1,5 +1,10 @@
-<div class="main-content" ng-controller="GamesCtrl">
+<div class="main-content">
+    <div ng-click="getGames()">Show games</div>
+    <div ng-click="pushGames()">Push games</div>
     <p ng-repeat="game in games">
-        Week&nbsp;{{game.week}}&nbsp;-&nbsp;{{game.awayTeamId}}&nbsp;vs&nbsp;{{game.homeTeamId}}
+        <span>{{game.id}} </span>
+        <span>Week {{game.week}} - </span>
+        <span>{{game.awayTeamId}} vs </span>
+        <span>{{game.homeTeamId}}</span>
     </p>
 </div>
