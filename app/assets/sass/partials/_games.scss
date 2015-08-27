@@ -1,0 +1,67 @@
+.list-games {
+    @include span(full);
+    padding: 0;
+    margin: 0;
+    .each-game {
+        @include span(full);
+        margin: 0 0 10px 0;
+        list-style: none;
+        .input-container {
+            @include span(10);
+        }
+        .submit-container {
+            @include span(2 last);
+        }
+    }
+}
+
+.away-team-container,
+.home-team-container {
+    .team-prediction {
+        @include span(2);
+        margin: 0 10px;
+    }
+
+    .full-name,.short-name {
+        float:left;
+    }
+
+    .full-name {
+        display: none;
+    }
+
+    @include breakpoint(min-width 720px)
+    {
+        .full-name {
+            display: inherit;
+        }
+
+        .short-name {
+            display: none;
+        }
+    }
+}
+
+.away-team-container {
+    @include span(5.5);
+    .team-prediction {
+        float: right;
+    }
+
+    .team-name {
+        text-align: right;
+        float:right;
+    }
+}
+
+.home-team-container {
+    @include span(5.5 last);
+    .team-prediction {
+        float: left;
+    }
+}
+
+.vs-container {
+    @include span(1);
+    text-align: center;
+}

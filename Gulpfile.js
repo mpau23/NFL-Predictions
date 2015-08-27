@@ -60,5 +60,15 @@ gulp.task('appImage', function() {
         .pipe(gulp.dest('./app/public/images/'));
 });
 
+gulp.task('watch', ['default'], function() {
+    gulp.watch([
+        './app/src/controllers/*.js',
+        './app/src/classes/*.js',
+        './app/src/*.js'
+    ], ['appJs']);
+    gulp.watch('./app/assets/sass/*.scss', ['appCss']);
+    gulp.watch('./app/assets/images/*.svg', ['appImage']);
+});
 
-gulp.task('default', ['appJs']);
+
+gulp.task('default', ['appJs', 'appCss', 'appImage']);

@@ -606,3 +606,110 @@ header .logo-wrapper a {
 footer {
   height: 50px;
 }
+
+.list-games {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  margin: 0;
+}
+.list-games .each-game {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin: 0 0 10px 0;
+  list-style: none;
+}
+.list-games .each-game .input-container {
+  width: 83.05085%;
+  float: left;
+  margin-right: 1.69492%;
+}
+.list-games .each-game .submit-container {
+  width: 15.25424%;
+  float: right;
+  margin-right: 0;
+}
+
+.away-team-container .team-prediction,
+.home-team-container .team-prediction {
+  width: 15.25424%;
+  float: left;
+  margin-right: 1.69492%;
+  margin: 0 10px;
+}
+.away-team-container .full-name, .away-team-container .short-name,
+.home-team-container .full-name,
+.home-team-container .short-name {
+  float: left;
+}
+.away-team-container .full-name,
+.home-team-container .full-name {
+  display: none;
+}
+@media (min-width: 720px) {
+  .away-team-container .full-name,
+  .home-team-container .full-name {
+    display: inherit;
+  }
+  .away-team-container .short-name,
+  .home-team-container .short-name {
+    display: none;
+  }
+}
+
+.away-team-container {
+  width: 44.91525%;
+  float: left;
+  margin-right: 1.69492%;
+}
+.away-team-container .team-prediction {
+  float: right;
+}
+.away-team-container .team-name {
+  text-align: right;
+  float: right;
+}
+
+.home-team-container {
+  width: 44.91525%;
+  float: right;
+  margin-right: 0;
+}
+.home-team-container .team-prediction {
+  float: left;
+}
+
+.vs-container {
+  width: 6.77966%;
+  float: left;
+  margin-right: 1.69492%;
+  text-align: center;
+}
+
+.login-container fieldset,
+.registration-container fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.login-container label,
+.registration-container label {
+  display: block;
+}
+
+.login-container {
+  margin-left: 8.47458%;
+  width: 40.67797%;
+  float: left;
+  margin-right: 1.69492%;
+}
+
+.registration-container {
+  width: 40.67797%;
+  float: left;
+  margin-right: 1.69492%;
+}

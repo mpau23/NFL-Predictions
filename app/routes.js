@@ -1,22 +1,24 @@
  // app/routes.js
 
- var Player = require('./db/tables/PlayerTable');
+ var User = require('./db/tables/UserTable');
  var Game = require('./db/tables/GameTable');
  var Team = require('./db/tables/TeamTable');
  var Prediction = require('./db/tables/PredictionTable');
+ var Base64 = require('./db/services/Base64');
 
  module.exports = function(app) {
 
      //GET Requests
 
-     app.get('/api/player', function(req, res) {
+     app.get('/api/user/:username/:password', function(req, res) {
 
-         Player.find(function(err, player) {
+         var userToken = Base64.encode(req.params.username + ':' + req.params.password)
+         User.findById(userToken, function(err, user) {
 
              if (err)
                  res.send(err);
 
-             res.json(player);
+             res.json(user);
          });
      });
 
@@ -42,9 +44,11 @@
          });
      });
 
-     app.get('/api/game', function(req, res) {
+     app.get('/api/game/:week', function(req, res) {
 
-         Game.find({})
+         Game.find({
+                 week: req.params.week
+             })
              .populate('awayTeam')
              .populate('homeTeam')
              .exec(function(err, game) {
@@ -58,23 +62,24 @@
 
      //POST Requests
 
-     app.post('/api/player', function(req, res) {
+     app.post('/api/user', function(req, res) {
 
-         var player;
+         var user;
 
-         player = new Player({
-             name: req.body.name
+         user = new User({
+             _id: Base64.encode(req.body.username + ':' + req.body.password),
+             fullName: req.body.fullName,
+             email: req.body.email,
+             username: req.body.username
          });
 
-         player.save(function(err) {
+         user.save(function(err) {
              if (!err) {
-                 return console.log("created");
-             } else {
-                 return console.log(err);
+                 return res.send(err);
              }
          });
-
-         return res.send(player);
+         console.log(user);
+         return res.json(user);
      });
 
      app.post('/api/team', function(req, res) {
@@ -123,6 +128,7 @@
      });
 
      app.get('*', function(req, res) {
+        console.log(req.headers);
          res.sendFile(__dirname + '/public/index.html');
      });
 

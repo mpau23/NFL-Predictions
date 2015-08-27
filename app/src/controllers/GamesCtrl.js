@@ -1,18 +1,26 @@
-NflPredictionsApp.controller('GamesCtrl', ['$scope', '$http', '$q', 'Game', function($scope, $http, $q, Game) {
+NflPredictionsApp.controller('GamesCtrl', ['$scope', '$http', '$q', '$stateParams', 'Game', 'Team', function($scope, $http, $q, $stateParams, Game, Team) {
 
-    $scope.games;
+    $scope.games = getGames();
 
-    $scope.getGames = function() {
+    function getGames() {
 
         var gamesArray = new Array;
 
-        $http.get('/api/game')
+        $http.get('/api/game/' + $stateParams.week)
             .then(function(response) {
 
                 angular.forEach(response.data, function(value, key) {
                     date = new Date(value.date);
-                    date.setHours(date.getHours()+5);
-                    gamesArray.push(new Game(value._id, value.week, date.toString(), "", value.awayTeam._id, value.homeTeam._id));
+                    date.setHours(date.getHours() + 5);
+                    gamesArray.push(
+                        new Game(
+                            value._id,
+                            value.week,
+                            date.toString(),
+                            new Team(value.awayTeam._id, value.awayTeam.shortName, value.awayTeam.fullName),
+                            new Team(value.homeTeam._id, value.homeTeam.shortName, value.homeTeam.fullName)
+                        )
+                    );
                 });
 
                 $scope.games = gamesArray;
@@ -51,7 +59,7 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$http', '$q', 'Game', func
                     if (!thisWeeksGames.games[gameCount])
                         gameCount = 0;
 
-                    gamesArray.push(new Game(thisGameId, value.gameWeek, value.gameDate, value.gameTimeET, value.awayTeam, value.homeTeam));
+                    gamesArray.push(new Game(thisGameId, value.gameWeek, value.gameDate + " " + value.gameTimeET, value.awayTeam, value.homeTeam));
                     gameCount++;
                 });
 
@@ -61,13 +69,22 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$http', '$q', 'Game', func
                         "week": value.week,
                         "homeTeam": value.homeTeamId,
                         "awayTeam": value.awayTeamId,
-                        "date": value.date+" "+value.time
+                        "date": value.date
                     });
                 });
 
             });
 
 
+    };
+
+    $scope.submit = function(awayPrediction, awayTeamId, homePrediction, homeTeamId, gameId) {
+
+        console.log(awayPrediction);
+        console.log(awayTeamId);
+        console.log(homePrediction);
+        console.log(homeTeamId);
+        console.log(gameId);
     };
 
     function getCenterData() {

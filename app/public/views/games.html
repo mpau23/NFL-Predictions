@@ -1,11 +1,30 @@
 <div class="main-content">
-    <div ng-click="getGames()">Show games</div>
-    <div ng-click="pushGames()">Push games</div>
-    <p ng-repeat="game in games">
-        <span>{{game.id}} </span>
-        <span>Week {{game.week}} - </span>
-        <span>{{game.awayTeamId}} vs </span>
-        <span>{{game.homeTeamId}}</span>
-        <span>{{game.date}}</span>
-    </p>
+    <!-- <div ng-click="pushGames()">Push games</div> -->
+
+    <ul class="list-games">
+        <li ng-repeat="game in games" class="each-game">
+            <form name="prediction">
+
+                <span class="input-container">
+                    <span class="away-team-container">
+                        <input type="number" ng-model="awayPrediction" name="away-prediction" class="away-team-prediction team-prediction" />
+                        <span class="away-team-image {{game.awayTeam.code}}"></span>
+                        <span class="away-team-name team-name short-name">{{game.awayTeam.shortName}}</span>
+                        <span class="away-team-name team-name full-name">{{game.awayTeam.fullName}}</span>
+                    </span>
+                    <span class="vs-container">vs.</span>
+                    <span class="home-team-container">
+                        <input type="number" ng-model="homePrediction" name="home-prediction" class="home-team-prediction team-prediction" />
+                        <span class="home-team-image {{game.homeTeam.code}}"></span>
+                        <span class="home-team-name team-name short-name">{{game.homeTeam.shortName}}</span>
+                        <span class="home-team-name team-name full-name">{{game.homeTeam.fullName}}</span>
+                    </span>
+                </span>
+                <span class="submit-container">
+                    <input type="submit" name="submit-prediction" value="Submit" ng-click="submit(awayPrediction, game.awayTeam.code, homePrediction, game.homeTeam.code, game.id)" />
+                </span>
+            </form>
+
+        </li>
+    </ul>
 </div>

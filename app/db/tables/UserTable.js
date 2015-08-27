@@ -6,8 +6,11 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var PlayerSchema = new Schema({
-    name: String
+var UserSchema = new Schema({
+    _id: String,
+    fullName: String,
+    email :String,
+    username :String 
 });
 
-module.exports = mongoose.model('Player', PlayerSchema);
+module.exports = mongoose.model('User', UserSchema);
