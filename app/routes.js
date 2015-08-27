@@ -1,135 +1,170 @@
- // app/routes.js
+// app/routes.js
 
- var User = require('./db/tables/UserTable');
- var Game = require('./db/tables/GameTable');
- var Team = require('./db/tables/TeamTable');
- var Prediction = require('./db/tables/PredictionTable');
- var Base64 = require('./db/services/Base64');
+var User = require('./db/tables/UserTable');
+var Game = require('./db/tables/GameTable');
+var Team = require('./db/tables/TeamTable');
+var Prediction = require('./db/tables/PredictionTable');
+var Base64 = require('./db/services/Base64');
 
- module.exports = function(app) {
+module.exports = function(app) {
 
-     //GET Requests
+    //GET Requests
 
-     app.get('/api/user/:username/:password', function(req, res) {
+    app.get('/api/user/:username/:password', function(req, res) {
 
-         var userToken = Base64.encode(req.params.username + ':' + req.params.password)
-         User.findById(userToken, function(err, user) {
+        var userToken = Base64.encode(req.params.username + ':' + req.params.password)
+        User.findById(userToken, function(err, user) {
 
-             if (err)
-                 res.send(err);
+            if (err)
+                res.send(err);
 
-             res.json(user);
-         });
-     });
+            res.json(user);
+        });
+    });
 
-     app.get('/api/team', function(req, res) {
+    app.get('/api/team', function(req, res) {
 
-         Team.find(function(err, team) {
+        Team.find(function(err, team) {
 
-             if (err)
-                 res.send(err);
+            if (err)
+                res.send(err);
 
-             res.json(team);
-         });
-     });
+            res.json(team);
+        });
+    });
 
-     app.get('/api/team/:code', function(req, res) {
+    app.get('/api/team/:code', function(req, res) {
 
-         Team.findById(req.params.code, function(err, team) {
+        Team.findById(req.params.code, function(err, team) {
 
-             if (err)
-                 res.send(err);
+            if (err)
+                res.send(err);
 
-             res.json(team);
-         });
-     });
+            res.json(team);
+        });
+    });
 
-     app.get('/api/game/:week', function(req, res) {
+    app.get('/api/game/:week', function(req, res) {
 
-         Game.find({
-                 week: req.params.week
-             })
-             .populate('awayTeam')
-             .populate('homeTeam')
-             .exec(function(err, game) {
-                 if (err)
-                     res.send(err);
+        Game.find({
+                week: req.params.week
+            })
+            .populate('awayTeam')
+            .populate('homeTeam')
+            .exec(function(err, game) {
+                if (err)
+                    res.send(err);
 
-                 res.json(game);
-             });
+                res.json(game);
+            });
 
-     });
+    });
 
-     //POST Requests
+    app.get('/api/prediction/:game/:user', function(req, res) {
 
-     app.post('/api/user', function(req, res) {
+        Prediction.find({
+                game: req.params.game,
+                user: req.params.user
+            })
+            .populate('game')
+            .populate('user')
+            .exec(function(err, prediction) {
+                if (err)
+                    res.send(err);
 
-         var user;
+                res.json(prediction);
+            });
 
-         user = new User({
-             _id: Base64.encode(req.body.username + ':' + req.body.password),
-             fullName: req.body.fullName,
-             email: req.body.email,
-             username: req.body.username
-         });
+    });
 
-         user.save(function(err) {
-             if (!err) {
-                 return res.send(err);
-             }
-         });
-         console.log(user);
-         return res.json(user);
-     });
+    //POST Requests
 
-     app.post('/api/team', function(req, res) {
+    app.post('/api/user', function(req, res) {
 
-         var team;
+        var user;
 
-         team = new Team({
-             _id: req.body.code,
-             shortName: req.body.shortName,
-             fullName: req.body.fullName
-         });
+        user = new User({
+            _id: Base64.encode(req.body.username + ':' + req.body.password),
+            fullName: req.body.fullName,
+            email: req.body.email,
+            username: req.body.username
+        });
 
-         team.save(function(err) {
-             if (!err) {
-                 return console.log("created");
-             } else {
-                 return console.log(err);
-             }
-         });
+        user.save(function(err) {
+            if (err) {
+                return res.send(err);
+            }
+        });
+        console.log(user);
+        return res.json(user);
+    });
 
-         return res.send(team);
-     });
+    app.post('/api/team', function(req, res) {
+
+        var team;
+
+        team = new Team({
+            _id: req.body.code,
+            shortName: req.body.shortName,
+            fullName: req.body.fullName
+        });
+
+        team.save(function(err) {
+            if (err) {
+                return res.send(err);
+            }
+        });
+
+        return res.send(team);
+    });
 
 
-     app.post('/api/game', function(req, res) {
+    app.post('/api/game', function(req, res) {
 
-         var game;
+        var game;
 
-         game = new Game({
-             _id: req.body.id,
-             week: req.body.week,
-             homeTeam: req.body.homeTeam,
-             awayTeam: req.body.awayTeam,
-             date: req.body.date
-         });
+        game = new Game({
+            _id: req.body.id,
+            week: req.body.week,
+            homeTeam: req.body.homeTeam,
+            awayTeam: req.body.awayTeam,
+            date: req.body.date
+        });
 
-         game.save(function(err) {
-             if (!err) {
-                 return console.log("created");
-             } else {
-                 return console.log(err);
-             }
-         });
+        game.save(function(err) {
+            if (err) {
+                return res.send(err);
+            }
+        });
 
-         return res.send(game);
-     });
+        return res.send(game);
+    });
 
-     app.get('*', function(req, res) {
-        console.log(req.headers);
-         res.sendFile(__dirname + '/public/index.html');
-     });
 
- };
+    app.post('/api/prediction', function(req, res) {
+
+        var prediction;
+
+        prediction = new Prediction({
+            game: req.body.game,
+            user: req.body.user,
+            homePrediction: req.body.homePrediction,
+            awayPrediction: req.body.awayPrediction
+        });
+
+        prediction.save(function(err) {
+            if (err) {
+                return res.send(err);
+            }
+        });
+
+        return res.send(prediction);
+    });
+
+
+
+    app.get('*', function(req, res) {
+        res.sendFile(__dirname + '/public/index.html');
+    });
+
+};

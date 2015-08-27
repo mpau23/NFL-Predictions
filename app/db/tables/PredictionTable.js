@@ -8,12 +8,12 @@ var Schema = mongoose.Schema;
 
 var PredictionSchema = new Schema({
     game: {
-        type: Schema.Types.ObjectId,
+        type: Number,
         ref: 'Game'
     },
-    player: {
-        type: Schema.Types.ObjectId,
-        ref: 'Player'
+    user: {
+        type: String,
+        ref: 'User'
     },
     homePrediction: Number,
     awayPrediction: Number

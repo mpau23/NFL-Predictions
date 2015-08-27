@@ -1,4 +1,4 @@
-NflPredictionsApp.controller('GamesCtrl', ['$scope', '$http', '$q', '$stateParams', 'Game', 'Team', function($scope, $http, $q, $stateParams, Game, Team) {
+NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q', '$stateParams', 'Game', 'Team', function($scope, $rootScope, $http, $q, $stateParams, Game, Team) {
 
     $scope.games = getGames();
 
@@ -17,8 +17,13 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$http', '$q', '$stateParam
                             value._id,
                             value.week,
                             date.toString(),
-                            new Team(value.awayTeam._id, value.awayTeam.shortName, value.awayTeam.fullName),
-                            new Team(value.homeTeam._id, value.homeTeam.shortName, value.homeTeam.fullName)
+                            new Team(
+                                value.awayTeam._id,
+                                value.awayTeam.shortName,
+                                value.awayTeam.fullName),
+                            new Team(value.homeTeam._id,
+                                value.homeTeam.shortName,
+                                value.homeTeam.fullName)
                         )
                     );
                 });
@@ -59,7 +64,12 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$http', '$q', '$stateParam
                     if (!thisWeeksGames.games[gameCount])
                         gameCount = 0;
 
-                    gamesArray.push(new Game(thisGameId, value.gameWeek, value.gameDate + " " + value.gameTimeET, value.awayTeam, value.homeTeam));
+                    gamesArray.push(new Game(
+                        thisGameId,
+                        value.gameWeek,
+                        value.gameDate + " " + value.gameTimeET,
+                        value.awayTeam,
+                        value.homeTeam));
                     gameCount++;
                 });
 
@@ -78,13 +88,24 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$http', '$q', '$stateParam
 
     };
 
-    $scope.submit = function(awayPrediction, awayTeamId, homePrediction, homeTeamId, gameId) {
+    $scope.submit = function(awayPrediction, homePrediction, gameId) {
 
         console.log(awayPrediction);
-        console.log(awayTeamId);
         console.log(homePrediction);
-        console.log(homeTeamId);
         console.log(gameId);
+
+        $http.post('/api/prediction', {
+                "user": $rootScope.currentUser,
+                "game": gameId,
+                "homePrediction": homePrediction,
+                "awayPrediction": awayPrediction
+            })
+            .then(function(response) {
+                if (!response.data._id) {
+                    response.error = 'There was a problem creating an account';
+                }
+            });
+
     };
 
     function getCenterData() {
@@ -105,7 +126,7 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$http', '$q', '$stateParam
                         var game = {
                             id: value.getAttribute("data-gameid"),
                             home: value.getAttribute("data-home-abbr")
-                        }
+                        };
                         weekArray.push(game);
                     });
 
