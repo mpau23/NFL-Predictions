@@ -21,7 +21,10 @@
                     </span>
                 </span>
                 <span class="submit-container">
-                    <input type="submit" name="submit-prediction" value="Submit" ng-click="submit(game.prediction.awayPrediction, game.prediction.homePrediction, game.id)" />
+                    <input type="radio" name="joker" ng-model="game.prediction.joker" ng-if="game.prediction.joker == true" ng-value="true" checked>
+                    <input type="radio" name="joker" ng-model="game.prediction.joker" ng-if="!game.prediction.joker == true" ng-value="true">
+
+                    <input type="submit" name="submit-prediction" value="Submit" ng-click="submit(game.prediction.awayPrediction, game.prediction.homePrediction, game.id, game.prediction.joker)" />
                 </span>
             </form>
 

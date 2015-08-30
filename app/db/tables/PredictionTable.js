@@ -16,7 +16,8 @@ var PredictionSchema = new Schema({
         ref: 'User'
     },
     homePrediction: Number,
-    awayPrediction: Number
+    awayPrediction: Number,
+    joker: Boolean
 });
 
 module.exports = mongoose.model('Prediction', PredictionSchema);

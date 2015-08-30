@@ -33,8 +33,7 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q'
                 angular.forEach(gamesArray, function(value, key) {
                     $http.get('/api/prediction/' + value.id + "/" + $rootScope.currentUser).then(function(response) {
                         if (response.data) {
-                            console.log(response.data._id);
-                            value.prediction = new Prediction(response.data.homePrediction, response.data.awayPrediction);
+                            value.prediction = new Prediction(response.data.homePrediction, response.data.awayPrediction, response.data.joker);
                         }
                     });
 
@@ -101,17 +100,19 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q'
 
     };
 
-    $scope.submit = function(awayPrediction, homePrediction, gameId) {
+    $scope.submit = function(awayPrediction, homePrediction, gameId, joker) {
 
         console.log(awayPrediction);
         console.log(homePrediction);
         console.log(gameId);
+        console.log(joker);
 
         $http.post('/api/prediction', {
                 "user": $rootScope.currentUser,
                 "game": gameId,
                 "homePrediction": homePrediction,
-                "awayPrediction": awayPrediction
+                "awayPrediction": awayPrediction,
+                "joker": joker
             })
             .then(function(response) {
                 if (!response.data._id) {

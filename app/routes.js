@@ -149,7 +149,8 @@ module.exports = function(app) {
             game: req.body.game,
             user: req.body.user,
             homePrediction: req.body.homePrediction,
-            awayPrediction: req.body.awayPrediction
+            awayPrediction: req.body.awayPrediction,
+            joker: req.body.joker
         });
 
         prediction.save(function(err) {
