@@ -1,7 +1,5 @@
 NflPredictionsApp.controller('LoginCtrl', ['$scope', '$http', 'Authentication', '$location', function($scope, $http, Authentication, $location) {
 
-    Authentication.clearCredentials();
-
     $scope.loginUsername = "";
     $scope.loginPassword = "";
 

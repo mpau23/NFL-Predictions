@@ -62,7 +62,7 @@ module.exports = function(app) {
 
     app.get('/api/prediction/:game/:user', function(req, res) {
 
-        Prediction.find({
+        Prediction.findOne({
                 game: req.params.game,
                 user: req.params.user
             })

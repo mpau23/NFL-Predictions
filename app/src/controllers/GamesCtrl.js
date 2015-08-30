@@ -1,4 +1,4 @@
-NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q', '$stateParams', 'Game', 'Team', function($scope, $rootScope, $http, $q, $stateParams, Game, Team) {
+NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q', '$stateParams', 'Game', 'Team', 'Prediction', function($scope, $rootScope, $http, $q, $stateParams, Game, Team, Prediction) {
 
     $scope.games = getGames();
 
@@ -28,8 +28,21 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q'
                     );
                 });
 
-                $scope.games = gamesArray;
+            })
+            .then(function() {
+                angular.forEach(gamesArray, function(value, key) {
+                    $http.get('/api/prediction/' + value.id + "/" + $rootScope.currentUser).then(function(response) {
+                        if (response.data) {
+                            console.log(response.data._id);
+                            value.prediction = new Prediction(response.data.homePrediction, response.data.awayPrediction);
+                        }
+                    });
+
+                })
+
             });
+
+        return gamesArray;
     }
 
     $scope.pushGames = function() {
