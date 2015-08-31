@@ -7,14 +7,14 @@
 
                 <span class="input-container">
                     <span class="away-team-container">
-                        <input type="number" ng-model="game.prediction.awayPrediction" name="away-prediction" class="away-team-prediction team-prediction" />
+                        <input type="number" ng-model="game.prediction.awayPrediction" name="away-prediction" class="away-team-prediction team-prediction" min="0"/>
                         <span class="away-team-image {{game.awayTeam.code}}"></span>
                         <span class="away-team-name team-name short-name">{{game.awayTeam.shortName}}</span>
                         <span class="away-team-name team-name full-name">{{game.awayTeam.fullName}}</span>
                     </span>
                     <span class="vs-container">vs.</span>
                     <span class="home-team-container">
-                        <input type="number" ng-model="game.prediction.homePrediction" name="home-prediction" class="home-team-prediction team-prediction" />
+                        <input type="number" ng-model="game.prediction.homePrediction" name="home-prediction" class="home-team-prediction team-prediction" min="0"/>
                         <span class="home-team-image {{game.homeTeam.code}}"></span>
                         <span class="home-team-name team-name short-name">{{game.homeTeam.shortName}}</span>
                         <span class="home-team-name team-name full-name">{{game.homeTeam.fullName}}</span>
