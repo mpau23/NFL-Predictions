@@ -143,23 +143,49 @@ module.exports = function(app) {
 
     app.post('/api/prediction', function(req, res) {
 
-        var prediction;
-
-        prediction = new Prediction({
+        Prediction.findOne({
             game: req.body.game,
-            user: req.body.user,
-            homePrediction: req.body.homePrediction,
-            awayPrediction: req.body.awayPrediction,
-            joker: req.body.joker
-        });
+            user: req.body.user
+        }, function(err, prediction) {
+            
+            console.log(err);
+            console.log(prediction);
 
-        prediction.save(function(err) {
-            if (err) {
-                return res.send(err);
+            if (prediction) {
+                console.log("I exist!");
+                prediction.homePrediction = req.body.homePrediction;
+                prediction.awayPrediction = req.body.awayPrediction;
+                prediction.joker = req.body.joker;
+
+                prediction.save(function(err) {
+                    if (err) {
+                        return res.send(err);
+                    }
+                });
+                return res.send(prediction);
+
+            } else {
+                console.log("I'm new!");
+                var prediction;
+
+                prediction = new Prediction({
+                    game: req.body.game,
+                    user: req.body.user,
+                    homePrediction: req.body.homePrediction,
+                    awayPrediction: req.body.awayPrediction,
+                    joker: req.body.joker
+                });
+
+                prediction.save(function(err) {
+                    if (err) {
+                        return res.send(err);
+                    }
+                });
+
+                return res.send(prediction);
             }
         });
 
-        return res.send(prediction);
     });
 
 

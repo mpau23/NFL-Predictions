@@ -34,6 +34,9 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q'
                     $http.get('/api/prediction/' + value.id + "/" + $rootScope.currentUser).then(function(response) {
                         if (response.data) {
                             value.prediction = new Prediction(response.data.homePrediction, response.data.awayPrediction, response.data.joker);
+                        } else {
+                            value.prediction = new Prediction(0, 0, false);
+
                         }
                     });
 
@@ -100,27 +103,38 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q'
 
     };
 
-    $scope.submit = function(awayPrediction, homePrediction, gameId, joker) {
+    $scope.submit = function() {
 
-        console.log(awayPrediction);
-        console.log(homePrediction);
-        console.log(gameId);
-        console.log(joker);
 
-        $http.post('/api/prediction', {
+        angular.forEach($scope.games, function(value, key) {
+
+            $http.post('/api/prediction', {
                 "user": $rootScope.currentUser,
-                "game": gameId,
-                "homePrediction": homePrediction,
-                "awayPrediction": awayPrediction,
-                "joker": joker
-            })
-            .then(function(response) {
-                if (!response.data._id) {
-                    response.error = 'There was a problem creating an account';
-                }
+                "game": value.id,
+                "homePrediction": value.prediction.homePrediction,
+                "awayPrediction": value.prediction.awayPrediction,
+                "joker": value.prediction.joker
             });
 
+
+        });
+
+
+
     };
+
+    $scope.jokerChange = function(game) {
+
+        angular.forEach($scope.games, function(value, key) {
+
+            if (game != value) {
+                value.prediction.joker = false;
+            }
+
+
+
+        });
+    }
 
     function getCenterData() {
 

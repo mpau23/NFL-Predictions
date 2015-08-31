@@ -1,9 +1,9 @@
 <div class="main-content">
-    <!-- <div ng-click="pushGames()">Push games</div> -->
 
-    <ul class="list-games">
-        <li ng-repeat="game in games" class="each-game">
-            <form name="prediction">
+    <form name="prediction">
+
+        <ul class="list-games">
+            <li ng-repeat="game in games" class="each-game">
 
                 <span class="input-container">
                     <span class="away-team-container">
@@ -21,13 +21,14 @@
                     </span>
                 </span>
                 <span class="submit-container">
-                    <input type="radio" name="joker" ng-model="game.prediction.joker" ng-if="game.prediction.joker == true" ng-value="true" checked>
-                    <input type="radio" name="joker" ng-model="game.prediction.joker" ng-if="!game.prediction.joker == true" ng-value="true">
-
-                    <input type="submit" name="submit-prediction" value="Submit" ng-click="submit(game.prediction.awayPrediction, game.prediction.homePrediction, game.id, game.prediction.joker)" />
+                    <input type="radio" name="joker" ng-model="game.prediction.joker" ng-if="game.prediction.joker == true" ng-change="jokerChange(game)" ng-value="true" checked>
+                    <input type="radio" name="joker" ng-model="game.prediction.joker" ng-if="!game.prediction.joker == true" ng-change="jokerChange(game)" ng-value="true">
                 </span>
-            </form>
 
-        </li>
-    </ul>
+            </li>
+        </ul>
+        <input type="submit" name="submit-prediction" value="Submit" ng-click="submit()" />
+
+    </form>
+
 </div>
