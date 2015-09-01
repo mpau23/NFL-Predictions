@@ -77,6 +77,30 @@ module.exports = function(app) {
 
     });
 
+
+    app.get('/api/prediction', function(req, res) {
+
+        Prediction.find({}, '-_id user game awayPrediction homePrediction', {
+                sort: {
+                    user: -1
+                }
+            })
+            .populate({
+                path: 'game',
+                select: '_id'
+            })
+            .populate({
+                path: 'user',
+                select: 'username -_id'
+            })
+            .exec(function(err, prediction) {
+
+                console.log(prediction);
+                res.json(prediction);
+            });
+
+    });
+
     //POST Requests
 
     app.post('/api/user', function(req, res) {
@@ -147,7 +171,7 @@ module.exports = function(app) {
             game: req.body.game,
             user: req.body.user
         }, function(err, prediction) {
-            
+
             console.log(err);
             console.log(prediction);
 
