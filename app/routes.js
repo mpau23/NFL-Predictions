@@ -22,6 +22,17 @@ module.exports = function(app) {
         });
     });
 
+    app.get('/api/user', function(req, res) {
+
+        User.find({}, '-_id fullName username', function(err, user) {
+
+            if (err)
+                res.send(err);
+
+            res.json(user);
+        });
+    });
+
     app.get('/api/team', function(req, res) {
 
         Team.find(function(err, team) {
@@ -78,27 +89,29 @@ module.exports = function(app) {
     });
 
 
-    app.get('/api/prediction', function(req, res) {
+    app.get('/api/prediction/:user', function(req, res) {
 
-        Prediction.find({}, '-_id user game awayPrediction homePrediction', {
-                sort: {
-                    user: -1
-                }
-            })
-            .populate({
-                path: 'game',
-                select: '_id'
-            })
-            .populate({
-                path: 'user',
-                select: 'username -_id'
-            })
-            .exec(function(err, prediction) {
+        User.findOne({
+            username: req.params.user
+        }, function(err, user) {
 
-                console.log(prediction);
-                res.json(prediction);
-            });
+            Prediction.find({
+                    'user': user.id
+                }, '-_id game awayPrediction homePrediction joker')
+                .populate({
+                    path: 'game'
+                })
+                .exec(function(err, prediction) {
 
+                    Team.populate(prediction, {
+                        path: 'game.awayTeam game.homeTeam'
+                    }, function(err, updatedPrediction) {
+                        res.json(updatedPrediction);
+                    });
+
+                });
+
+        });
     });
 
     //POST Requests

@@ -23,6 +23,12 @@ NflPredictionsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProv
             templateUrl: 'views/games.html',
             controller: 'GamesCtrl'
         })
+        .state('leaderboard', {
+            name: 'home.leaderboard',
+            url: '/leaderboard',
+            templateUrl: 'views/leaderboard.html',
+            controller: 'LeaderboardCtrl'
+        })
         .state('login', {
             name: 'home.login',
             url: '/login',

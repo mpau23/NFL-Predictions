@@ -1,12 +1,15 @@
 NflPredictionsApp.factory('User', function() {
 
     // instantiate our initial object
-    var User = function(fullName, email, username, token) {
+    var User = function(fullName, username) {
     	this.fullName = fullName,
-    	this.email = email,
     	this.username = username,
-    	this.token = token
+    	this.predictions = new Array
     };
+
+    User.prototype.addPrediction = function(prediction) {
+    	this.predictions.push(prediction);
+    }
 
     return User;
 });
