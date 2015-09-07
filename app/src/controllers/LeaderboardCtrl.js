@@ -50,6 +50,7 @@ NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$http', '$q', 'User'
                                                         if (response.data) {
                                                             var correctPoints = false;
                                                             var correctTeam = false;
+                                                            var correctExactScore = false;
                                                             var points = 0;
 
                                                             if ((result.awayScore + result.homeScore) == (response.data.awayPrediction + response.data.homePrediction)) {
@@ -68,12 +69,20 @@ NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$http', '$q', 'User'
                                                                 correctTeam = true;
                                                             }
 
+                                                            if (result.awayScore == response.data.awayPrediction && result.homeScore == response.data.homePrediction) {
+                                                                correctExactScore = true
+                                                            }
+
                                                             if (correctPoints) {
                                                                 points += 5;
                                                             }
 
                                                             if (correctTeam) {
                                                                 points += 10;
+                                                            }
+
+                                                            if (correctExactScore) {
+                                                                points += 15;
                                                             }
 
                                                             if (response.data.joker) {
