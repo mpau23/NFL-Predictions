@@ -1,7 +1,7 @@
 NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$http', '$q', 'User', 'Prediction', 'Game', 'Team', 'Results',
     function($scope, $http, $q, User, Prediction, Game, Team, Results) {
 
-        $scope.leaderboard = newLeaderboard();
+        $scope.users = newLeaderboard();
 
         function newLeaderboard() {
 
@@ -98,8 +98,7 @@ NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$http', '$q', 'User'
                         });
                 });
 
-            $scope.users = users;
-            return results;
+            return users;
         };
     }
 ]);
