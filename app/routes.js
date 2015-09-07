@@ -1,10 +1,11 @@
-// app/routes.js
+var request = require('request');
 
 var User = require('./db/tables/UserTable');
 var Game = require('./db/tables/GameTable');
 var Team = require('./db/tables/TeamTable');
 var Prediction = require('./db/tables/PredictionTable');
 var Base64 = require('./db/services/Base64');
+
 
 module.exports = function(app) {
 
@@ -55,6 +56,20 @@ module.exports = function(app) {
         });
     });
 
+    app.get('/api/game', function(req, res) {
+
+        Game.find()
+            .populate('awayTeam')
+            .populate('homeTeam')
+            .exec(function(err, game) {
+                if (err)
+                    res.send(err);
+
+                res.json(game);
+            });
+
+    });
+
     app.get('/api/game/:week', function(req, res) {
 
         Game.find({
@@ -89,14 +104,15 @@ module.exports = function(app) {
     });
 
 
-    app.get('/api/prediction/:user', function(req, res) {
+    app.get('/api/prediction/results/:game/:user', function(req, res) {
 
         User.findOne({
             username: req.params.user
         }, function(err, user) {
 
-            Prediction.find({
-                    'user': user.id
+            Prediction.findOne({
+                    'user': user.id,
+                    'game': req.params.game
                 }, '-_id game awayPrediction homePrediction joker')
                 .populate({
                     path: 'game'
@@ -112,6 +128,20 @@ module.exports = function(app) {
                 });
 
         });
+    });
+
+    app.get('/api/results/:game', function(req, res) {
+
+//        request('http://www.nfl.com/liveupdate/game-center/' + req.params.game + '/' + req.params.game + '_gtd.json', function(error, response, body) {
+
+        request('http://www.nfl.com/liveupdate/game-center/2015090353/2015090353_gtd.json', function(error, response, body) {
+            if (!error && response.statusCode == 200) {
+                res.send(body);
+            } else {
+                res.send(error);
+            }
+        });
+
     });
 
     //POST Requests
@@ -132,7 +162,6 @@ module.exports = function(app) {
                 return res.send(err);
             }
         });
-        console.log(user);
         return res.json(user);
     });
 
@@ -185,11 +214,7 @@ module.exports = function(app) {
             user: req.body.user
         }, function(err, prediction) {
 
-            console.log(err);
-            console.log(prediction);
-
             if (prediction) {
-                console.log("I exist!");
                 prediction.homePrediction = req.body.homePrediction;
                 prediction.awayPrediction = req.body.awayPrediction;
                 prediction.joker = req.body.joker;
@@ -202,7 +227,6 @@ module.exports = function(app) {
                 return res.send(prediction);
 
             } else {
-                console.log("I'm new!");
                 var prediction;
 
                 prediction = new Prediction({

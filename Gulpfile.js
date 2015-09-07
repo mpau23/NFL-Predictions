@@ -7,7 +7,9 @@ var gulp = require('gulp'),
     compass = require('gulp-compass'),
     path = require('path'),
     minifyCss = require('gulp-minify-css'),
-    svgmin = require('gulp-svgmin');
+    svgmin = require('gulp-svgmin'),
+    gutil = require('gulp-util');
+
 
 gulp.task('bower', function() {
     return gulp.src(bower(), {
@@ -27,7 +29,7 @@ gulp.task('appJs', function() {
             './app/src/*.js'
         ])
         .pipe(concat('app.js'))
-        .pipe(uglify())
+        .pipe(uglify().on('error', gutil.log))
         .pipe(rename({
             extname: '.min.js'
         }))
