@@ -110,8 +110,6 @@ module.exports = function(app) {
             username: req.params.user
         }, function(err, user) {
 
- console.log(user._id);
-
             Prediction.findOne({
                     'user': user._id,
                     'game': req.params.game
@@ -124,8 +122,6 @@ module.exports = function(app) {
                     Team.populate(prediction, {
                         path: 'game.awayTeam game.homeTeam'
                     }, function(err, updatedPrediction) {
-
-console.log(updatedPrediction);
 
                         res.json(updatedPrediction);
                     });

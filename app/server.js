@@ -13,7 +13,7 @@ var mongoose = require('mongoose');
 var db = require('./server/config/db');
 
 // set our port
-var port = process.env.PORT || 1111;
+var port = process.env.PORT || 80;
 
 // connect to our mongoDB database 
 // (uncomment after you enter in your own credentials in config/db.js)
