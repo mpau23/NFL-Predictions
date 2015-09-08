@@ -1,3 +1,13 @@
-<h1>Leaderboard</h1>
+<div class="leaderboard-container">
 
-{{users}}
+    <div class="title-container">
+        <span class="name">Name</span>
+        <span class="rank">Points</span>
+    </div>
+
+    <div class="user-container" ng-repeat="user in users | orderBy: -points">
+        <span class="rank">{{$index + 1}}</span>
+        <span class="user">{{user.fullName}}</span>
+        <span class="points">{{user.points}}</span>
+    </div>
+</div>

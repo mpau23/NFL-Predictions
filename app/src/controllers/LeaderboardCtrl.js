@@ -45,8 +45,6 @@ NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$http', '$q', 'User'
                                                 $http.get('/api/prediction/results/' + value._id + "/" + user.username)
                                                     .then(function(response) {
 
-                                                        console.log(response);
-
                                                         if (response.data) {
                                                             var correctPoints = false;
                                                             var correctTeam = false;

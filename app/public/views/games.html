@@ -1,33 +1,36 @@
-<div class="main-content">
+<div class="main-content games-container">
 
     <form name="prediction">
-
-        <ul class="list-games">
-            <li ng-repeat="game in games" class="each-game">
-
-                <span class="input-container">
-                    <span class="away-team-container">
-                        <input type="number" ng-model="game.prediction.awayPrediction" name="away-prediction" class="away-team-prediction team-prediction" min="0"/>
-                        <span class="away-team-image {{game.awayTeam.code}}"></span>
-                        <span class="away-team-name team-name short-name">{{game.awayTeam.shortName}}</span>
-                        <span class="away-team-name team-name full-name">{{game.awayTeam.fullName}}</span>
+        <div class="game-container" ng-repeat="game in games">
+            <div class="prediction-container">
+                <div class="away-container team-container">
+                    <span class="logo {{game.awayTeam.code}}"></span>
+                    <span class="teamname long">{{game.awayTeam.fullName}}</span>
+                    <span class="teamname short">{{game.awayTeam.shortName}}</span>
+                    <span class="location">(away)</span>
+                    <span class="input">
+                        <input type="number" ng-model="game.prediction.awayPrediction" name="away-prediction" class="away-team-prediction team-prediction" min="0" />
                     </span>
-                    <span class="vs-container">vs.</span>
-                    <span class="home-team-container">
-                        <input type="number" ng-model="game.prediction.homePrediction" name="home-prediction" class="home-team-prediction team-prediction" min="0"/>
-                        <span class="home-team-image {{game.homeTeam.code}}"></span>
-                        <span class="home-team-name team-name short-name">{{game.homeTeam.shortName}}</span>
-                        <span class="home-team-name team-name full-name">{{game.homeTeam.fullName}}</span>
-                    </span>
-                </span>
-                <span class="submit-container">
+                </div>
+                <div class="home-container team-container">
+                    <span class="logo {{game.homeTeam.code}}"></span>
+                    <span class="teamname long">{{game.homeTeam.fullName}}</span>
+                    <span class="teamname short">{{game.homeTeam.shortName}}</span>
+                    <span class="location">(home)</span>
+
+                    <span class="input">
+                        <input type="number" ng-model="game.prediction.homePrediction" name="home-prediction" class="home-team-prediction team-prediction" min="0" /> </span>
+                </div>
+            </div>
+            <div class="joker-container">
+                <label>
                     <input type="radio" name="joker" ng-model="game.prediction.joker" ng-if="game.prediction.joker == true" ng-change="jokerChange(game)" ng-value="true" checked>
                     <input type="radio" name="joker" ng-model="game.prediction.joker" ng-if="!game.prediction.joker == true" ng-change="jokerChange(game)" ng-value="true">
-                </span>
+                </label>
+            </div>
+        </div>
 
-            </li>
-        </ul>
-        <input type="submit" name="submit-prediction" value="Submit" ng-click="submit()" />
+        <div class="submit-predictions" ng-click="submit()">Submit</div>
 
     </form>
 

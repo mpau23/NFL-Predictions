@@ -1,67 +1,57 @@
-.list-games {
+.game-container {
+    background: linear-gradient(to bottom, #fafafa 0%, #efefef 100%);
+    border: 1px solid lightgrey;
+    line-height: 32px;
+    margin: 10px 0 0 0;
     @include span(full);
-    padding: 0;
-    margin: 0;
-    .each-game {
-        @include span(full);
-        margin: 0 0 10px 0;
-        list-style: none;
-        .input-container {
-            @include span(10);
-        }
-        .submit-container {
-            @include span(2 last);
-        }
-    }
-}
-
-.away-team-container,
-.home-team-container {
-    .team-prediction {
-        @include span(2);
-        margin: 0 10px;
-    }
-
-    .full-name,.short-name {
-        float:left;
-    }
-
-    .full-name {
-        display: none;
-    }
-
-    @include breakpoint(min-width 720px)
-    {
-        .full-name {
-            display: inherit;
+    .prediction-container {
+        @include span(11);
+        padding: 5px 0;
+        .logo {
+            background-size: 32px 32px;
+            height: 32px;
+            width: 32px;
+            float: left;
+            margin: 0 5px;
         }
 
-        .short-name {
+        .teamname.long {
             display: none;
         }
+        
+        @include breakpoint(min-width 480px) {
+            .teamname.long {
+                display: inline;
+            }
+            .teamname.short {
+                display: none;
+            }
+        }
+        
+        .location {
+            font-size: 12px;
+        }
+        .input input {
+            width: 40px;
+            float: right;
+            margin: 4px 15px;
+        }
+    }
+    .joker-container {
+        height: 66px;
+        @include span(1 last);
+        padding: 5px 0;
     }
 }
 
-.away-team-container {
-    @include span(5.5);
-    .team-prediction {
-        float: right;
-    }
-
-    .team-name {
-        text-align: right;
-        float:right;
-    }
-}
-
-.home-team-container {
-    @include span(5.5 last);
-    .team-prediction {
-        float: left;
-    }
-}
-
-.vs-container {
-    @include span(1);
+.submit-predictions {
+    @include span(full);
+    background: linear-gradient(to bottom, #012D5E 0%, #05468F 100%);
+    color: #fff;
     text-align: center;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 0;
+    border: 1px solid darkblue;
+    cursor: pointer;
 }
