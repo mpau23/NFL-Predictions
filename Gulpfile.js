@@ -68,7 +68,7 @@ gulp.task('watch', ['default'], function() {
         './app/src/classes/*.js',
         './app/src/*.js'
     ], ['appJs']);
-    gulp.watch('./app/assets/sass/*.scss', ['appCss']);
+    gulp.watch(['./app/assets/sass/*.scss', './app/assets/sass/partials/*.scss'], ['appCss']);
     gulp.watch('./app/assets/images/*.svg', ['appImage']);
 });
 

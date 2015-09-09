@@ -7,9 +7,7 @@
     </div>
 
     <div class="user-container" ng-repeat="user in users | orderBy: -points">
-        <span class="rank">{{$index + 1}}
-<!--             <span class="background"></span>
- -->        </span>
+        <span class="rank">{{$index + 1}}</span>
         <span class="points">{{user.points}}</span>
         <span class="user">{{user.fullName}}</span>
     </div>

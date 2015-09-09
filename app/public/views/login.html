@@ -1,52 +1,55 @@
 <div class="login-container">
-
-    <h1>Login</h1>
-
     <form name="form" ng-submit="login()" role="form">
-        <fieldset>
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="form-control" ng-model="loginUsername" required />
-        </fieldset>
 
-        <fieldset>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" ng-model="loginPassword" required />
-        </fieldset>
+        <div class="title">Already have an account?</div>
 
-        <fieldset>
-            <button type="submit">Login</button>
-        </fieldset>
+        <div class="input-container">
+            <fieldset>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" class="form-control" ng-model="loginUsername" required />
+            </fieldset>
+
+            <fieldset>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" class="form-control" ng-model="loginPassword" required />
+            </fieldset>
+        </div>
+
+        <button class="submit-form" type="submit">Login</button>
     </form>
 </div>
 
 <div class="registration-container">
 
-    <h1>Register</h1>
+    <form name="form" ng-submit="register()" role="form" autocomplete="off">
 
-    <form name="form" ng-submit="register()" role="form">
-        <fieldset>
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="form-control" ng-model="registerUsername" required />
-        </fieldset>
+        <div class="title">Need to sign up?</div>
 
-        <fieldset>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" ng-model="registerPassword" required />
-        </fieldset>
+        <div class="input-container">
 
-        <fieldset>
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" class="form-control" ng-model="registerName" required />
-        </fieldset>
+            <fieldset>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" class="form-control" ng-model="registerName" required />
+            </fieldset>
 
-        <fieldset>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="form-control" ng-model="registerEmail" required />
-        </fieldset>
+            <fieldset>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" class="form-control" ng-model="registerEmail" required />
+            </fieldset>
 
-        <fieldset>
-            <button type="submit" ng-disabled="form.$invalid || dataLoading">Register</button>
-        </fieldset>
+            <fieldset>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" class="form-control" ng-model="registerUsername" required autocomplete="off" />
+            </fieldset>
+
+            <fieldset>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" class="form-control" ng-model="registerPassword" required autocomplete="off" />
+            </fieldset>
+
+        </div>
+
+        <button class="submit-form" type="submit" ng-disabled="form.$invalid || dataLoading">Register</button>
     </form>
 </div>
 
