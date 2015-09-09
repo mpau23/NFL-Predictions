@@ -3,13 +3,15 @@ NflPredictionsApp.controller('LoginCtrl', ['$scope', '$http', 'Authentication', 
     $scope.loginUsername = "";
     $scope.loginPassword = "";
 
+    Authentication.clearCredentials();
+
     $scope.login = function() {
         $scope.dataLoading = true;
 
         Authentication.login($scope.loginUsername, $scope.loginPassword, function(response) {
             if (!response.error) {
                 Authentication.setCredentials($scope.loginUsername, $scope.loginPassword);
-                $location.path('/');
+                $location.path('/leaderboard');
             } else {
                 $scope.error = response.error;
             }
@@ -27,7 +29,7 @@ NflPredictionsApp.controller('LoginCtrl', ['$scope', '$http', 'Authentication', 
         Authentication.register($scope.registerUsername, $scope.registerPassword, $scope.registerName, $scope.registerEmail, function(response) {
             if (!response.error) {
                 Authentication.setCredentials($scope.loginUsername, $scope.loginPassword);
-                $location.path('/');
+                $location.path('/leaderboard');
             } else {
                 $scope.error = response.error;
             }
