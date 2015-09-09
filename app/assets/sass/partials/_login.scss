@@ -1,0 +1,69 @@
+.login-container,
+.registration-container {
+    @include span(full);
+    .title {
+        margin: 15px 0 10px;
+        text-align: center;
+        font-size: 18px;
+    }
+    .input-container {
+        background: linear-gradient(to bottom, #fafafa 0%, #efefef 100%);
+        border: 1px solid lightgrey;
+        padding: 5px 0;
+    }
+    fieldset {
+        margin: 0;
+        padding: 5px 15px;
+        border: none;
+        line-height: 32px;
+        input {
+            @include span(full);
+            height: 32px;
+            padding: 0 10px;
+        }
+        label {
+            display: block;
+        }
+    }
+    .submit-form {
+        @include span(full);
+        background: linear-gradient(to bottom, #012D5E 0%, #05468F 100%);
+        color: #fff;
+        text-align: center;
+        height: 40px;
+        margin: 10px 0 0;
+        border: 1px solid darkblue;
+        cursor: pointer;
+    }
+}
+
+@include breakpoint(min-width 480px) {
+    .login-container {
+        @include span(6);
+    }
+    .registration-container {
+        @include span(6 last);
+    }
+}
+
+@include breakpoint(min-width 720px) {
+    .login-container {
+        @include pre(1);
+        @include span(5);
+    }
+    .registration-container {
+        @include span(5);
+        @include post(1 last);
+    }
+}
+
+@include breakpoint(min-width 1024px) {
+    .login-container {
+        @include pre(2);
+        @include span(4);
+    }
+    .registration-container {
+        @include span(4);
+        @include post(2 last);
+    }
+}

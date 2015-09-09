@@ -928,7 +928,7 @@ footer {
   color: #fff;
   text-align: center;
   height: 40px;
-  margin: 10px 0;
+  margin: 10px 0 0;
   border: 1px solid darkblue;
   cursor: pointer;
 }
@@ -944,5 +944,35 @@ footer {
     width: 49.15254%;
     float: right;
     margin-right: 0;
+  }
+}
+@media (min-width: 720px) {
+  .login-container {
+    margin-left: 8.47458%;
+    width: 40.67797%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+
+  .registration-container {
+    width: 40.67797%;
+    float: left;
+    margin-right: 1.69492%;
+    margin-right: 8.47458%;
+  }
+}
+@media (min-width: 1024px) {
+  .login-container {
+    margin-left: 16.94915%;
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+
+  .registration-container {
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%;
+    margin-right: 16.94915%;
   }
 }
