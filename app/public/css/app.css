@@ -824,43 +824,64 @@ footer {
   margin-right: 1.69492%;
 }
 
-.leaderboard-container .user-container {
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
+.user-container {
   background: linear-gradient(to bottom, #fafafa 0%, #efefef 100%);
   border: 1px solid lightgrey;
   line-height: 32px;
   margin: 10px 0 0 0;
   padding: 5px 0;
 }
-.leaderboard-container .user-container .user {
-  width: 66.10169%;
-  float: left;
-  margin-right: 1.69492%;
+.user-container .rank {
+  position: relative;
 }
-.leaderboard-container .user-container .points {
-  width: 32.20339%;
-  float: right;
-  margin-right: 0;
+.user-container .rank .background {
+  background-color: #E50000;
+  height: 20px;
+  width: 80%;
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: -20%;
 }
-.leaderboard-container .title-container {
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
+.user-container .rank .background::after {
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: 100%;
+  border: 10px solid transparent;
+  border-left-color: #E50000;
+}
+
+.title-container {
   line-height: 32px;
   margin: 10px 0 0 0;
   padding: 5px 0;
 }
-.leaderboard-container .title-container .name {
-  width: 66.10169%;
+
+.title-container,
+.user-container {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+.title-container .rank,
+.user-container .rank {
+  width: 15.25424%;
+  float: left;
+  margin-right: 1.69492%;
+  text-align: center;
+}
+.title-container .user,
+.user-container .user {
+  width: 49.15254%;
   float: left;
   margin-right: 1.69492%;
 }
-.leaderboard-container .title-container .rank {
-  width: 32.20339%;
+.title-container .points,
+.user-container .points {
+  width: 23.72881%;
   float: right;
   margin-right: 0;
 }
