@@ -68,7 +68,6 @@ nav {
         li {
             float: left;
             position: relative;
-            z-index: 2;
             background-color: #E50000;
         }
     }
@@ -77,9 +76,9 @@ nav {
         padding: 0 10px;
         text-align: center;
     }
-    li:hover > .games-list {
-        display: block;
-    }
+    // li:hover > .games-list {
+    //     display: block;
+    // }
     .games-list {
         position: absolute;
         display: none;
@@ -87,8 +86,11 @@ nav {
         width: 100px;
         color: #fff;
         text-align: center;
-        font-size:14px;
-
+        font-size: 14px;
+        z-index: 3;
+        &.show-list {
+            display: block;
+        }
         .link-container {
             @include span(full);
         }
@@ -102,4 +104,11 @@ nav {
 
 footer {
     height: 50px;
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
 }

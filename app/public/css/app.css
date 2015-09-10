@@ -631,16 +631,12 @@ nav ul {
 nav ul li {
   float: left;
   position: relative;
-  z-index: 2;
   background-color: #E50000;
 }
 nav a {
   color: inherit;
   padding: 0 10px;
   text-align: center;
-}
-nav li:hover > .games-list {
-  display: block;
 }
 nav .games-list {
   position: absolute;
@@ -650,6 +646,10 @@ nav .games-list {
   color: #fff;
   text-align: center;
   font-size: 14px;
+  z-index: 3;
+}
+nav .games-list.show-list {
+  display: block;
 }
 nav .games-list .link-container {
   width: 100%;
@@ -668,6 +668,13 @@ nav .games-list .link-container {
 
 footer {
   height: 50px;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
 .ARI {
@@ -799,20 +806,23 @@ footer {
 }
 
 .game-container {
-  background: linear-gradient(to bottom, #fafafa 0%, #efefef 100%);
-  border: 1px solid lightgrey;
-  line-height: 32px;
-  margin: 10px 0 0 0;
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
+  background: linear-gradient(to bottom, #fafafa 0%, #efefef 100%);
+  border: 1px solid lightgrey;
+  line-height: 32px;
+  margin: 10px 0 0 0;
 }
 .game-container .prediction-container {
   width: 83.05085%;
   float: left;
   margin-right: 1.69492%;
   padding: 5px 0;
+}
+.game-container .prediction-container .team-container {
+  height: 40px;
 }
 .game-container .prediction-container .logo {
   background-size: 32px 32px;
@@ -849,7 +859,7 @@ footer {
 }
 .game-container .joker-container img {
   margin: 10px 0;
-  height: 46px;
+  height: 60px;
   opacity: 0.3;
   cursor: pointer;
 }

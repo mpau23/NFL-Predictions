@@ -26,7 +26,8 @@ gulp.task('appJs', function() {
     return gulp.src([
             './app/src/controllers/*.js',
             './app/src/classes/*.js',
-            './app/src/*.js'
+            './app/src/*.js',
+            './app/assets/js/*.js'
         ])
         .pipe(concat('app.js'))
         .pipe(uglify().on('error', gutil.log))
@@ -66,7 +67,8 @@ gulp.task('watch', ['default'], function() {
     gulp.watch([
         './app/src/controllers/*.js',
         './app/src/classes/*.js',
-        './app/src/*.js'
+        './app/src/*.js',
+        './app/assets/js/*.js'
     ], ['appJs']);
     gulp.watch(['./app/assets/sass/*.scss', './app/assets/sass/partials/*.scss'], ['appCss']);
     gulp.watch('./app/assets/images/*.svg', ['appImage']);
