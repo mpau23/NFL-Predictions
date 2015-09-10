@@ -10,6 +10,7 @@ NflPredictionsApp.factory('Game', function() {
         this.prediction = prediction;
         this.awayScore = awayScore;
         this.homeScore = homeScore;
+        this.started = false;
     };
 
     return Game;

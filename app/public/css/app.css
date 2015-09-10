@@ -815,6 +815,10 @@ footer {
   line-height: 32px;
   margin: 10px 0 0 0;
 }
+.game-container.started {
+  pointer-events: none;
+  opacity: 0.4;
+}
 .game-container .prediction-container {
   width: 83.05085%;
   float: left;

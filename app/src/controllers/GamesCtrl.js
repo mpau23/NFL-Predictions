@@ -3,6 +3,8 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q'
 
         $scope.games = getGames();
 
+        $scope.date = new Date();
+
         function getGames() {
 
             var gamesArray = new Array;
@@ -39,9 +41,16 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q'
                                 value.prediction = new Prediction(0, 0, false);
 
                             }
+                            var now = new Date();
+                            var gamedate = new Date(value.date);
+
+                            if (now > gamedate) {
+                                value.started = true;
+                            }
+
                         });
 
-                    })
+                    });
 
                 });
 
