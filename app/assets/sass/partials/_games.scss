@@ -5,7 +5,7 @@
     margin: 10px 0 0 0;
     @include span(full);
     .prediction-container {
-        @include span(11);
+        @include span(10);
         padding: 5px 0;
         .logo {
             background-size: 32px 32px;
@@ -32,15 +32,33 @@
             font-size: 12px;
         }
         .input input {
-            width: 40px;
+            width: 50px;
             float: right;
             margin: 4px 15px;
         }
     }
     .joker-container {
-        height: 66px;
-        @include span(1 last);
+        @include span(2 last);
         padding: 5px 0;
+        height: 66px;
+
+        img {
+            margin:10px 0;
+            height: 46px;
+            opacity:0.3;
+            cursor: pointer;
+        }
+
+        input[type=radio] {
+            display:none;
+
+            &:checked ~ img {
+                opacity: 1;
+            }
+
+        }
+
+
     }
 }
 

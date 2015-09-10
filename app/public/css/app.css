@@ -809,7 +809,7 @@ footer {
   margin-right: 0;
 }
 .game-container .prediction-container {
-  width: 91.52542%;
+  width: 83.05085%;
   float: left;
   margin-right: 1.69492%;
   padding: 5px 0;
@@ -836,16 +836,28 @@ footer {
   font-size: 12px;
 }
 .game-container .prediction-container .input input {
-  width: 40px;
+  width: 50px;
   float: right;
   margin: 4px 15px;
 }
 .game-container .joker-container {
-  height: 66px;
-  width: 6.77966%;
+  width: 15.25424%;
   float: right;
   margin-right: 0;
   padding: 5px 0;
+  height: 66px;
+}
+.game-container .joker-container img {
+  margin: 10px 0;
+  height: 46px;
+  opacity: 0.3;
+  cursor: pointer;
+}
+.game-container .joker-container input[type=radio] {
+  display: none;
+}
+.game-container .joker-container input[type=radio]:checked ~ img {
+  opacity: 1;
 }
 
 .submit-predictions {
