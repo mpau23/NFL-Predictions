@@ -19,7 +19,7 @@ NflPredictionsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProv
         })
         .state('games', {
             name: 'home.games',
-            url: '/games/:week',
+            url: '/games/week/:week',
             templateUrl: 'views/games.html',
             controller: 'GamesCtrl'
         })

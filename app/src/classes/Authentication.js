@@ -43,7 +43,7 @@ NflPredictionsApp.factory('Authentication', ['Base64', '$http', '$cookies', '$ro
             },
 
             clearCredentials: function() {
-                $rootScope.currentUser = {};
+                delete $rootScope.currentUser;
                 $cookies.remove('currentUser');
                 $http.defaults.headers.common.Authorization = 'Basic ';
             }

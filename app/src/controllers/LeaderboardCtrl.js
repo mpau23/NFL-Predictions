@@ -19,7 +19,7 @@ NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$http', '$q', 'User'
                             angular.forEach(response.data, function(value, key) {
 
                                 var now = new Date();
-                                now.setHours(now.getHours() + 168);
+                                //now.setHours(now.getHours() + 24);
 
                                 var gameDate = new Date(value.date);
                                 gameDate.setHours(gameDate.getHours() + 5);

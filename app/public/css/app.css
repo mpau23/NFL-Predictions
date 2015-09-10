@@ -594,7 +594,6 @@ footer {
 
 header {
   height: 100px;
-  border-bottom: solid 15px #E50000;
 }
 header .logo-wrapper {
   width: 100%;
@@ -610,6 +609,53 @@ header .logo-wrapper a {
   width: 100px;
   background-image: url(../images/nfl-logo.min.svg);
   background-size: 100% 100%;
+}
+
+nav {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 15px;
+  background-color: #E50000;
+  height: 32px;
+  line-height: 32px;
+  color: #fff;
+  text-align: center;
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+nav ul li {
+  float: left;
+  position: relative;
+  z-index: 2;
+  background-color: #E50000;
+}
+nav a {
+  color: inherit;
+  padding: 0 10px;
+  text-align: center;
+}
+nav li:hover > .games-list {
+  display: block;
+}
+nav .games-list {
+  position: absolute;
+  display: none;
+  float: left;
+  width: 100px;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+nav .games-list .link-container {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .main-content {

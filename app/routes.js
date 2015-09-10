@@ -133,9 +133,8 @@ module.exports = function(app) {
 
     app.get('/api/results/:game', function(req, res) {
 
-//        request('http://www.nfl.com/liveupdate/game-center/' + req.params.game + '/' + req.params.game + '_gtd.json', function(error, response, body) {
-
-        request('http://www.nfl.com/liveupdate/game-center/2015090353/2015090353_gtd.json', function(error, response, body) {
+        request('http://www.nfl.com/liveupdate/game-center/' + req.params.game + '/' + req.params.game + '_gtd.json', function(error, response, body) {
+//        request('http://www.nfl.com/liveupdate/game-center/2015090353/2015090353_gtd.json', function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 res.send(body);
             } else {
