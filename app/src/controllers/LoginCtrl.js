@@ -28,7 +28,7 @@ NflPredictionsApp.controller('LoginCtrl', ['$scope', '$http', 'Authentication', 
 
         Authentication.register($scope.registerUsername, $scope.registerPassword, $scope.registerName, $scope.registerEmail, function(response) {
             if (!response.error) {
-                Authentication.setCredentials($scope.loginUsername, $scope.loginPassword);
+                Authentication.setCredentials($scope.registerUsername, $scope.registerPassword);
                 $location.path('/leaderboard');
             } else {
                 $scope.error = response.error;
