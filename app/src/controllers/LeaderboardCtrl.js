@@ -68,7 +68,7 @@ NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$http', '$q', 'User'
                                                             }
 
                                                             if (result.awayScore == response.data.awayPrediction && result.homeScore == response.data.homePrediction) {
-                                                                correctExactScore = true
+                                                                correctExactScore = true;
                                                             }
 
                                                             if (correctPoints) {
@@ -89,6 +89,13 @@ NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$http', '$q', 'User'
 
                                                             user.addPoints(points);
                                                         }
+                                                    })
+                                                    .then(function() {
+
+                                                        users.sort(function(a, b) {
+                                                            return (a.points < b.points) ? 1 : ((b.points < a.points) ? -1 : 0);
+                                                        });
+
                                                     });
                                             });
 
