@@ -1,7 +1,7 @@
 <div class="login-container">
     <form name="form" ng-submit="login()" role="form">
 
-        <div class="title">Already have an account?</div>
+        <div class="title">Login</div>
 
         <div class="input-container">
             <fieldset>
@@ -13,13 +13,17 @@
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password" class="form-control" ng-model="loginPassword" required />
             </fieldset>
+            <fieldset>
+
+            <button class="submit-form" type="submit">Login</button>
+            </fieldset>
+
         </div>
 
-        <button class="submit-form" type="submit">Login</button>
     </form>
 </div>
 
-<div class="registration-container">
+<div class="registration-container hidden">
 
     <form name="form" ng-submit="register()" role="form" autocomplete="off">
 
@@ -46,10 +50,10 @@
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password" class="form-control" ng-model="registerPassword" required autocomplete="off" />
             </fieldset>
+            <button class="submit-form" type="submit" ng-disabled="form.$invalid || dataLoading">Register</button>
 
         </div>
 
-        <button class="submit-form" type="submit" ng-disabled="form.$invalid || dataLoading">Register</button>
     </form>
 </div>
 

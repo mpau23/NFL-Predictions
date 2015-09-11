@@ -976,12 +976,12 @@ footer {
 .registration-container .input-container {
   background: linear-gradient(to bottom, #fafafa 0%, #efefef 100%);
   border: 1px solid lightgrey;
-  padding: 5px 0;
+  padding: 15px 10px 20px;
 }
 .login-container fieldset,
 .registration-container fieldset {
   margin: 0;
-  padding: 5px 15px;
+  padding: 0 5px;
   border: none;
   line-height: 32px;
 }
@@ -1015,7 +1015,8 @@ footer {
 
 @media (min-width: 480px) {
   .login-container {
-    width: 49.15254%;
+    margin-left: 16.94915%;
+    width: 66.10169%;
     float: left;
     margin-right: 1.69492%;
   }
@@ -1028,8 +1029,8 @@ footer {
 }
 @media (min-width: 720px) {
   .login-container {
-    margin-left: 8.47458%;
-    width: 40.67797%;
+    margin-left: 25.42373%;
+    width: 49.15254%;
     float: left;
     margin-right: 1.69492%;
   }
@@ -1043,7 +1044,7 @@ footer {
 }
 @media (min-width: 1024px) {
   .login-container {
-    margin-left: 16.94915%;
+    margin-left: 33.89831%;
     width: 32.20339%;
     float: left;
     margin-right: 1.69492%;

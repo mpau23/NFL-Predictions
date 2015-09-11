@@ -1,5 +1,6 @@
 .login-container,
 .registration-container {
+    //@include pre(1);
     @include span(full);
     .title {
         margin: 15px 0 10px;
@@ -9,11 +10,11 @@
     .input-container {
         background: linear-gradient(to bottom, #fafafa 0%, #efefef 100%);
         border: 1px solid lightgrey;
-        padding: 5px 0;
+        padding: 15px 10px 20px;
     }
     fieldset {
         margin: 0;
-        padding: 5px 15px;
+        padding: 0 5px;
         border: none;
         line-height: 32px;
         input {
@@ -39,7 +40,8 @@
 
 @include breakpoint(min-width 480px) {
     .login-container {
-        @include span(6);
+        @include pre(2);
+        @include span(8);
     }
     .registration-container {
         @include span(6 last);
@@ -48,8 +50,8 @@
 
 @include breakpoint(min-width 720px) {
     .login-container {
-        @include pre(1);
-        @include span(5);
+        @include pre(3);
+        @include span(6);
     }
     .registration-container {
         @include span(5);
@@ -59,7 +61,7 @@
 
 @include breakpoint(min-width 1024px) {
     .login-container {
-        @include pre(2);
+        @include pre(4);
         @include span(4);
     }
     .registration-container {
