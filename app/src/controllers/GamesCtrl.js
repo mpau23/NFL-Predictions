@@ -2,7 +2,7 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q'
     function($scope, $rootScope, $http, $q, $stateParams, Game, Team, Prediction) {
 
         $scope.games = getGames();
-
+        $scope.jokerChosen = "";
         $scope.date = new Date();
 
         function getGames() {
@@ -46,6 +46,10 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q'
 
                             if (now > gamedate) {
                                 value.started = true;
+                            }
+
+                            if (value.started && value.prediction.joker) {
+                                $scope.jokerChosen = "chosen";
                             }
 
                         });

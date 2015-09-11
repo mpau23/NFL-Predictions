@@ -4,20 +4,16 @@
     border: 1px solid lightgrey;
     line-height: 32px;
     margin: 10px 0 0 0;
-
     &.started {
         pointer-events: none;
         opacity: 0.4;
     }
-    
     .prediction-container {
         @include span(10);
         padding: 5px 0;
-        
         .team-container {
-            height:40px;
+            height: 40px;
         }
-
         .logo {
             background-size: 32px 32px;
             height: 32px;
@@ -25,11 +21,9 @@
             float: left;
             margin: 0 5px;
         }
-
         .teamname.long {
             display: none;
         }
-        
         @include breakpoint(min-width 480px) {
             .teamname.long {
                 display: inline;
@@ -38,38 +32,35 @@
                 display: none;
             }
         }
-        
         .location {
             font-size: 12px;
         }
         .input input {
             width: 50px;
             float: right;
-            margin: 4px 15px;
+            margin: 4px 10px;
         }
     }
     .joker-container {
         @include span(2 last);
         padding: 5px 0;
         height: 66px;
-
-        img {
-            margin:10px 0;
-            height: 60px;
-            opacity:0.3;
-            cursor: pointer;
+        &.chosen {
+            pointer-events: none;
         }
-
+        img {
+            margin: 15px 0;
+            height: 50px;
+            opacity: 0.3;
+            cursor: pointer;
+            transform: rotate(10deg);
+        }
         input[type=radio] {
-            display:none;
-
+            display: none;
             &:checked ~ img {
                 opacity: 1;
             }
-
         }
-
-
     }
 }
 
@@ -83,4 +74,8 @@
     margin: 10px 0;
     border: 1px solid darkblue;
     cursor: pointer;
+    &.submitted {
+        background: linear-gradient(to bottom, #038002 0%, #07A920 100%);
+        border: 1px solid darkgreen;
+    }
 }

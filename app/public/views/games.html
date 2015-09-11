@@ -1,3 +1,5 @@
+{{jokerChosen}}
+
 <div class="main-content games-container">
     <form name="prediction">
         <div class="game-container" ng-repeat="game in games" ng-class="{started: game.started== true}">
@@ -21,7 +23,7 @@
                         <input type="number" ng-model="game.prediction.homePrediction" name="home-prediction" class="home-team-prediction team-prediction" min="0" /> </span>
                 </div>
             </div>
-            <div class="joker-container">
+            <div class="joker-container {{jokerChosen}}">
                 <label>
                     <input type="radio" name="joker" ng-model="game.prediction.joker" ng-if="game.prediction.joker == true" ng-change="jokerChange(game)" ng-value="true" checked>
                     <input type="radio" name="joker" ng-model="game.prediction.joker" ng-if="!game.prediction.joker == true" ng-change="jokerChange(game)" ng-value="true">

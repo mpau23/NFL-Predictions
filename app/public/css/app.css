@@ -852,7 +852,7 @@ footer {
 .game-container .prediction-container .input input {
   width: 50px;
   float: right;
-  margin: 4px 15px;
+  margin: 4px 10px;
 }
 .game-container .joker-container {
   width: 15.25424%;
@@ -861,11 +861,15 @@ footer {
   padding: 5px 0;
   height: 66px;
 }
+.game-container .joker-container.chosen {
+  pointer-events: none;
+}
 .game-container .joker-container img {
-  margin: 10px 0;
-  height: 60px;
+  margin: 15px 0;
+  height: 50px;
   opacity: 0.3;
   cursor: pointer;
+  transform: rotate(10deg);
 }
 .game-container .joker-container input[type=radio] {
   display: none;
@@ -887,6 +891,10 @@ footer {
   margin: 10px 0;
   border: 1px solid darkblue;
   cursor: pointer;
+}
+.submit-predictions.submitted {
+  background: linear-gradient(to bottom, #038002 0%, #07a920 100%);
+  border: 1px solid darkgreen;
 }
 
 .user-container {
