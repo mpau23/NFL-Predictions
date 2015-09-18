@@ -37,9 +37,9 @@ NflPredictionsApp.factory('Authentication', ['Base64', '$http', '$cookies', '$ro
 
             setCredentials: function(username, password) {
                 console.log('Setting credentials')
+                var authdata = Base64.encode(username + ':' + password);
                 console.log('Basic ' + authdata);
 
-                var authdata = Base64.encode(username + ':' + password);
                 $rootScope.currentUser = authdata;
                 $http.defaults.headers.common.Authorization = 'Basic ' + authdata; // jshint ignore:line
                 $cookies.put('currentUser', $rootScope.currentUser);
