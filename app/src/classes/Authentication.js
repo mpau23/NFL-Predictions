@@ -6,6 +6,8 @@ NflPredictionsApp.factory('Authentication', ['Base64', '$http', '$cookies', '$ro
 
             login: function(username, password, callback) {
 
+                console.log('Attempting to log in');
+
                 $http.get('/api/user/' + username + "/" + password)
                     .then(function(response) {
                         if (!response.data) {
@@ -34,18 +36,19 @@ NflPredictionsApp.factory('Authentication', ['Base64', '$http', '$cookies', '$ro
             },
 
             setCredentials: function(username, password) {
-                var authdata = Base64.encode(username + ':' + password);
-
-                $rootScope.currentUser = authdata;
+                console.log('Setting credentials')
                 console.log('Basic ' + authdata);
-                $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
+
+                var authdata = Base64.encode(username + ':' + password);
+                $rootScope.currentUser = authdata;
+                $http.defaults.headers.common.Authorization = 'Basic ' + authdata; // jshint ignore:line
                 $cookies.put('currentUser', $rootScope.currentUser);
             },
 
             clearCredentials: function() {
                 delete $rootScope.currentUser;
                 $cookies.remove('currentUser');
-                $http.defaults.headers.common.Authorization = 'Basic ';
+                $http.defaults.headers.common.Authorization = 'Basic auth';
             }
 
         };
