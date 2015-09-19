@@ -70,6 +70,26 @@ module.exports = function(app) {
 
     });
 
+    app.get('/api/games/:date', function(req, res) {
+
+        var date = new Date(req.params.date);
+        date.setHours(date.getHours() - 5);
+
+        Game.find({
+                date: {
+                    $lte: new Date(date)
+                }
+            })
+            .populate('awayTeam')
+            .populate('homeTeam')
+            .exec(function(err, game) {
+                if (err)
+                    res.send(err);
+
+                res.json(game);
+            });
+    });
+
     app.get('/api/game/:week', function(req, res) {
 
         Game.find({
@@ -134,7 +154,7 @@ module.exports = function(app) {
     app.get('/api/results/:game', function(req, res) {
 
         request('http://www.nfl.com/liveupdate/game-center/' + req.params.game + '/' + req.params.game + '_gtd.json', function(error, response, body) {
-//        request('http://www.nfl.com/liveupdate/game-center/2015090353/2015090353_gtd.json', function(error, response, body) {
+            //        request('http://www.nfl.com/liveupdate/game-center/2015090353/2015090353_gtd.json', function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 res.send(body);
             } else {
@@ -244,6 +264,28 @@ module.exports = function(app) {
                 });
 
                 return res.send(prediction);
+            }
+        });
+
+    });
+
+    app.post('/api/update/game/score', function(req, res) {
+
+        Game.findById(req.body.game, function(err, game) {
+            if (err) {
+                res.send(err);
+            } else {
+                console.log(game);
+                game.awayScore = req.body.awayScore;
+                game.homeScore = req.body.homeScore;
+
+                game.save(function(err) {
+                    if (err) {
+                        res.send(err);
+
+                    }
+                });
+                return res.send(game);
             }
         });
 

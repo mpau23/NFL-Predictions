@@ -1,118 +1,158 @@
-NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$http', '$q', 'User', 'Prediction', 'Game', 'Team', 'Results',
-    function($scope, $http, $q, User, Prediction, Game, Team, Results) {
+NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$http', '$q', 'Results', 'User',
+    function($scope, $http, $q, Results, User) {
 
-        $scope.users = newLeaderboard();
+        var userArray = new Array();
 
-        function newLeaderboard() {
+        $scope.users = userArray;
 
-            var users = new Array();
+        generateLeaderboard();
 
-            $http.get('/api/user')
-                .then(function(response) {
+        function calculatePoints(game, awayScore, homeScore) {
 
-                    angular.forEach(response.data, function(value, key) {
-                        users.push(new User(value.fullName, value.username));
+            var pointsPromises = new Array();
+
+            angular.forEach(userArray, function(user, key) {
+
+                var pointsPromise = $http.get('/api/prediction/results/' + game._id + "/" + user.username)
+                    .then(function(response) {
+
+                        if (response.data) {
+                            var correctPoints = false;
+                            var correctTeam = false;
+                            var correctExactScore = false;
+                            var points = 0;
+
+                            if ((awayScore + homeScore) == (response.data.awayPrediction + response.data.homePrediction)) {
+                                correctPoints = true;
+                            }
+
+                            if (awayScore < homeScore && response.data.awayPrediction < response.data.homePrediction) {
+                                correctTeam = true;
+                            }
+
+                            if (awayScore > homeScore && response.data.awayPrediction > response.data.homePrediction) {
+                                correctTeam = true;
+                            }
+
+                            if (awayScore == homeScore && response.data.awayPrediction == response.data.homePrediction) {
+                                correctTeam = true;
+                            }
+
+                            if (awayScore == response.data.awayPrediction && homeScore == response.data.homePrediction) {
+                                correctExactScore = true;
+                            }
+
+                            if (correctPoints) {
+                                points += 5;
+                            }
+
+                            if (correctTeam) {
+                                points += 10;
+                            }
+
+                            if (correctExactScore) {
+                                points += 15;
+                            }
+
+                            if (response.data.joker) {
+                                points *= 2;
+                            }
+
+                            user.addPoints(points);
+                        }
                     });
 
-                    $http.get('/api/game')
-                        .then(function(response) {
-                            angular.forEach(response.data, function(value, key) {
+                pointsPromises.push(pointsPromise);
 
-                                var now = new Date();
-                                //now.setHours(now.getHours() + 24);
+            });
 
-                                var gameDate = new Date(value.date);
-                                gameDate.setHours(gameDate.getHours() + 5);
-
-                                if (now > gameDate) {
-                                    $http.get('/api/results/' + value._id)
-                                        .then(function(response) {
-
-                                            responseObj = new Array();
-                                            angular.forEach(response.data, function(valueObj, keyObj) {
-                                                responseObj.push(valueObj);
-                                            });
-
-                                            var result = new Results(
-                                                value._id,
-                                                value.week,
-                                                responseObj[0].away.score.T,
-                                                responseObj[0].home.score.T
-                                            );
-
-                                            angular.forEach(users, function(user, key) {
-
-                                                $http.get('/api/prediction/results/' + value._id + "/" + user.username)
-                                                    .then(function(response) {
-
-                                                        if (response.data) {
-                                                            var correctPoints = false;
-                                                            var correctTeam = false;
-                                                            var correctExactScore = false;
-                                                            var points = 0;
-
-                                                            if ((result.awayScore + result.homeScore) == (response.data.awayPrediction + response.data.homePrediction)) {
-                                                                correctPoints = true;
-                                                            }
-
-                                                            if (result.awayScore < result.homeScore && response.data.awayPrediction < response.data.homePrediction) {
-                                                                correctTeam = true;
-                                                            }
-
-                                                            if (result.awayScore > result.homeScore && response.data.awayPrediction > response.data.homePrediction) {
-                                                                correctTeam = true;
-                                                            }
-
-                                                            if (result.awayScore == result.homeScore && response.data.awayPrediction == response.data.homePrediction) {
-                                                                correctTeam = true;
-                                                            }
-
-                                                            if (result.awayScore == response.data.awayPrediction && result.homeScore == response.data.homePrediction) {
-                                                                correctExactScore = true;
-                                                            }
-
-                                                            if (correctPoints) {
-                                                                points += 5;
-                                                            }
-
-                                                            if (correctTeam) {
-                                                                points += 10;
-                                                            }
-
-                                                            if (correctExactScore) {
-                                                                points += 15;
-                                                            }
-
-                                                            if (response.data.joker) {
-                                                                points *= 2;
-                                                            }
-
-                                                            user.addPoints(points);
-                                                        }
-                                                    })
-                                                    .then(function() {
-
-                                                        users.sort(function(a, b) {
-                                                            return (a.points < b.points) ? 1 : ((b.points < a.points) ? -1 : 0);
-                                                        });
-
-                                                    });
-                                            });
-
-                                        });
-
-                                }
-
-
-                            });
-                        })
-                        .then(function() {
-
-
-                        });
+            $q.all(pointsPromises).then(function() {
+                userArray.sort(function(a, b) {
+                    return (a.points < b.points) ? 1 : ((b.points < a.points) ? -1 : 0);
                 });
+            });
 
-            return users;
-        };
+        }
+
+
+        function generateLeaderboard() {
+
+            var date = new Date();
+
+            var usersPromise = $http({
+                method: 'GET',
+                url: '/api/user',
+                cache: 'true'
+            });
+
+            var gamesPromise = $http({
+                method: 'GET',
+                url: '/api/games/' + date,
+                cache: 'true'
+            });
+
+            $q.all([usersPromise, gamesPromise]).then(function(response) {
+
+                    var users = response[0].data;
+                    var games = response[1].data;
+
+                    angular.forEach(users, function(value, key) {
+                        userArray.push(new User(value.fullName, value.username));
+                    });
+
+                    angular.forEach(games, function(game, key) {
+
+                        var gameDate = new Date(game.date);
+                        gameDate.setHours(gameDate.getHours() + 5);
+                        var gameAwayScore = 0;
+                        var gameHomeScore = 0;
+
+                        if (game.hasOwnProperty('homeScore') && game.hasOwnProperty('awayScore')) {
+
+                            gameAwayScore = game.awayScore;
+                            gameHomeScore = game.homeScore;
+
+                            calculatePoints(game, gameAwayScore, gameHomeScore);
+
+                        } else {
+
+                            $http.get('/api/results/' + game._id)
+                                .then(function(response) {
+
+                                    tempGameResultArray = new Array();
+                                    angular.forEach(response.data, function(result, key) {
+                                        tempGameResultArray.push(result);
+                                    });
+
+                                    gameAwayScore = tempGameResultArray[0].away.score.T;
+                                    gameHomeScore = tempGameResultArray[0].home.score.T;
+
+
+                                    var finishedGameTime = new Date(gameDate);
+                                    finishedGameTime.setHours(finishedGameTime.getHours() + 6);
+
+                                    if (date > finishedGameTime) {
+                                        $http.post('/api/update/game/score', {
+                                            "game": game._id,
+                                            "homeScore": gameHomeScore,
+                                            "awayScore": gameAwayScore
+                                        });
+                                    }
+
+                                })
+                                .then(function() {
+                                    calculatePoints(game, gameAwayScore, gameHomeScore);
+
+                                });
+
+                        }
+
+                    });
+
+                })
+                .then(function() {
+                    return userArray;
+                });
+        }
     }
 ]);

@@ -17,7 +17,9 @@ var GameSchema = new Schema({
         type: String,
         ref: 'Team'
     },
-    date: Date
+    date: Date,
+    homeScore: Number,
+    awayScore: Number
 
 });
 

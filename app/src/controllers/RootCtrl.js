@@ -1,5 +1,5 @@
 //Root controller for application
-NflPredictionsApp.controller('RootCtrl', ['$scope', function($scope) {
+NflPredictionsApp.controller('RootCtrl', ['$scope', '$http', function($scope, $http) {
 
     $scope.author = "Miren Pau";
 
