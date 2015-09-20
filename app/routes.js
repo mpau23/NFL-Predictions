@@ -123,6 +123,22 @@ module.exports = function(app) {
 
     });
 
+    app.get('/api/predictions/user/:user', function(req, res) {
+
+        User.findOne({
+            username: req.params.user
+        }, function(err, user) {
+
+            Prediction.find({
+                    'user': user._id,
+                }, '-_id game awayPrediction homePrediction joker')
+                .exec(function(err, predictions) {
+                    res.json(predictions);
+                });
+
+        });
+    });
+
 
     app.get('/api/prediction/results/:game/:user', function(req, res) {
 
@@ -154,7 +170,6 @@ module.exports = function(app) {
     app.get('/api/results/:game', function(req, res) {
 
         request('http://www.nfl.com/liveupdate/game-center/' + req.params.game + '/' + req.params.game + '_gtd.json', function(error, response, body) {
-            //        request('http://www.nfl.com/liveupdate/game-center/2015090353/2015090353_gtd.json', function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 res.send(body);
             } else {
