@@ -130,6 +130,8 @@ NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$http', '$q', 'Resul
                                         tempGameResultArray.push(result);
                                     });
 
+                                    console.log(tempGameResultArray);
+
                                     gameAwayScore = tempGameResultArray[0].away.score.T;
                                     gameHomeScore = tempGameResultArray[0].home.score.T;
 
