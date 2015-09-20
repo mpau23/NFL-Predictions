@@ -126,11 +126,10 @@ NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$http', '$q', 'Resul
                                 .then(function(response) {
 
                                     tempGameResultArray = new Array();
+                                    console.log(response);
                                     angular.forEach(response.data, function(result, key) {
                                         tempGameResultArray.push(result);
                                     });
-
-                                    console.log(tempGameResultArray);
 
                                     gameAwayScore = tempGameResultArray[0].away.score.T;
                                     gameHomeScore = tempGameResultArray[0].home.score.T;
