@@ -155,15 +155,12 @@ NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$http', '$q', 'Resul
 
                         }
 
-                        console.log("test");
-
                     });
 
                     $q.all(apiPromises).then(function() {
                         userArray.sort(function(a, b) {
                             return (a.points < b.points) ? 1 : ((b.points < a.points) ? -1 : 0);
                         });
-                        console.log("finished");
 
                         $scope.users = userArray;
 
