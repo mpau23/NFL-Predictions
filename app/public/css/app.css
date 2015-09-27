@@ -817,13 +817,17 @@ footer {
 }
 .game-container.started {
   pointer-events: none;
-  opacity: 0.4;
+  opacity: 0.5;
+}
+.game-container.started .prediction-container {
+  padding: 5px 0 0;
 }
 .game-container .prediction-container {
   width: 83.05085%;
   float: left;
   margin-right: 1.69492%;
   padding: 5px 0;
+  font-size: 15px;
 }
 .game-container .prediction-container .team-container {
   height: 40px;
@@ -850,7 +854,7 @@ footer {
   font-size: 12px;
 }
 .game-container .prediction-container .input input {
-  width: 50px;
+  width: 40px;
   float: right;
   margin: 4px 10px;
 }
@@ -876,6 +880,14 @@ footer {
 }
 .game-container .joker-container input[type=radio]:checked ~ img {
   opacity: 1;
+}
+.game-container .points-container {
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+  float: right;
+  line-height: 24px;
+  color: #038002;
 }
 
 .submit-predictions {

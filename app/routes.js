@@ -290,7 +290,6 @@ module.exports = function(app) {
             if (err) {
                 res.send(err);
             } else {
-                console.log(game);
                 game.awayScore = req.body.awayScore;
                 game.homeScore = req.body.homeScore;
 

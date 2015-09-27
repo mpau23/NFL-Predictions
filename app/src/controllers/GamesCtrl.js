@@ -15,20 +15,26 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q'
                     angular.forEach(response.data, function(value, key) {
                         date = new Date(value.date);
                         date.setHours(date.getHours() + 5);
-                        gamesArray.push(
-                            new Game(
-                                value._id,
-                                value.week,
-                                date.toString(),
-                                new Team(
-                                    value.awayTeam._id,
-                                    value.awayTeam.shortName,
-                                    value.awayTeam.fullName),
-                                new Team(value.homeTeam._id,
-                                    value.homeTeam.shortName,
-                                    value.homeTeam.fullName)
-                            )
+
+                        var game = new Game(
+                            value._id,
+                            value.week,
+                            date.toString(),
+                            new Team(
+                                value.awayTeam._id,
+                                value.awayTeam.shortName,
+                                value.awayTeam.fullName),
+                            new Team(value.homeTeam._id,
+                                value.homeTeam.shortName,
+                                value.homeTeam.fullName)
                         );
+
+                        if (value.awayScore && value.homeScore) {
+                            game.awayScore = value.awayScore;
+                            game.homeScore = value.homeScore;
+                        }
+
+                        gamesArray.push(game);
                     });
 
                 })
@@ -46,6 +52,10 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q'
 
                             if (now > gamedate) {
                                 value.started = true;
+
+                                if (value.awayScore != null && value.homeScore != null) {
+                                    value.points = calculatePoints(value);
+                                }
                             }
 
                             if (value.started && value.prediction.joker) {
@@ -61,61 +71,52 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q'
             return gamesArray;
         }
 
-        $scope.pushGames = function() {
+        function calculatePoints(game) {
 
-            var scheduleData;
-            var centerData;
-            var gamesArray = new Array;
+            var correctPoints = false;
+            var correctTeam = false;
+            var correctExactScore = false;
+            var points = 0;
 
+            if ((game.awayScore + game.homeScore) == (game.prediction.awayPrediction + game.prediction.homePrediction)) {
+                correctPoints = true;
+            }
 
-            $http.get('/json/nfl-fixtures.json')
-                .then(function(games) {
-                    scheduleData = games.data.Schedule;
-                    centerData = games.data.centerIds;
+            if (game.awayScore < game.homeScore && game.prediction.awayPrediction < game.prediction.homePrediction) {
+                correctTeam = true;
+            }
 
-                    var gameCount = 0;
-                    var thisWeeksGames;
-                    var thisGameId;
+            if (game.awayScore > game.homeScore && game.prediction.awayPrediction > game.prediction.homePrediction) {
+                correctTeam = true;
+            }
 
-                    angular.forEach(scheduleData, function(value, key) {
+            if (game.awayScore == game.homeScore && game.prediction.awayPrediction == game.prediction.homePrediction) {
+                correctTeam = true;
+            }
 
-                        angular.forEach(centerData, function(value1, key1) {
-                            if (value1.week === value.gameWeek)
-                                thisWeeksGames = value1;
+            if (game.awayScore == game.prediction.awayPrediction && game.homeScore == game.prediction.homePrediction) {
+                correctExactScore = true;
+            }
 
-                            angular.forEach(thisWeeksGames.games, function(value2, key2) {
-                                if (value2.home === value.homeTeam)
-                                    thisGameId = value2.id;
-                            });
+            if (correctPoints) {
+                points += 5;
+            }
 
-                        });
+            if (correctTeam) {
+                points += 10;
+            }
 
-                        if (!thisWeeksGames.games[gameCount])
-                            gameCount = 0;
+            if (correctExactScore) {
+                points += 15;
+            }
 
-                        gamesArray.push(new Game(
-                            thisGameId,
-                            value.gameWeek,
-                            value.gameDate + " " + value.gameTimeET,
-                            value.awayTeam,
-                            value.homeTeam));
-                        gameCount++;
-                    });
+            if (game.prediction.joker) {
+                points *= 2;
+            }
 
-                    angular.forEach(gamesArray, function(value, key) {
-                        $http.post('/api/game', {
-                            "id": value.id,
-                            "week": value.week,
-                            "homeTeam": value.homeTeamId,
-                            "awayTeam": value.awayTeamId,
-                            "date": value.date
-                        });
-                    });
+            return points;
 
-                });
-
-
-        };
+        }
 
         $scope.submit = function() {
 
@@ -149,47 +150,6 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q'
 
             });
         }
-
-        function getCenterData() {
-
-            var rawData = new Array;
-
-            for (var i = 1; i <= 17; i++) {
-                $http.get('http://www.nfl.com/schedules/2015/REG' + i)
-                    .then(function(response) {
-                        var weekData = response.data;
-                        var parser = new DOMParser();
-                        var doc = parser.parseFromString(weekData, 'text/html');
-                        var elements = doc.getElementsByClassName('schedules-list-content');
-
-                        var weekArray = new Array;
-
-                        angular.forEach(elements, function(value, key) {
-                            var game = {
-                                id: value.getAttribute("data-gameid"),
-                                home: value.getAttribute("data-home-abbr")
-                            };
-                            weekArray.push(game);
-                        });
-
-                        var regex = new RegExp("REG(.*)/");
-                        var week = regex.exec(elements[0].getAttribute("data-gc-url"));
-
-                        var jsonCenterData = {
-
-                            week: week[1],
-                            games: weekArray
-                        };
-
-                        rawData.push(jsonCenterData);
-                    });
-
-            };
-
-
-            return rawData;
-        }
-
 
     }
 ]);

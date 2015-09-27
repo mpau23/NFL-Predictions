@@ -29,6 +29,7 @@
 
                 </label>
             </div>
+            <span class="points-container" ng-if="game.started == true">Points: {{game.points}}</span>
         </div>
 
         <div class="submit-predictions" ng-click="submit()">Submit</div>

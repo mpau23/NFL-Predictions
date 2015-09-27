@@ -6,11 +6,15 @@
     margin: 10px 0 0 0;
     &.started {
         pointer-events: none;
-        opacity: 0.4;
+        opacity: 0.5;
+        .prediction-container {
+            padding: 5px 0 0;
+        }
     }
     .prediction-container {
         @include span(10);
         padding: 5px 0;
+        font-size: 15px;
         .team-container {
             height: 40px;
         }
@@ -36,7 +40,7 @@
             font-size: 12px;
         }
         .input input {
-            width: 50px;
+            width: 40px;
             float: right;
             margin: 4px 10px;
         }
@@ -61,6 +65,14 @@
                 opacity: 1;
             }
         }
+    }
+    .points-container {
+        padding: 0 10px;
+        font-size: 14px;
+        font-weight: 700;
+        float: right;
+        line-height: 24px;
+        color: #038002;
     }
 }
 
