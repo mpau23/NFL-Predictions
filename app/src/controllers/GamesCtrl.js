@@ -29,7 +29,7 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q'
                                 value.homeTeam.fullName)
                         );
 
-                        if (value.awayScore && value.homeScore) {
+                        if ((typeof value.awayScore !== 'undefined') && (typeof value.homeScore !== 'undefined')) {
                             game.awayScore = value.awayScore;
                             game.homeScore = value.homeScore;
                         }
@@ -47,6 +47,7 @@ NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q'
                                 value.prediction = new Prediction(0, 0, false);
 
                             }
+
                             var now = new Date();
                             var gamedate = new Date(value.date);
 
