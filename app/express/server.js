@@ -21,8 +21,11 @@ var j = schedule.scheduleJob('*/15 * * * 0-2,5', function() {
 
 winston.remove(winston.transports.Console);
 winston.add(winston.transports.File, {
-    filename: 'app/express/logs/server.log'
+    filename: __dirname + '/logs/server.log'
 });
+
+console.log("saving logs to: " + __dirname + '/logs/server.log');
+
 winston.add(winston.transports.Console, {
     'timestamp': true
 });
