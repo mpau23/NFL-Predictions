@@ -1,16 +1,16 @@
-NflPredictionsApp.controller('LoginCtrl', ['$scope', '$http', 'Authentication', '$location', function($scope, $http, Authentication, $location) {
+NflPredictionsApp.controller('LoginCtrl', ['$scope', '$http', 'AuthenticationService', '$location', function($scope, $http, AuthenticationService, $location) {
 
     $scope.loginUsername = "";
     $scope.loginPassword = "";
 
-    Authentication.clearCredentials();
+    AuthenticationService.clearCredentials();
 
     $scope.login = function() {
         $scope.dataLoading = true;
 
-        Authentication.login($scope.loginUsername, $scope.loginPassword, function(response) {
+        AuthenticationService.login($scope.loginUsername, $scope.loginPassword, function(response) {
             if (!response.error) {
-                Authentication.setCredentials($scope.loginUsername, $scope.loginPassword);
+                AuthenticationService.setCredentials($scope.loginUsername, $scope.loginPassword);
                 $location.path('/leaderboard');
             } else {
                 $scope.error = response.error;
@@ -26,9 +26,9 @@ NflPredictionsApp.controller('LoginCtrl', ['$scope', '$http', 'Authentication', 
     $scope.register = function() {
 
 
-        Authentication.register($scope.registerUsername, $scope.registerPassword, $scope.registerName, $scope.registerEmail, function(response) {
+        AuthenticationService.register($scope.registerUsername, $scope.registerPassword, $scope.registerName, $scope.registerEmail, function(response) {
             if (!response.error) {
-                Authentication.setCredentials($scope.registerUsername, $scope.registerPassword);
+                AuthenticationService.setCredentials($scope.registerUsername, $scope.registerPassword);
                 $location.path('/leaderboard');
             } else {
                 $scope.error = response.error;

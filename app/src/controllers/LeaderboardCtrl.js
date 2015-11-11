@@ -1,173 +1,62 @@
-NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$http', '$q', 'Results', 'User',
-    function($scope, $http, $q, Results, User) {
+NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$q', 'Results', 'UserService', 'GameService', 'PredictionService', 'ScoreService',
+    function($scope, $q, Results, UserService, GameService, PredictionService, ScoreService) {
 
-        var userArray = new Array();
+        generateNewLeaderboard();
 
-        generateLeaderboard();
-
-        function calculatePoints(game, awayScore, homeScore) {
-
-            angular.forEach(userArray, function(user, key) {
-
-                if (user.predictions[game._id]) {
-
-                    var correctPoints = false;
-                    var correctTeam = false;
-                    var correctExactScore = false;
-                    var points = 0;
-
-                    if ((awayScore + homeScore) == (user.predictions[game._id].awayPrediction + user.predictions[game._id].homePrediction)) {
-                        correctPoints = true;
-                    }
-
-                    if (awayScore < homeScore && user.predictions[game._id].awayPrediction < user.predictions[game._id].homePrediction) {
-                        correctTeam = true;
-                    }
-
-                    if (awayScore > homeScore && user.predictions[game._id].awayPrediction > user.predictions[game._id].homePrediction) {
-                        correctTeam = true;
-                    }
-
-                    if (awayScore == homeScore && user.predictions[game._id].awayPrediction == user.predictions[game._id].homePrediction) {
-                        correctTeam = true;
-                    }
-
-                    if (awayScore == user.predictions[game._id].awayPrediction && homeScore == user.predictions[game._id].homePrediction) {
-                        correctExactScore = true;
-                    }
-
-                    if (correctPoints) {
-                        points += 5;
-                    }
-
-                    if (correctTeam) {
-                        points += 10;
-                    }
-
-                    if (correctExactScore) {
-                        points += 15;
-                    }
-
-                    if (user.predictions[game._id].joker) {
-                        points *= 2;
-                    }
-
-                    user.addPoints(points);
-
-                }
-
-            });
-
-        }
-
-
-        function generateLeaderboard() {
+        function generateNewLeaderboard() {
 
             var date = new Date();
-
-            var usersPromise = $http({
-                method: 'GET',
-                url: '/api/user',
-                cache: 'true'
-            });
-
-            var gamesPromise = $http({
-                method: 'GET',
-                url: '/api/games/' + date,
-                cache: 'true'
-            });
+            var usersPromise = UserService.getAllUsers();
+            var gamesPromise = GameService.getGamesBeforeDate(date);
 
             $q.all([usersPromise, gamesPromise]).then(function(response) {
 
-                var users = response[0].data;
-                var games = response[1].data;
+                var allUsers = response[0];
+                var gamesThatStarted = response[1];
+                var userPredictionsPromisesArray = new Array();
 
-                var predictionPromises = new Array();
+                angular.forEach(allUsers, function(user, key) {
 
-                angular.forEach(users, function(value, key) {
+                    var userPredictionsPromise = PredictionService.getPredictionsBeforeDate(user.username, date);
 
-                    var user = new User(value.fullName, value.username);
+                    userPredictionsPromise.then(function(response) {
+                        user.predictions = response;
+                    });
 
-                    var predictionPromise = $http.get('/api/predictions/user/' + value.username)
-                        .then(function(response) {
-
-                            angular.forEach(response.data, function(prediction, key) {
-                                user.addPrediction(prediction);
-                            });
-
-                        });
-
-                    predictionPromises.push(predictionPromise);
-                    userArray.push(user);
+                    userPredictionsPromisesArray.push(userPredictionsPromise);
 
                 });
 
-                $q.all(predictionPromises).then(function() {
+                $q.all(userPredictionsPromisesArray).then(function(response) {
 
-                    var apiPromises = new Array();
+                    angular.forEach(gamesThatStarted, function(game, key) {
 
-                    angular.forEach(games, function(game, key) {
+                        angular.forEach(allUsers, function(user, key) {
 
-                        var gameDate = new Date(game.date);
-                        gameDate.setHours(gameDate.getHours() + 5);
-                        var gameAwayScore = 0;
-                        var gameHomeScore = 0;
+                            if (typeof game.awayScore === 'undefined' || typeof game.homeScore === 'undefined') {
+                                console.log(game);
+                            }
 
-                        if (game.hasOwnProperty('homeScore') && game.hasOwnProperty('awayScore')) {
+                            if (user.predictions[game.id] && typeof game.awayScore !== 'undefined' && typeof game.homeScore !== 'undefined') {
 
-                            gameAwayScore = game.awayScore;
-                            gameHomeScore = game.homeScore;
-
-                            calculatePoints(game, gameAwayScore, gameHomeScore);
-
-                        } else {
-
-                            var apiPromise = $http.get('/api/results/' + game._id)
-                                .then(function(response) {
-
-                                    tempGameResultArray = new Array();
-                                    console.log(response);
-                                    angular.forEach(response.data, function(result, key) {
-                                        tempGameResultArray.push(result);
-                                    });
-
-                                    gameAwayScore = tempGameResultArray[0].away.score.T;
-                                    gameHomeScore = tempGameResultArray[0].home.score.T;
-
-
-                                    var finishedGameTime = new Date(gameDate);
-                                    finishedGameTime.setHours(finishedGameTime.getHours() + 6);
-
-                                    if (date > finishedGameTime) {
-                                        $http.post('/api/update/game/score', {
-                                            "game": game._id,
-                                            "homeScore": gameHomeScore,
-                                            "awayScore": gameAwayScore
-                                        });
-                                    }
-
-                                })
-                                .then(function() {
-                                    calculatePoints(game, gameAwayScore, gameHomeScore);
-                                });
-
-
-                            apiPromises.push(apiPromise);
-
-                        }
-
-                    });
-
-                    $q.all(apiPromises).then(function() {
-                        userArray.sort(function(a, b) {
-                            return (a.points < b.points) ? 1 : ((b.points < a.points) ? -1 : 0);
+                                user.addPoints(ScoreService.calculatePoints(
+                                    game.awayScore,
+                                    game.homeScore,
+                                    user.predictions[game.id].awayPrediction,
+                                    user.predictions[game.id].homePrediction,
+                                    user.predictions[game.id].joker
+                                ));
+                            }
                         });
 
-                        $scope.users = userArray;
+                    });
 
+                    allUsers.sort(function(a, b) {
+                        return (a.points < b.points) ? 1 : ((b.points < a.points) ? -1 : 0);
                     });
 
 
+                    $scope.users = allUsers;
                 });
 
             });

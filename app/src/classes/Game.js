@@ -1,4 +1,4 @@
-NflPredictionsApp.factory('Game', function() {
+NflPredictionsApp.factory('Game', ['Prediction', function(Prediction) {
 
     // instantiate our initial object
     var Game = function(id, week, date, awayTeam, homeTeam) {
@@ -8,7 +8,7 @@ NflPredictionsApp.factory('Game', function() {
         this.awayTeam = awayTeam;
         this.homeTeam = homeTeam;
 
-        this.prediction = null;
+        this.prediction = new Prediction();
         this.awayScore = null;
         this.homeScore = null;
         this.started = false;
@@ -16,4 +16,4 @@ NflPredictionsApp.factory('Game', function() {
     };
 
     return Game;
-});
+}]);

@@ -1,22 +1,31 @@
 {
-  "name": "NFL-Predictions",
-  "description": "App",
-  "dependencies": {
-    "angular": "~1.4.3",
-    "jquery": "~2.1.4",
-    "normalize.css": "~3.0.3",
-    "ui-router": "~0.2.15",
-    "moment": "~2.10.6"
-  },
-  "overrides": {
-    "angular": {
-      "main": "*.min.js"
+    "name": "NFL-Predictions",
+    "description": "App",
+    "dependencies": {
+        "angular": "~1.4.3",
+        "jquery": "~2.1.4",
+        "normalize.css": "~3.0.3",
+        "ui-router": "~0.2.15",
+        "moment": "~2.10.6",
+        "angular-local-storage": "~0.2.3",
+        "angular-cookies": "~1.4.7"
     },
-    "jquery": {
-      "main": "dist/*.min.js"
-    },
-    "ui-router": {
-      "main": "release/*.min.js"
+    "overrides": {
+        "angular": {
+            "main": "*.min.js"
+        },
+        "jquery": {
+            "main": "dist/*.min.js"
+        },
+        "ui-router": {
+            "main": "release/*.min.js"
+        },
+        "angular-local-storage": {
+            "main": "dist/*.min.js"
+        },
+        "angular-cookies": {
+            "main": "*.min.js"
+        }
+
     }
-  }
 }

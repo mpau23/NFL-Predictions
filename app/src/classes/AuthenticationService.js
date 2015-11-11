@@ -1,5 +1,5 @@
-NflPredictionsApp.factory('Authentication', ['Base64', '$http', '$cookies', '$rootScope', '$timeout',
-    function(Base64, $http, $cookies, $rootScope, $timeout) {
+NflPredictionsApp.factory('AuthenticationService', ['Base64', '$http', '$cookies', '$rootScope',
+    function(Base64, $http, $cookies, $rootScope) {
 
         // instantiate our initial object
         var service = {
@@ -8,10 +8,10 @@ NflPredictionsApp.factory('Authentication', ['Base64', '$http', '$cookies', '$ro
 
                 console.log('Attempting to log in');
 
-                $http.get('/api/user/' + username + "/" + password)
+                $http.get('/api/get/user/by-login/' + Base64.encode(username + ':' + password))
                     .then(function(response) {
                         if (!response.data) {
-                            response.error = 'Username or password is incorrect';
+                            response.error = true;
                         }
                         callback(response);
                     });
@@ -20,15 +20,14 @@ NflPredictionsApp.factory('Authentication', ['Base64', '$http', '$cookies', '$ro
 
             register: function(username, password, user, email, callback) {
 
-                $http.post('/api/user', {
+                $http.post('/api/post/user', {
                         "fullName": user,
                         "email": email,
-                        "username": username,
-                        "password": password,
+                        "id": Base64.encode(username + ':' + password),
                     })
                     .then(function(response) {
                         if (!response.data._id) {
-                            response.error = 'There was a problem creating an account';
+                            response.error = true;
                         }
                         callback(response);
                     });
@@ -36,16 +35,18 @@ NflPredictionsApp.factory('Authentication', ['Base64', '$http', '$cookies', '$ro
             },
 
             setCredentials: function(username, password) {
+
                 console.log('Setting credentials')
                 var authdata = Base64.encode(username + ':' + password);
-                console.log('Basic ' + authdata);
 
+                console.log('Basic ' + authdata);
                 $rootScope.currentUser = authdata;
                 $http.defaults.headers.common.Authorization = 'Basic ' + authdata; // jshint ignore:line
                 $cookies.put('currentUser', $rootScope.currentUser);
             },
 
             clearCredentials: function() {
+
                 delete $rootScope.currentUser;
                 $cookies.remove('currentUser');
                 $http.defaults.headers.common.Authorization = 'Basic auth';

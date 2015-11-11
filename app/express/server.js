@@ -6,18 +6,38 @@ var app = express();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
+var fetcher = require('./services/ResultFetcher');
+var schedule = require('node-schedule');
+var winston = require('winston');
+
+// scheduled tasks =========================================
+
+//var j = schedule.scheduleJob('*/1 * * * *', function() {
+var j = schedule.scheduleJob('*/15 * * * 0-2,5', function() {
+    fetcher.fetchGameResult();
+});
 
 // configuration ===========================================
 
+winston.remove(winston.transports.Console);
+winston.add(winston.transports.File, {
+    filename: 'app/express/logs/server.log'
+});
+winston.add(winston.transports.Console, {
+    'timestamp': true
+});
+
 // config files
-var db = require('./server/config/db');
+var db = {
+    url: 'mongodb://localhost/nfl/'
+};
 
 // set our port
 var port = process.env.PORT || 80;
 
 // connect to our mongoDB database 
 // (uncomment after you enter in your own credentials in config/db.js)
-mongoose.connect(db.url); 
+mongoose.connect(db.url);
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json 
@@ -47,7 +67,8 @@ require('./routes')(app); // configure our routes
 app.listen(port);
 
 // shoutout to the user                     
-console.log('Magic happens on port ' + port);
+winston.info('Magic happens on port ' + port);
+
 
 // expose app           
 exports = module.exports = app;

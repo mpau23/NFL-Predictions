@@ -1,154 +1,65 @@
-NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$http', '$q', '$stateParams', 'Game', 'Team', 'Prediction',
-    function($scope, $rootScope, $http, $q, $stateParams, Game, Team, Prediction) {
+NflPredictionsApp.controller('GamesCtrl', ['$scope', '$rootScope', '$q', '$stateParams', 'GameService', 'PredictionService', 'ScoreService',
+    function($scope, $rootScope, $q, $stateParams, GameService, PredictionService, ScoreService) {
 
-        $scope.games = getGames();
         $scope.jokerChosen = "";
-        $scope.date = new Date();
+
+        getGames();
 
         function getGames() {
 
-            var gamesArray = new Array;
+            var games = new Array();
+            var predictions = new Array();
 
-            $http.get('/api/game/' + $stateParams.week)
-                .then(function(response) {
+            var gamesForThisWeek = GameService.getThisWeekGames($stateParams.week);
+            var predictionsForThisWeek = PredictionService.getThisWeekPredictions($rootScope.currentUser, $stateParams.week);
 
-                    angular.forEach(response.data, function(value, key) {
-                        date = new Date(value.date);
-                        date.setHours(date.getHours() + 5);
+            $q.all([gamesForThisWeek, predictionsForThisWeek]).then(function(response) {
 
-                        var game = new Game(
-                            value._id,
-                            value.week,
-                            date.toString(),
-                            new Team(
-                                value.awayTeam._id,
-                                value.awayTeam.shortName,
-                                value.awayTeam.fullName),
-                            new Team(value.homeTeam._id,
-                                value.homeTeam.shortName,
-                                value.homeTeam.fullName)
-                        );
+                games = response[0];
+                predictions = response[1];
 
-                        if ((typeof value.awayScore !== 'undefined') && (typeof value.homeScore !== 'undefined')) {
-                            game.awayScore = value.awayScore;
-                            game.homeScore = value.homeScore;
-                        }
 
-                        gamesArray.push(game);
-                    });
+                angular.forEach(games, function(game, key) {
+                    if (predictions[game.id]) {
+                        game.prediction = predictions[game.id];
 
-                })
-                .then(function() {
-                    angular.forEach(gamesArray, function(value, key) {
-                        $http.get('/api/prediction/' + value.id + "/" + $rootScope.currentUser).then(function(response) {
-                            if (response.data) {
-                                value.prediction = new Prediction(response.data.homePrediction, response.data.awayPrediction, response.data.joker);
-                            } else {
-                                value.prediction = new Prediction(0, 0, false);
-
+                        if (game.started) {
+                            if (game.awayScore != null && game.homeScore != null) {
+                                game.points = ScoreService.calculatePoints(
+                                    game.awayScore,
+                                    game.homeScore,
+                                    game.prediction.awayPrediction,
+                                    game.prediction.homePrediction,
+                                    game.prediction.joker
+                                );
                             }
 
-                            var now = new Date();
-                            var gamedate = new Date(value.date);
-
-                            if (now > gamedate) {
-                                value.started = true;
-
-                                if (value.awayScore != null && value.homeScore != null) {
-                                    value.points = calculatePoints(value);
-                                }
-                            }
-
-                            if (value.started && value.prediction.joker) {
+                            if (game.prediction.joker) {
                                 $scope.jokerChosen = "chosen";
                             }
-
-                        });
-
-                    });
+                        }
+                    }
 
                 });
 
-            return gamesArray;
-        }
+                $scope.games = games;
 
-        function calculatePoints(game) {
-
-            var correctPoints = false;
-            var correctTeam = false;
-            var correctExactScore = false;
-            var points = 0;
-
-            if ((game.awayScore + game.homeScore) == (game.prediction.awayPrediction + game.prediction.homePrediction)) {
-                correctPoints = true;
-            }
-
-            if (game.awayScore < game.homeScore && game.prediction.awayPrediction < game.prediction.homePrediction) {
-                correctTeam = true;
-            }
-
-            if (game.awayScore > game.homeScore && game.prediction.awayPrediction > game.prediction.homePrediction) {
-                correctTeam = true;
-            }
-
-            if (game.awayScore == game.homeScore && game.prediction.awayPrediction == game.prediction.homePrediction) {
-                correctTeam = true;
-            }
-
-            if (game.awayScore == game.prediction.awayPrediction && game.homeScore == game.prediction.homePrediction) {
-                correctExactScore = true;
-            }
-
-            if (correctPoints) {
-                points += 5;
-            }
-
-            if (correctTeam) {
-                points += 10;
-            }
-
-            if (correctExactScore) {
-                points += 15;
-            }
-
-            if (game.prediction.joker) {
-                points *= 2;
-            }
-
-            return points;
-
+            });
         }
 
         $scope.submit = function() {
 
-
-            angular.forEach($scope.games, function(value, key) {
-
-                $http.post('/api/prediction', {
-                    "user": $rootScope.currentUser,
-                    "game": value.id,
-                    "homePrediction": value.prediction.homePrediction,
-                    "awayPrediction": value.prediction.awayPrediction,
-                    "joker": value.prediction.joker
-                });
-
-
+            angular.forEach($scope.games, function(game, key) {
+                PredictionService.setPredictionForGame($rootScope.currentUser, game);
             });
-
-
-
         };
 
         $scope.jokerChange = function(game) {
 
             angular.forEach($scope.games, function(value, key) {
-
                 if (game != value) {
                     value.prediction.joker = false;
                 }
-
-
-
             });
         }
 
