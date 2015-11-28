@@ -13,7 +13,7 @@ module.exports = {
         var currentTimeInET = currentTimeInET.setHours(currentTimeInET.getHours() - 5); //5
 
         var gamesStartedAfterTime = new Date();
-        var gamesStartedAfterTime = gamesStartedAfterTime.setHours(gamesStartedAfterTime.getHours() - 11); //11
+        var gamesStartedAfterTime = gamesStartedAfterTime.setHours(gamesStartedAfterTime.getHours() - 17); //11
 
         Game.find({
                 date: {

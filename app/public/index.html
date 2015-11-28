@@ -4,93 +4,101 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/">
-    <link rel="stylesheet" type="text/css" href="/css/app.min.css">
-    <script src="/js/angular.min.js"></script>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/angular-ui-router.min.js"></script>
-    <script src="/js/angular-cookies.min.js"></script>
-    <script src="/js/angular-local-storage.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/pure-min.css">
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
     <title>NFL Predictions</title>
-
-    <script type="text/javascript">
-    //Initialize application
-    var NflPredictionsApp = angular.module('NflPredictionsApp', ["ui.router", "ngCookies", "LocalStorageModule"]);
-    </script>
-    <script src="/js/app.min.js"></script>
 </head>
 
 <body>
+
     <header>
-        <div class="logo-wrapper">
-            <a class="logo" href="#"></a>
+        <div class="menu-link">
+            <div class="hamburger">
+            </div>
+        </div>
+        <div class="logo">
         </div>
     </header>
     <nav>
-        <ul class="nav-list">
-            <li class="nav-listitem prediction-list">
-                <a class="games-list-title" href="#">Predictions</a>
-                <ul class="games-list">
-                    <li class="link-container">
-                        <a class="blah" href="/games/week/1">Week 1</a>
+        <ul class="primary">
+            <li>
+                <a class="nav-sub-link" href="#">Predictions</a>
+                <ul class="secondary">
+                    <li>
+                        <a href="/games/week/1">Week 1</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/2">Week 2</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/3">Week 3</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/4">Week 4</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/5">Week 5</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/6">Week 6</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/7">Week 7</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/8">Week 8</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/9">Week 9</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/10">Week 10</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/11">Week 11</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/12">Week 12</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/13">Week 13</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/14">Week 14</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/15">Week 15</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/16">Week 16</a>
                     </li>
-                    <li class="link-container">
+                    <li>
                         <a href="/games/week/17">Week 17</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a class="leaderboard" href="/leaderboard">Leaderboard</a>
+                <a href="/leaderboard">Leaderboard</a>
             </li>
             <li>
-                <a class="logout" href="/login">Logout</a>
+                <a href="/login">Login / Logout</a>
             </li>
+        </ul>
     </nav>
-    <div ui-view> </div>
+
+    <div class="main-content">
+        <div ui-view> </div>
+    </div>
+
 </body>
+<script src="/js/angular.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/angular-ui-router.min.js"></script>
+<script src="/js/angular-cookies.min.js"></script>
+<script src="/js/angular-local-storage.min.js"></script>
+<script type="text/javascript">
+var NflPredictionsApp = angular.module('NflPredictionsApp', ["ui.router", "ngCookies", "LocalStorageModule"]);
+</script>
+<script src="/js/app.min.js"></script>
 
 </html>

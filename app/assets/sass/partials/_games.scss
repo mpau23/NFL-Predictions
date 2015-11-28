@@ -1,9 +1,14 @@
+.games-container {
+    margin: 15px 0 0;
+    float: left;
+}
+
 .game-container {
     @include span(full);
     background: linear-gradient(to bottom, #fafafa 0%, #efefef 100%);
     border: 1px solid lightgrey;
     line-height: 32px;
-    margin: 10px 0 0 0;
+    margin: 0 0 10px 0;
     &.started {
         pointer-events: none;
         opacity: 0.5;
@@ -83,7 +88,6 @@
     text-align: center;
     height: 40px;
     line-height: 40px;
-    margin: 10px 0;
     border: 1px solid darkblue;
     cursor: pointer;
     &.submitted {

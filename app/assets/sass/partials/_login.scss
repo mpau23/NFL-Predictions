@@ -2,11 +2,7 @@
 .registration-container {
     //@include pre(1);
     @include span(full);
-    .title {
-        margin: 15px 0 10px;
-        text-align: center;
-        font-size: 18px;
-    }
+    margin: 15px 0 0;
     .input-container {
         background: linear-gradient(to bottom, #fafafa 0%, #efefef 100%);
         border: 1px solid lightgrey;

@@ -550,6 +550,9 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  font-family: sans-serif;
 }
 
 *,
@@ -573,8 +576,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   min-width: 320px;
-  margin: 5px;
   font-size: 16px;
+  position: relative;
 }
 body:after {
   content: " ";
@@ -582,99 +585,131 @@ body:after {
   clear: both;
 }
 
-header,
-footer {
+.main-content {
+  min-width: 320px;
+}
+body.menu-open .main-content {
+  margin-left: 175px;
+}
+
+.overlay {
+  position: absolute;
   width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  background-color: #012D5E;
-  position: relative;
+  height: 100%;
+  z-index: 2;
+  top: 0;
+}
+
+.main-content,
+nav {
+  transition: all 0.2s ease-out;
 }
 
 header {
-  height: 100px;
-}
-header .logo-wrapper {
+  height: 48px;
   width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  height: 100%;
+  background-color: #012D5E;
 }
-header .logo-wrapper a {
+
+.menu-link {
+  position: absolute;
+  display: block;
+  font-size: 10px;
+  width: 20px;
+  padding: 23px 16px;
+  box-sizing: content-box;
+  transition: transform 0.2s linear;
+  cursor: pointer;
+}
+.menu-link div {
+  display: block;
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 2px;
+}
+.menu-link div:before, .menu-link div:after {
+  background-color: #fff;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  margin-top: -6px;
+  content: " ";
+}
+.menu-link div:after {
+  margin-top: 6px;
+}
+body.menu-open .menu-link {
+  transform: rotate(30deg);
+}
+
+.logo {
   display: block;
   margin: 0 auto;
   height: 100%;
-  width: 100px;
+  width: 100%;
   background-image: url(../images/nfl-logo.min.svg);
   background-size: 100% 100%;
 }
 
 nav {
-  width: 100%;
-  float: left;
+  margin-left: -200px;
+  width: 175px;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: linear-gradient(to top, #fafafa 0%, #efefef 100%);
+  overflow-y: auto;
+  min-height: 800px;
+}
+body.menu-open nav {
   margin-left: 0;
-  margin-right: 0;
-  padding: 0 15px;
-  background-color: #E50000;
-  height: 32px;
-  line-height: 32px;
-  color: #fff;
-  text-align: center;
 }
 nav ul {
-  padding: 0;
+  float: left;
+  padding: 20px 0;
   margin: 0;
-  display: inline-block;
+  width: 100%;
+}
+nav ul.secondary {
+  padding: 0;
+  transition: all 0.5s cubic-bezier(0.3, 1, 0.3, 1);
+  max-height: 0;
+  overflow-y: hidden;
+}
+nav ul.secondary.open {
+  padding: 10px 0;
+  max-height: 1000px;
+}
+nav ul.secondary li {
+  padding: 5px 15px;
 }
 nav ul li {
-  float: left;
-  position: relative;
-  background-color: #E50000;
-}
-nav a {
-  color: inherit;
-  padding: 0 10px;
-  text-align: center;
-}
-nav .games-list {
-  position: absolute;
-  display: none;
-  float: left;
-  width: 100px;
-  color: #fff;
-  text-align: center;
-  font-size: 14px;
-  z-index: 3;
-}
-nav .games-list.show-list {
-  display: block;
-}
-nav .games-list .link-container {
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.main-content {
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  background-color: #fff;
-}
-
-footer {
-  height: 50px;
-}
-
-.overlay {
-  position: fixed;
+  list-style: none;
+  height: 32px;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  padding: 10px 15px;
+}
+nav a {
+  color: #000;
+  text-decoration: none;
+}
+
+.heading-container {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+  margin: 15px 0 0;
+}
+.heading-container .heading {
+  margin: 15px 0 10px;
+  font-size: 18px;
+  border-bottom: 1px solid black;
 }
 
 .ARI {
@@ -805,6 +840,11 @@ footer {
   background-image: url(../images/WAS.svg);
 }
 
+.games-container {
+  margin: 15px 0 0;
+  float: left;
+}
+
 .game-container {
   width: 100%;
   float: left;
@@ -813,7 +853,7 @@ footer {
   background: linear-gradient(to bottom, #fafafa 0%, #efefef 100%);
   border: 1px solid lightgrey;
   line-height: 32px;
-  margin: 10px 0 0 0;
+  margin: 0 0 10px 0;
 }
 .game-container.started {
   pointer-events: none;
@@ -900,7 +940,6 @@ footer {
   text-align: center;
   height: 40px;
   line-height: 40px;
-  margin: 10px 0;
   border: 1px solid darkblue;
   cursor: pointer;
 }
@@ -977,12 +1016,7 @@ footer {
   float: left;
   margin-left: 0;
   margin-right: 0;
-}
-.login-container .title,
-.registration-container .title {
-  margin: 15px 0 10px;
-  text-align: center;
-  font-size: 18px;
+  margin: 15px 0 0;
 }
 .login-container .input-container,
 .registration-container .input-container {

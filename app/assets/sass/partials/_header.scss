@@ -5,6 +5,9 @@ html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    font-family: sans-serif;
 }
 
 *,
@@ -26,89 +29,132 @@ html {
 body {
     @include container();
     min-width: 320px;
-    margin: 5px;
     font-size: 16px;
-}
-
-header,
-footer {
-    @include span(full);
-    background-color: #012D5E;
     position: relative;
 }
 
-header {
-    height: 100px;
-    .logo-wrapper {
-        @include span(full);
-        height: 100%;
-        a {
-            display: block;
-            margin: 0 auto;
-            height: 100%;
-            width: 100px;
-            background-image: url(../images/nfl-logo.min.svg);
-            background-size: 100% 100%;
-        }
-    }
-}
-
-nav {
-    @include span(full);
-    padding: 0 15px;
-    background-color: #E50000;
-    height: 32px;
-    line-height: 32px;
-    color: #fff;
-    text-align: center;
-    ul {
-        padding: 0;
-        margin: 0;
-        display: inline-block;
-        li {
-            float: left;
-            position: relative;
-            background-color: #E50000;
-        }
-    }
-    a {
-        color: inherit;
-        padding: 0 10px;
-        text-align: center;
-    }
-    // li:hover > .games-list {
-    //     display: block;
-    // }
-    .games-list {
-        position: absolute;
-        display: none;
-        float: left;
-        width: 100px;
-        color: #fff;
-        text-align: center;
-        font-size: 14px;
-        z-index: 3;
-        &.show-list {
-            display: block;
-        }
-        .link-container {
-            @include span(full);
-        }
-    }
-}
-
 .main-content {
-    @include span(full);
-    background-color: #fff;
-}
-
-footer {
-    height: 50px;
+    min-width: 320px;
+    body.menu-open & {
+        margin-left: 175px;
+    }
 }
 
 .overlay {
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100%;
     z-index: 2;
+    top: 0;
+}
+
+.main-content,
+nav {
+    transition: all 0.2s ease-out;
+}
+
+header {
+    height: 48px;
+    width: 100%;
+    background-color: #012D5E;
+}
+
+.menu-link {
+    position: absolute;
+    display: block;
+    font-size: 10px;
+    width: 20px;
+    padding: 23px 16px;
+    box-sizing: content-box;
+    transition: transform 0.2s linear;
+    cursor: pointer;
+    div {
+        display: block;
+        position: relative;
+        background-color: #fff;
+        width: 100%;
+        height: 2px;
+        &:before,
+        &:after {
+            background-color: #fff;
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            margin-top: -6px;
+            content: " ";
+        }
+        &:after {
+            margin-top: 6px;
+        }
+    }
+    body.menu-open & {
+        transform: rotate(30deg);
+    }
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/nfl-logo.min.svg);
+    background-size: 100% 100%;
+}
+
+nav {
+    margin-left: -200px;
+    width: 175px;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: linear-gradient(to top, #fafafa 0%, #efefef 100%);
+    overflow-y: auto;
+    min-height: 800px;
+    body.menu-open & {
+        margin-left: 0;
+    }
+    ul {
+        float: left;
+        padding: 20px 0;
+        margin: 0;
+        width: 100%;
+        &.secondary {
+            padding: 0;
+            transition: all 0.5s cubic-bezier(0.3, 1, 0.3, 1);
+            ;
+            max-height: 0;
+            overflow-y: hidden;
+            &.open {
+                padding: 10px 0;
+                max-height: 1000px;
+            }
+            li {
+                padding: 5px 15px;
+            }
+        }
+        li {
+            list-style: none;
+            height: 32px;
+            width: 100%;
+            height: 100%;
+            padding: 10px 15px;
+        }
+    }
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+}
+
+.heading-container {
+    @include span(full);
+    text-align: center;
+    margin: 15px 0 0;
+    .heading {
+        margin: 15px 0 10px;
+        font-size: 18px;
+        border-bottom: 1px solid black;
+    }
 }

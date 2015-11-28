@@ -1,14 +1,20 @@
-$(document).on('click', '.games-list-title', function() {
-	$('.games-list').toggleClass('show-list');
-	$( "<div class='overlay'></div>" ).appendTo( "body" );
-});
-
-$(document).on('click', '.overlay, .link-container a', function() {
-	$('.games-list').toggleClass('show-list');
-	$('.overlay').remove();
-});
-
 $(document).on('click', '.submit-predictions', function() {
-	$(this).addClass('submitted');
-	$(this).text("Submitted");
-})
+    $(this).addClass('submitted');
+    $(this).text("Submitted");
+});
+
+$('.menu-link').click(function() {
+    $('.overlay').remove();
+    $('body').toggleClass('menu-open');
+    $("<div class='overlay'></div>").appendTo("body");
+});
+
+$(document).on('click', '.overlay', function() {
+    $('body').toggleClass('menu-open');
+    $('.overlay').remove();
+});
+
+$('.nav-sub-link').click(function() {
+    $(this).next('ul').toggleClass('open');
+
+});
