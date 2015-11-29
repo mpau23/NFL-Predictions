@@ -1,6 +1,6 @@
 .games-container {
+    @include span(full);
     margin: 15px 0 0;
-    float: left;
 }
 
 .game-container {

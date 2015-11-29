@@ -835,8 +835,11 @@ nav a {
 }
 
 .games-container {
-  margin: 15px 0 0;
+  width: 100%;
   float: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin: 15px 0 0;
 }
 
 .game-container {
