@@ -578,6 +578,7 @@ body {
   min-width: 320px;
   font-size: 16px;
   position: relative;
+  overflow-x: hidden;
 }
 body:after {
   content: " ";

@@ -18,3 +18,11 @@ $('.nav-sub-link').click(function() {
     $(this).next('ul').toggleClass('open');
 
 });
+
+$('nav a').click(function() {
+    if (!$(this).hasClass('nav-sub-link')) {
+        $('body').toggleClass('menu-open');
+        $('.overlay').remove();
+    }
+
+});
