@@ -34,12 +34,12 @@ body {
     overflow-x: hidden;
 }
 
-.main-content {
-    min-width: 320px;
-    body.menu-open & {
-        margin-left: 175px;
-    }
-}
+// .main-content {
+//     min-width: 320px;
+//     body.menu-open & {
+//         margin-left: 175px;
+//     }
+// }
 
 .overlay {
     position: absolute;

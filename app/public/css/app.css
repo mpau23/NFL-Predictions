@@ -586,13 +586,6 @@ body:after {
   clear: both;
 }
 
-.main-content {
-  min-width: 320px;
-}
-body.menu-open .main-content {
-  margin-left: 175px;
-}
-
 .overlay {
   position: absolute;
   width: 100%;
