@@ -6,6 +6,7 @@ NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$q', 'Results', 'Use
         function generateNewLeaderboard() {
 
             var date = new Date();
+            var startOfGameWeek = Date.parse('last wednesday');
             var usersPromise = UserService.getAllUsers();
             var gamesPromise = GameService.getGamesBeforeDate(date);
 
@@ -39,13 +40,21 @@ NflPredictionsApp.controller('LeaderboardCtrl', ['$scope', '$q', 'Results', 'Use
 
                             if (user.predictions[game.id] && typeof game.awayScore !== 'undefined' && typeof game.homeScore !== 'undefined') {
 
-                                user.addPoints(ScoreService.calculatePoints(
+                                var pointsForPrediction = ScoreService.calculatePoints(
                                     game.awayScore,
                                     game.homeScore,
                                     user.predictions[game.id].awayPrediction,
                                     user.predictions[game.id].homePrediction,
                                     user.predictions[game.id].joker
-                                ));
+                                );
+
+                                user.addPoints(pointsForPrediction);
+
+                                if (new Date(game.date) > Date.parse('last wednesday')) {
+
+                                    user.addThisWeekPoints(pointsForPrediction);
+                                }
+
                             }
                         });
 

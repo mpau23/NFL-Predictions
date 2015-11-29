@@ -647,7 +647,7 @@ body.menu-open .menu-link {
 }
 
 nav {
-  margin-left: -200px;
+  margin-left: -175px;
   width: 175px;
   position: absolute;
   top: 48px;
@@ -659,7 +659,7 @@ nav {
   min-height: 800px;
 }
 body.menu-open nav {
-  margin-left: 0;
+  transform: translateX(175px);
 }
 nav ul {
   float: left;
@@ -921,7 +921,7 @@ nav a {
 .game-container .points-container {
   padding: 0 10px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   float: right;
   line-height: 24px;
   color: #038002;
@@ -973,11 +973,16 @@ nav a {
   border: 10px solid transparent;
   border-left-color: #E50000;
 }
+.user-container .points .thisweek {
+  color: #038002;
+  font-weight: 400;
+}
 
 .title-container {
   line-height: 32px;
   margin: 10px 0 0 0;
   padding: 5px 0;
+  float: left;
 }
 
 .title-container,
@@ -1002,7 +1007,7 @@ nav a {
 }
 .title-container .points,
 .user-container .points {
-  width: 23.72881%;
+  width: 32.20339%;
   float: right;
   margin-right: 0;
 }

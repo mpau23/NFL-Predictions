@@ -25,12 +25,19 @@
             }
         }
     }
+    .points {
+        .thisweek {
+            color: #038002;
+            font-weight: 400;
+        }
+    }
 }
 
 .title-container {
     line-height: 32px;
     margin: 10px 0 0 0;
     padding: 5px 0;
+    float:left;
 }
 
 .title-container,
@@ -44,6 +51,6 @@
         @include span(6);
     }
     .points {
-        @include span(3 last);
+        @include span(4 last);
     }
 }

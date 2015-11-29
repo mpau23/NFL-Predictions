@@ -4,7 +4,7 @@
 
 <div class="games-container">
     <form name="prediction">
-        <div class="game-container" ng-repeat="game in games" ng-class="{started: game.started== true}">
+        <div class="game-container" ng-repeat="game in games" ng-class="{started: game.started== true}" data-gameid="{{game.id}}">
             <div class="prediction-container">
                 <div class="away-container team-container">
                     <span class="logo {{game.awayTeam.code}}"></span>
@@ -33,7 +33,10 @@
 
                 </label>
             </div>
-            <span class="points-container" ng-if="game.started == true">Points: {{game.points}}</span>
+            <div class="points-container" ng-if="game.started == true">
+                <span class="points">Points: {{game.points}}, </span>
+                <span class="score">Score: {{game.awayScore}}-{{game.homeScore}}</span>
+            </div>
         </div>
 
         <div class="submit-predictions" ng-click="submit()">Submit</div>

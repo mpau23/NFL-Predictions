@@ -103,7 +103,7 @@ header {
 }
 
 nav {
-    margin-left: -200px;
+    margin-left: -175px;
     width: 175px;
     position: absolute;
     top: 48px;
@@ -114,7 +114,7 @@ nav {
     overflow-y: auto;
     min-height: 800px;
     body.menu-open & {
-        margin-left: 0;
+        transform: translateX(175px);
     }
     ul {
         float: left;
