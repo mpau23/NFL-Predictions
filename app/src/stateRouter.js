@@ -34,5 +34,11 @@ NflPredictionsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProv
             url: '/login',
             templateUrl: 'views/login.html',
             controller: 'LoginCtrl'
+        })
+        .state('updateGame', {
+            name: 'home.updateGame',
+            url: '/update-game',
+            templateUrl: 'views/update-game.html',
+            controller: 'UpdateGameCtrl'
         });
 }]);

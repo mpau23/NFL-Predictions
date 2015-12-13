@@ -391,3 +391,219 @@
 {"level":"info","message":"Requesting week 12 predictions for user bXBhdTIzOktyaXNobmEyMw==","timestamp":"2015-11-29T18:31:59.088Z"}
 {"level":"info","message":"Requesting games that started before Sun Nov 29 2015 18:32:18 GMT+0000 (GMT)","timestamp":"2015-11-29T18:32:18.589Z"}
 {"level":"info","message":"ET equivelant date is Sun Nov 29 2015 13:32:18 GMT+0000 (GMT)","timestamp":"2015-11-29T18:32:18.590Z"}
+{"level":"info","message":"Magic happens on port 80","timestamp":"2015-12-13T15:30:35.372Z"}
+{"level":"info","message":"fetching current games...","timestamp":"2015-12-13T15:45:00.087Z"}
+{"level":"info","message":"Fetching live data for game: 2015112909","timestamp":"2015-12-13T15:45:00.139Z"}
+{"level":"info","message":"Fetching live data for game: 2015112910","timestamp":"2015-12-13T15:45:00.143Z"}
+{"level":"info","message":"Fetching live data for game: 2015112911","timestamp":"2015-12-13T15:45:00.144Z"}
+{"level":"info","message":"Fetching live data for game: 2015113000","timestamp":"2015-12-13T15:45:00.145Z"}
+{"level":"info","message":"Fetching live data for game: 2015120300","timestamp":"2015-12-13T15:45:00.146Z"}
+{"level":"info","message":"Fetching live data for game: 2015120600","timestamp":"2015-12-13T15:45:00.146Z"}
+{"level":"info","message":"Fetching live data for game: 2015120601","timestamp":"2015-12-13T15:45:00.147Z"}
+{"level":"info","message":"Fetching live data for game: 2015120602","timestamp":"2015-12-13T15:45:00.147Z"}
+{"level":"info","message":"Fetching live data for game: 2015120603","timestamp":"2015-12-13T15:45:00.147Z"}
+{"level":"info","message":"Fetching live data for game: 2015120604","timestamp":"2015-12-13T15:45:00.148Z"}
+{"level":"info","message":"Fetching live data for game: 2015120605","timestamp":"2015-12-13T15:45:00.148Z"}
+{"level":"info","message":"Fetching live data for game: 2015120606","timestamp":"2015-12-13T15:45:00.148Z"}
+{"level":"info","message":"Fetching live data for game: 2015120607","timestamp":"2015-12-13T15:45:00.148Z"}
+{"level":"info","message":"Fetching live data for game: 2015120608","timestamp":"2015-12-13T15:45:00.148Z"}
+{"level":"info","message":"Fetching live data for game: 2015120609","timestamp":"2015-12-13T15:45:00.149Z"}
+{"level":"info","message":"Fetching live data for game: 2015120610","timestamp":"2015-12-13T15:45:00.149Z"}
+{"level":"info","message":"Fetching live data for game: 2015120611","timestamp":"2015-12-13T15:45:00.150Z"}
+{"level":"info","message":"Fetching live data for game: 2015120612","timestamp":"2015-12-13T15:45:00.150Z"}
+{"level":"info","message":"Fetching live data for game: 2015120613","timestamp":"2015-12-13T15:45:00.150Z"}
+{"level":"info","message":"Fetching live data for game: 2015120700","timestamp":"2015-12-13T15:45:00.150Z"}
+{"level":"info","message":"Fetching live data for game: 2015121000","timestamp":"2015-12-13T15:45:00.151Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:00.493Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:00.502Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:00.535Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:00.537Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:00.544Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:00.545Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.400Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.403Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.404Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.406Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.411Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.412Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.420Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.421Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.435Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.437Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.442Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.447Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.447Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.453Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.457Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.458Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.470Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.471Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.503Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.504Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.537Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.538Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.586Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.587Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.611Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.613Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.653Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.654Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.779Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.780Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.811Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.813Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.901Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.902Z"}
+{"level":"info","message":"Data retrieved successfully","timestamp":"2015-12-13T15:45:02.944Z"}
+{"level":"info","message":"Result updated successfully","timestamp":"2015-12-13T15:45:02.945Z"}
+{"level":"info","message":"Requesting all users","timestamp":"2015-12-13T15:48:53.883Z"}
+{"level":"info","message":"Requesting games that started before Sun Dec 13 2015 15:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:53.892Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 10:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:53.892Z"}
+{"level":"info","message":"Requesting Anthony's predictions for games that started before Sun Dec 13 2015 15:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:53.970Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 10:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:53.970Z"}
+{"level":"info","message":"Requesting C.j.burridge's predictions for games that started before Sun Dec 13 2015 15:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:53.975Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 10:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:53.976Z"}
+{"level":"info","message":"Requesting Nickyc101's predictions for games that started before Sun Dec 13 2015 15:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:53.991Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 10:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:53.991Z"}
+{"level":"info","message":"Requesting Sam's predictions for games that started before Sun Dec 13 2015 15:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:53.992Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 10:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:53.992Z"}
+{"level":"info","message":"Requesting Pedder5's predictions for games that started before Sun Dec 13 2015 15:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:53.993Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 10:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:53.993Z"}
+{"level":"info","message":"Requesting carps86's predictions for games that started before Sun Dec 13 2015 15:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:54.023Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 10:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:54.023Z"}
+{"level":"info","message":"Requesting mpau23's predictions for games that started before Sun Dec 13 2015 15:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:54.062Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 10:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:54.062Z"}
+{"level":"info","message":"Requesting nashy's predictions for games that started before Sun Dec 13 2015 15:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:54.063Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 10:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:54.063Z"}
+{"level":"info","message":"Requesting cjunited's predictions for games that started before Sun Dec 13 2015 15:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:54.106Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 10:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:54.106Z"}
+{"level":"info","message":"Requesting pjunited1's predictions for games that started before Sun Dec 13 2015 15:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:54.107Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 10:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:54.107Z"}
+{"level":"info","message":"Requesting richdixon68's predictions for games that started before Sun Dec 13 2015 15:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:54.113Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 10:48:53 GMT+0000 (GMT)","timestamp":"2015-12-13T15:48:54.113Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T15:49:01.680Z"}
+{"level":"info","message":"Requesting week 14 predictions for user bXBhdTIzOktyaXNobmEyMw==","timestamp":"2015-12-13T15:49:01.690Z"}
+{"level":"info","message":"Magic happens on port 80","timestamp":"2015-12-13T15:53:04.566Z"}
+{"level":"info","message":"fetching current games...","timestamp":"2015-12-13T16:00:00.500Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:08:48.443Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:09:06.635Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:12:09.802Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:13:26.843Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:13:38.994Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:14:18.830Z"}
+{"level":"info","message":"fetching current games...","timestamp":"2015-12-13T16:15:00.475Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:15:35.264Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:15:58.897Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:16:11.363Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:20:33.993Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:21:40.063Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:21:43.652Z"}
+{"level":"info","message":"Requesting games for week 3","timestamp":"2015-12-13T16:21:47.825Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T16:21:53.256Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:27:28.764Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:28:03.150Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:28:28.962Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:28:49.081Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:29:13.298Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:29:25.045Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:29:50.734Z"}
+{"level":"info","message":"fetching current games...","timestamp":"2015-12-13T16:30:00.473Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:32:20.353Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:32:29.831Z"}
+{"level":"info","message":"Requesting games for week 2","timestamp":"2015-12-13T16:32:31.924Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:32:44.133Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:34:45.639Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:35:07.737Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:35:27.973Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:35:42.533Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:36:00.698Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:36:14.676Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:36:32.010Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:37:07.344Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T16:37:13.209Z"}
+{"level":"info","message":"Requesting games for week 5","timestamp":"2015-12-13T16:38:12.010Z"}
+{"level":"info","message":"Requesting games for week 9","timestamp":"2015-12-13T16:38:19.711Z"}
+{"level":"info","message":"Requesting games for week 1","timestamp":"2015-12-13T16:38:23.974Z"}
+{"level":"info","message":"Requesting games for week 6","timestamp":"2015-12-13T16:39:05.717Z"}
+{"level":"info","message":"Requesting games for week 5","timestamp":"2015-12-13T16:39:09.238Z"}
+{"level":"info","message":"Requesting games for week 4","timestamp":"2015-12-13T16:44:07.491Z"}
+{"level":"info","message":"Requesting games for week 2","timestamp":"2015-12-13T16:44:12.780Z"}
+{"level":"info","message":"fetching current games...","timestamp":"2015-12-13T16:45:00.473Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T16:45:53.213Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T16:47:55.703Z"}
+{"level":"info","message":"Saving game 2015121300","timestamp":"2015-12-13T16:48:06.937Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T16:48:16.650Z"}
+{"level":"info","message":"Saving game 2015121300","timestamp":"2015-12-13T16:48:36.691Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T16:48:54.993Z"}
+{"level":"info","message":"Saving game 2015121300","timestamp":"2015-12-13T16:49:03.125Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T16:49:10.453Z"}
+{"level":"info","message":"Saving game 2015121300","timestamp":"2015-12-13T16:49:29.225Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T16:49:36.372Z"}
+{"level":"info","message":"Requesting games for week 6","timestamp":"2015-12-13T16:54:09.002Z"}
+{"level":"info","message":"Requesting games for week 6","timestamp":"2015-12-13T16:54:44.600Z"}
+{"level":"info","message":"fetching current games...","timestamp":"2015-12-13T17:00:00.473Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T17:01:51.894Z"}
+{"level":"info","message":"Requesting games for week 10","timestamp":"2015-12-13T17:02:27.448Z"}
+{"level":"info","message":"Requesting games for week 12","timestamp":"2015-12-13T17:03:07.784Z"}
+{"level":"info","message":"Requesting games for week 11","timestamp":"2015-12-13T17:03:23.192Z"}
+{"level":"info","message":"Requesting games for week 11","timestamp":"2015-12-13T17:03:28.141Z"}
+{"level":"info","message":"Requesting games for week 7","timestamp":"2015-12-13T17:04:02.190Z"}
+{"level":"info","message":"Requesting games for week 6","timestamp":"2015-12-13T17:04:31.889Z"}
+{"level":"info","message":"Requesting games for week 6","timestamp":"2015-12-13T17:07:01.996Z"}
+{"level":"info","message":"Requesting games for week 15","timestamp":"2015-12-13T17:07:23.009Z"}
+{"level":"info","message":"Requesting games for week 13","timestamp":"2015-12-13T17:08:06.211Z"}
+{"level":"info","message":"Saving game 2015120300","timestamp":"2015-12-13T17:08:19.653Z"}
+{"level":"info","message":"Requesting games for week 13","timestamp":"2015-12-13T17:08:24.162Z"}
+{"level":"info","message":"Requesting games for week 13","timestamp":"2015-12-13T17:08:30.155Z"}
+{"level":"info","message":"Requesting week 13 predictions for user bXBhdTIzOktyaXNobmEyMw==","timestamp":"2015-12-13T17:08:30.164Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T17:08:39.834Z"}
+{"level":"info","message":"Requesting week 14 predictions for user bXBhdTIzOktyaXNobmEyMw==","timestamp":"2015-12-13T17:08:39.835Z"}
+{"level":"info","message":"Requesting games that started before Sun Dec 13 2015 17:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.522Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 12:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.522Z"}
+{"level":"info","message":"Requesting Anthony's predictions for games that started before Sun Dec 13 2015 17:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.568Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 12:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.568Z"}
+{"level":"info","message":"Requesting C.j.burridge's predictions for games that started before Sun Dec 13 2015 17:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.584Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 12:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.585Z"}
+{"level":"info","message":"Requesting Nickyc101's predictions for games that started before Sun Dec 13 2015 17:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.585Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 12:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.585Z"}
+{"level":"info","message":"Requesting Sam's predictions for games that started before Sun Dec 13 2015 17:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.600Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 12:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.600Z"}
+{"level":"info","message":"Requesting Pedder5's predictions for games that started before Sun Dec 13 2015 17:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.600Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 12:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.601Z"}
+{"level":"info","message":"Requesting carps86's predictions for games that started before Sun Dec 13 2015 17:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.638Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 12:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.638Z"}
+{"level":"info","message":"Requesting mpau23's predictions for games that started before Sun Dec 13 2015 17:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.639Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 12:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.639Z"}
+{"level":"info","message":"Requesting nashy's predictions for games that started before Sun Dec 13 2015 17:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.684Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 12:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.684Z"}
+{"level":"info","message":"Requesting cjunited's predictions for games that started before Sun Dec 13 2015 17:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.702Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 12:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.702Z"}
+{"level":"info","message":"Requesting pjunited1's predictions for games that started before Sun Dec 13 2015 17:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.722Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 12:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.722Z"}
+{"level":"info","message":"Requesting richdixon68's predictions for games that started before Sun Dec 13 2015 17:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.723Z"}
+{"level":"info","message":"ET equivelant date is Sun Dec 13 2015 12:08:45 GMT+0000 (GMT)","timestamp":"2015-12-13T17:08:45.723Z"}
+{"level":"info","message":"Requesting games for week 13","timestamp":"2015-12-13T17:08:57.414Z"}
+{"level":"info","message":"Saving game 2015120300","timestamp":"2015-12-13T17:09:05.793Z"}
+{"level":"info","message":"Requesting games for week 13","timestamp":"2015-12-13T17:09:10.459Z"}
+{"level":"info","message":"Saving game 2015120300","timestamp":"2015-12-13T17:09:22.027Z"}
+{"level":"info","message":"Requesting games for week 13","timestamp":"2015-12-13T17:09:25.930Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T17:09:33.904Z"}
+{"level":"info","message":"fetching current games...","timestamp":"2015-12-13T17:15:00.473Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T17:16:47.449Z"}
+{"level":"info","message":"Requesting week 14 predictions for user bXBhdTIzOktyaXNobmEyMw==","timestamp":"2015-12-13T17:16:47.451Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T17:17:06.823Z"}
+{"level":"info","message":"Requesting week 14 predictions for user bXBhdTIzOktyaXNobmEyMw==","timestamp":"2015-12-13T17:17:06.824Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T17:17:08.272Z"}
+{"level":"info","message":"Requesting week 14 predictions for user bXBhdTIzOktyaXNobmEyMw==","timestamp":"2015-12-13T17:17:08.273Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T17:17:09.506Z"}
+{"level":"info","message":"Requesting week 14 predictions for user bXBhdTIzOktyaXNobmEyMw==","timestamp":"2015-12-13T17:17:09.507Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T17:17:10.743Z"}
+{"level":"info","message":"Requesting week 14 predictions for user bXBhdTIzOktyaXNobmEyMw==","timestamp":"2015-12-13T17:17:10.744Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T17:17:17.199Z"}
+{"level":"info","message":"Requesting week 14 predictions for user bXBhdTIzOktyaXNobmEyMw==","timestamp":"2015-12-13T17:17:17.200Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T17:17:42.219Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T17:18:03.783Z"}
+{"level":"info","message":"Saving game 2015121300","timestamp":"2015-12-13T17:18:27.406Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T17:18:31.211Z"}
+{"level":"info","message":"Requesting games for week 14","timestamp":"2015-12-13T17:18:43.224Z"}
+{"level":"info","message":"Requesting week 14 predictions for user bXBhdTIzOktyaXNobmEyMw==","timestamp":"2015-12-13T17:18:43.225Z"}

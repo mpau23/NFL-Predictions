@@ -4,7 +4,7 @@
 
 <div class="games-container">
     <form name="prediction">
-        <div class="game-container" ng-repeat="game in games" ng-class="{started: game.started== true}" data-gameid="{{game.id}}">
+        <div class="game-container" ng-repeat="game in games | orderBy:'id'" ng-class="{started: game.started== true}" data-gameid="{{game.id}}">
             <div class="prediction-container">
                 <div class="away-container team-container">
                     <span class="logo {{game.awayTeam.code}}"></span>

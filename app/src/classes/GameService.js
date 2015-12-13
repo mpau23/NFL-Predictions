@@ -55,7 +55,7 @@ NflPredictionsApp.factory('GameService', ['$http', '$q', 'Game', 'Team', functio
             return gamesPromise = $http.get('/api/get/game/before-date/' + date)
                 .then(function(response) {
                     if (response.data) {
-                        
+
                         var gamesArray = new Array();
 
                         angular.forEach(response.data, function(value, key) {
@@ -96,6 +96,23 @@ NflPredictionsApp.factory('GameService', ['$http', '$q', 'Game', 'Team', functio
                         return $q.reject;
                     }
                 });
+        },
+
+        updateGameForId: function(id, awayScore, homeScore, date) {
+
+            return predictionsSuccessPromise = $http.post('/api/post/game', {
+                "game": id,
+                "homeScore": homeScore,
+                "awayScore": awayScore,
+                "date": date
+            }).then(function(response) {
+                if (response.data) {
+                    return response.data;
+                } else {
+                    return $q.reject;
+                }
+            });
+
         }
 
     }

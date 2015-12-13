@@ -1,0 +1,24 @@
+<div class="update-game-container">
+    <form>
+
+        <label for="weeks">Week</label>
+        <select id="weeks" ng-model="selectedWeek" ng-change="changeWeek(selectedWeek)">
+            <option value="{{$index + 1}}" ng-repeat="i in getNumberOfWeeks() track by $index">Week {{$index + 1}}</option>
+        </select>
+
+        <label for="weeks">Games</label>
+        <select id="games" ng-model="selectedGame" ng-change="changeGame(selectedGame)">
+            <option value="{{game.id}}" ng-repeat="game in thisWeeksGames | orderBy:'id'">{{game.id}} - {{game.date}} - {{game.awayTeam.code}} - {{game.homeTeam.code}}</option>
+        </select>
+
+        <label for="weeks">Away Score</label>
+        <input type="number" id="awayScore" ng-model="selectedGameAwayScore">
+        <label for="weeks">Home Score</label>
+        <input type="number" id="homeScore" ng-model="selectedGameHomeScore">
+        <label for="weeks">Date</label>
+        <input type="text" id="date" ng-model="selectedGameDate">
+
+        <input type="button" id="updateButton" ng-click="updateGame()" value="Update" ng-class="{hidden: selectedGame == null}">
+
+    </form>
+</div>

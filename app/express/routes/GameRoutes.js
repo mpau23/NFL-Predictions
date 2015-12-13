@@ -49,4 +49,36 @@ module.exports = function(app) {
                 }
             });
     });
+
+    app.post('/api/post/game', function(req, res) {
+
+        winston.info("Saving game " + req.body.game);
+
+        var date = new Date(req.body.date);
+
+        Game.findById(req.body.game, function(err, game) {
+            if (err) {
+                res.send(err);
+            } else {
+
+                if (game) {
+                    game.homeScore = req.body.homeScore;
+                    game.awayScore = req.body.awayScore;
+                    game.date = date;
+                    game.save(function(err) {
+                        if (err) {
+                            return res.send(err);
+                        } else {
+                            return res.send(game);
+                        }
+                    });
+
+                } else {
+                    var err = "Invalid game";
+                    res.send(err);
+                }
+            }
+        });
+
+    });
 }

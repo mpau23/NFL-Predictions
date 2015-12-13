@@ -1,0 +1,25 @@
+.update-game-container {
+    @include span(full);
+    input,
+    select,
+    label {
+        @include pre(1);
+        @include span(10);
+    }
+    label {
+        padding: 20px 0 0 0;
+    }
+    input {
+        padding: 5px 0;
+        font-size: 15px;
+    }
+    input[type=button] {
+        margin-top: 40px;
+        background: linear-gradient(to bottom, #012D5E 0%, #05468F 100%);
+        color: #fff;
+        text-align: center;
+        height: 40px;
+        border: 1px solid darkblue;
+        cursor: pointer;
+    }
+}

@@ -656,7 +656,7 @@ nav {
   z-index: 1000;
   background: linear-gradient(to top, #fafafa 0%, #efefef 100%);
   overflow-y: auto;
-  min-height: 800px;
+  min-height: 750px;
 }
 body.menu-open nav {
   transform: translateX(175px);
@@ -1104,4 +1104,34 @@ nav a {
     margin-right: 1.69492%;
     margin-right: 16.94915%;
   }
+}
+.update-game-container {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+.update-game-container input,
+.update-game-container select,
+.update-game-container label {
+  margin-left: 8.47458%;
+  width: 83.05085%;
+  float: left;
+  margin-right: 1.69492%;
+}
+.update-game-container label {
+  padding: 20px 0 0 0;
+}
+.update-game-container input {
+  padding: 5px 0;
+  font-size: 15px;
+}
+.update-game-container input[type=button] {
+  margin-top: 40px;
+  background: linear-gradient(to bottom, #012d5e 0%, #05468f 100%);
+  color: #fff;
+  text-align: center;
+  height: 40px;
+  border: 1px solid darkblue;
+  cursor: pointer;
 }
