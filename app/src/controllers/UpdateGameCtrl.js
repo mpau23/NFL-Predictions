@@ -1,7 +1,7 @@
 NflPredictionsApp.controller('UpdateGameCtrl', ['$scope', 'GameService', function($scope, GameService) {
 
     $scope.getNumberOfWeeks = function() {
-        return new Array(17);
+        return new Array(21);
     }
 
     $scope.updateGame = function() {
