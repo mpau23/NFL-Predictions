@@ -1,10 +1,10 @@
 <div class="heading-container">
     <span class="heading">Predictions</span>
 </div>
-
 <div class="games-container">
     <form name="prediction">
         <div class="game-container" ng-repeat="game in games | orderBy:'id'" ng-class="{started: game.started== true}" data-gameid="{{game.id}}">
+            <div class="date-container">{{game.date | date:'EEE dd MMM yyyy - HH:mm'}}</div>
             <div class="prediction-container">
                 <div class="away-container team-container">
                     <span class="logo {{game.awayTeam.code}}"></span>
@@ -20,7 +20,6 @@
                     <span class="teamname long">{{game.homeTeam.fullName}}</span>
                     <span class="teamname short">{{game.homeTeam.shortName}}</span>
                     <span class="location">(home)</span>
-
                     <span class="input">
                         <input type="number" ng-model="game.prediction.homePrediction" name="home-prediction" class="home-team-prediction team-prediction" min="0" /> </span>
                 </div>
@@ -30,7 +29,6 @@
                     <input type="radio" name="joker" ng-model="game.prediction.joker" ng-if="game.prediction.joker == true" ng-change="jokerChange(game)" ng-value="true" checked>
                     <input type="radio" name="joker" ng-model="game.prediction.joker" ng-if="!game.prediction.joker == true" ng-change="jokerChange(game)" ng-value="true">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Joker_red_02.svg/165px-Joker_red_02.svg.png" />
-
                 </label>
             </div>
             <div class="points-container" ng-if="game.started == true">
@@ -38,9 +36,6 @@
                 <span class="score">Score: {{game.awayScore}}-{{game.homeScore}}</span>
             </div>
         </div>
-
         <div class="submit-predictions" ng-click="submit()">Submit</div>
-
     </form>
-
 </div>

@@ -17,7 +17,7 @@ NflPredictionsApp.factory('GameService', ['$http', '$q', 'Game', 'Team', functio
                             var game = new Game(
                                 value._id,
                                 value.week,
-                                date.toString(),
+                                date,
                                 new Team(
                                     value.awayTeam._id,
                                     value.awayTeam.shortName,

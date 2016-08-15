@@ -16,6 +16,13 @@
             padding: 5px 0 0;
         }
     }
+    .date-container {
+        @include span(full);
+        font-size: 12px;
+        text-align: center;
+        line-height: 12px;
+        padding: 6px 0 0 0;
+    }
     .prediction-container {
         @include span(10);
         padding: 5px 0;
