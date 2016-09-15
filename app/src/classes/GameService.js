@@ -12,7 +12,7 @@ NflPredictionsApp.factory('GameService', ['$http', '$q', 'Game', 'Team', functio
 
                         angular.forEach(response.data, function(value, key) {
                             date = new Date(value.date);
-                            date.setHours(date.getHours() + 5);
+//                            date.setHours(date.getHours() + 5);
 
                             var game = new Game(
                                 value._id,
@@ -60,7 +60,7 @@ NflPredictionsApp.factory('GameService', ['$http', '$q', 'Game', 'Team', functio
 
                         angular.forEach(response.data, function(value, key) {
                             date = new Date(value.date);
-                            date.setHours(date.getHours() + 5);
+//                            date.setHours(date.getHours() + 5);
 
                             var game = new Game(
                                 value._id,
