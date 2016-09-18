@@ -31,10 +31,6 @@ module.exports = function(app) {
 
         winston.info("Requesting games that started before " + date);
 
-        date.setHours(date.getHours() - 5);
-
-        winston.info("ET equivelant date is " + date);
-
         Game.find({
                 date: {
                     $lte: new Date(date)
