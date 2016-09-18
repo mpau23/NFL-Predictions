@@ -108,7 +108,7 @@ module.exports = function(app) {
 
                     var currentTimeInET = new Date(gameyear + "-" + gamemonth + "-" + gameday + " " + gametime);
                     console.log(currentTimeInET);
-                    currentTimeInET.setTime(currentTimeInET.getTime() + (5 * 60 * 60 * 1000));
+                    currentTimeInET.setTime(currentTimeInET.getTime() + (4 * 60 * 60 * 1000));
                     console.log(currentTimeInET);
 
                     Game.findById(gameid, function(err, game) {
