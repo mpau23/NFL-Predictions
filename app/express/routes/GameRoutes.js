@@ -105,7 +105,7 @@ module.exports = function(app) {
                                 games.forEach(function(game, j) {
                                     if (game[0] == weekGame._id) {
                                         var currentTimeInET = new Date(game[1].year + "-" + game[1].month + "-" + game[1].day + " " + game[1].time);
-                                        currentTimeInET.setTime(currentTimeInET.getTime() + (17 * 60 * 60 * 1000));
+                                        currentTimeInET.setTime(currentTimeInET.getTime() + (16 * 60 * 60 * 1000));
                                         console.log(currentTimeInET);
                                         weekGame.date = currentTimeInET;
                                         weekGame.save(function(err) {
