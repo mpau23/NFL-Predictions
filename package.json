@@ -20,14 +20,15 @@
   "dependencies": {
     "body-parser": "^1.13.3",
     "cheerio": "^0.20.0",
+    "datejs": "1.0.0-rc3",
     "express": "^4.13.3",
     "http-server": "^0.8.0",
     "method-override": "^2.3.5",
     "mongoose": "^4.1.2",
     "node-schedule": "^0.2.9",
+    "nodemailer": "^2.6.4",
     "path": "^0.12.7",
     "request": "^2.61.0",
-    "winston": "^1.1.1",
-    "datejs": "1.0.0-rc3"
+    "winston": "^1.1.1"
   }
 }

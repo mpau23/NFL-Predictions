@@ -8,6 +8,11 @@ NflPredictionsApp.factory('ScoreService', [function() {
             var correctTeam = false;
             var correctExactScore = false;
             var points = 0;
+            var zeroPrediction = false;
+
+            if ((awayPrediction + homePrediction) === 0){
+                zeroPrediction = true;
+            }
 
             if ((awayScore + homeScore) == (awayPrediction + homePrediction)) {
                 correctPoints = true;
@@ -41,8 +46,13 @@ NflPredictionsApp.factory('ScoreService', [function() {
                 points += 15;
             }
 
-            if (joker) {
-                points *= 2;
+            if (joker && !zeroPrediction) {
+                if (correctTeam) {
+                    points *= 2;
+                } else {
+                    points -= 5;
+                }
+
             }
 
             return points;
