@@ -7,3 +7,6 @@ bower_components/**/*
 node_modules/**/*
 node_modules/
 node_modules
+app/express/data/emailCreds.json
+
+app/express/logs/server.log

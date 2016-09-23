@@ -83,71 +83,46 @@ module.exports = function(app) {
 
         var week = req.params.week;
 
-        request("http://www.nfl.com/schedules/2016/REG" + week, function(error, response, body) {
-            if (!error) {
+        request("https://raw.githubusercontent.com/BurntSushi/nflgame/ff84fc045767f733588d5dfaad7ff32ac2d25520/nflgame/schedule.json", function(error, response, body) {
 
-                var htmlData = cheerio.load(body);
+            if (error) {
+                res.send(error);
+            } else {
 
-                htmlData('.schedules-list-content').each(function() {
+                var data = JSON.parse(response.body);
+                var games = data.games;
 
-                    console.log(htmlData(this).data("gameid"));
-                    console.log(htmlData(this).data("away-abbr"));
-                    console.log(htmlData(this).data("home-abbr"));
 
-                    var gameid = htmlData(this).data("gameid").toString();
-                    var gameAwayTeam = htmlData(this).data("away-abbr").toString();
-                    var gameHomeTeam = htmlData(this).data("home-abbr").toString();
-                    var gametime = htmlData(this).data("localtime").toString();
-                    var gameyear = gameid.substring(0, 4);
-                    var gamemonth = gameid.substring(4, 6);
-                    var gameday = gameid.substring(6, 8);
-
-                    var currentTimeInET = new Date(gameyear + "-" + gamemonth + "-" + gameday + " " + gametime);
-                    console.log(currentTimeInET);
-                    currentTimeInET.setTime(currentTimeInET.getTime() + (4 * 60 * 60 * 1000));
-                    console.log(currentTimeInET);
-
-                    Game.findById(gameid, function(err, game) {
+                Game.find({
+                        week: req.params.week
+                    })
+                    .exec(function(err, weekGames) {
                         if (err) {
-                            winston.info(err);
+                            res.send(err);
                         } else {
 
-                            if (game) {
-                                winston.info("Game " + gameid + " exists...updating");
-                                game.date = currentTimeInET;
-                                game.save(function(err) {
-                                    if (err) {
-                                        winston.info(err);
+                            weekGames.forEach(function(weekGame, i) {
+                                games.forEach(function(game, j) {
+                                    if (game[0] == weekGame._id) {
+                                        var currentTimeInET = new Date(game[1].year + "-" + game[1].month + "-" + game[1].day + " " + game[1].time);
+                                        currentTimeInET.setTime(currentTimeInET.getTime() + (17 * 60 * 60 * 1000));
+                                        console.log(currentTimeInET);
+                                        weekGame.date = currentTimeInET;
+                                        weekGame.save(function(err) {
+                                            if (err) {
+                                                winston.info(err);
+                                            }
+                                        });
+
                                     }
                                 });
+                            });
 
-                            } else {
-                                winston.info("Creating new data for game " + gameid);
-                                game = new Game({
-                                    _id: gameid,
-                                    week: week,
-                                    homeTeam: gameHomeTeam,
-                                    awayTeam: gameAwayTeam,
-                                    date: currentTimeInET
-                                });
-
-                                game.save(function(err) {
-                                    if (err) {
-                                        winston.info(err);
-                                    }
-
-                                });
-                            }
+                            res.send(weekGames);
                         }
                     });
-
-                });
-
-                res.send(true);
-
-            } else {
-                winston.info(err);
             }
+
         });
 
     });
