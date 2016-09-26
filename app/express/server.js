@@ -17,7 +17,7 @@ var j1 = schedule.scheduleJob('*/15 * * * 0-2,5', function() {
     fetcher.fetchGameResult();
 });
 
-var j2 = schedule.scheduleJob('* */60 * * 0-2,5', function() {
+var j2 = schedule.scheduleJob('*/60 * * * 0-2,5', function() {
     emailSender.sendEmail();
 });
 

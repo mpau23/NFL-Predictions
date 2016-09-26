@@ -64,7 +64,10 @@ module.exports = {
                                                             gamesToAdd.push(prediction.game);
                                                         }
                                                     });
-                                                    module.exports.composeEmail(user, gamesToAdd);
+                                                    if (gamesToAdd.length > 0) {
+                                                        module.exports.composeEmail(user, gamesToAdd);
+                                                    }
+
                                                 }
                                             }
                                         });
@@ -101,7 +104,7 @@ module.exports = {
 
         // setup e-mail data with unicode symbols
         var mailOptions = {
-            from: '"Miren Pau" <'+emailCreds.email+'>', // sender address
+            from: '"Miren Pau" <' + emailCreds.email + '>', // sender address
             to: user.email, // list of receivers
             subject: 'Missing Predictions!', // Subject line
             text: htmlEmail, // plaintext body
