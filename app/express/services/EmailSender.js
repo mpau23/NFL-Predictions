@@ -35,7 +35,7 @@ module.exports = {
                         } else {
 
                             if (games.length < 1) {
-                                console.log("NO GAMES");
+                                winston.info("No games starting in the next hour");
                             } else {
 
                                 var gameIds = new Array();
@@ -56,15 +56,17 @@ module.exports = {
                                                 winston.info(err);
                                             } else {
                                                 if (predictions.length < 1) {
+                                                    winston.info(user.fullName + " is currently missing " + games.length + " predictions (no predictions made)");
                                                     module.exports.composeEmail(user, games);
                                                 } else {
                                                     var gamesToAdd = new Array();
                                                     predictions.forEach(function(prediction, index) {
-                                                        if (prediction.awayPrediction == 0 && prediction.homePrediction == 0) {
+                                                        if (prediction.awayPrediction === 0 && prediction.homePrediction === 0) {
                                                             gamesToAdd.push(prediction.game);
                                                         }
                                                     });
                                                     if (gamesToAdd.length > 0) {
+                                                        winston.info(user.fullName + " is currently missing " + gamesToAdd.length + " predictions (some predictions made)");
                                                         module.exports.composeEmail(user, gamesToAdd);
                                                     }
 
