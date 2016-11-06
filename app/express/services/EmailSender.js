@@ -118,7 +118,7 @@ module.exports = {
             if (error) {
                 return console.log(error);
             }
-            console.log('Message sent: ' + info.response);
+            winston.info('Message sent: ' + info.response);
 
         });
 
