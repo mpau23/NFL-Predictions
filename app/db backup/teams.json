@@ -23,10 +23,10 @@
 {"_id":"OAK","shortName":"Oakland","fullName":"Oakland Raiders","__v":0}
 {"_id":"PHI","shortName":"Philadelphia","fullName":"Philadelphia Eagles","__v":0}
 {"_id":"PIT","shortName":"Pittsburgh","fullName":"Pittsburgh Steelers","__v":0}
-{"_id":"SD","shortName":"San Diego","fullName":"San Diego Chargers","__v":0}
+{"_id":"LAC","shortName":"LA Chargers","fullName":"Los Angeles Chargers","__v":0}
 {"_id":"SF","shortName":"San Francisco","fullName":"San Francisco 49ers","__v":0}
 {"_id":"SEA","shortName":"Seattle","fullName":"Seattle Seahawks","__v":0}
-{"_id":"LA","shortName":"Los Angeles","fullName":"Los Angeles Rams","__v":0}
+{"_id":"LA","shortName":"LA Rams","fullName":"Los Angeles Rams","__v":0}
 {"_id":"TB","shortName":"Tampa Bay","fullName":"Tampa Bay Buccaneers","__v":0}
 {"_id":"TEN","shortName":"Tennessee","fullName":"Tennessee Titans","__v":0}
 {"_id":"WAS","shortName":"Washington","fullName":"Washington Redskins","__v":0}
