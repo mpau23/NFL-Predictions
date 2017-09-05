@@ -109,7 +109,7 @@ module.exports = function(app) {
                             weekGames.forEach(function(currentGame, index) {
                                 filteredGames.forEach(function(currentFilteredGame, filteredIndex) {
                                     
-                                    var currentTimeInET = new Date(currentFilteredGame[1].year + "-" + currentFilteredGame[1].month + "-" + currentFilteredGame[1].day + " " + currentFilteredGame[1].time);
+                                    var currentTimeInET = new Date(currentFilteredGame[1].year + "-" + currentFilteredGame[1].month + "-" + currentFilteredGame[1].day + " " + (currentFilteredGame[1].time - 1));
                                     currentTimeInET.setTime(currentTimeInET.getTime() + (17 * 60 * 60 * 1000));
 
                                     if(currentFilteredGame[0] == currentGame._id) {
