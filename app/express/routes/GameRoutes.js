@@ -82,7 +82,7 @@ module.exports = function(app) {
 
 app.get('/api/import/game/week/:week', function(req, res) {
 
-        request("http://www.nfl.com/ajax/scorestrip?season=2018&seasonType=REG&week=1", function(requestError, response, body) {
+        request("http://www.nfl.com/ajax/scorestrip?season=2018&seasonType=REG&week=" + req.params.week, function(requestError, response, body) {
 
             if (requestError) {
                 res.send(requestError);
