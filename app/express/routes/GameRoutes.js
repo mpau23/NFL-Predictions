@@ -3,6 +3,7 @@ var Team = require('../tables/TeamTable');
 var winston = require('winston');
 var request = require('request');
 var cheerio = require('cheerio');
+var parser = require('xml2json');
 
 module.exports = function(app) {
 
@@ -79,23 +80,17 @@ module.exports = function(app) {
 
     });
 
-    app.get('/api/import/game/week/:week', function(req, res) {
+app.get('/api/import/game/week/:week', function(req, res) {
 
-        request("https://raw.githubusercontent.com/BurntSushi/nflgame/master/nflgame/schedule.json", function(requestError, response, body) {
+        request("http://www.nfl.com/ajax/scorestrip?season=2018&seasonType=REG&week=1", function(requestError, response, body) {
 
             if (requestError) {
                 res.send(requestError);
             } else {
 
-                var data = JSON.parse(response.body);
-                var filteredGames = data.games.filter(function(element) {
-                    return element[1].year >= 2017 &&
-                        element[1].month >= 9 &&
-                        element[1].week == req.params.week;
-                });
-                winston.info("Number of filtered games: " + filteredGames.length)
-
-
+                var json = JSON.parse(parser.toJson(response.body));
+                filteredGames = json["ss"]["gms"]["g"];
+                
                 Game.find({
                     week: req.params.week
                 })
@@ -106,10 +101,16 @@ module.exports = function(app) {
 
                         if(weekGames.length > 0) {
 
-                            weekGames.forEach(function(currentGame, index) {
+                           weekGames.forEach(function(currentGame, index) {
                                 filteredGames.forEach(function(currentFilteredGame, filteredIndex) {
                                     
-                                    var currentTimeInET = new Date(currentFilteredGame[1].year + "-" + currentFilteredGame[1].month + "-" + currentFilteredGame[1].day + " " + currentFilteredGame[1].time);
+                                    currentFilteredGame.date = {
+                                        year: currentFilteredGame["eid"].slice(0,4),
+                                        month: currentFilteredGame["eid"].slice(4,6),
+                                        day: currentFilteredGame["eid"].slice(6,8)
+                                    }
+
+                                    var currentTimeInET = new Date(currentFilteredGame.date.year + "-" + currentFilteredGame.date.month + "-" + currentFilteredGame.date.day + " " + currentFilteredGame["t"]);
                                     currentTimeInET.setTime(currentTimeInET.getTime() + (16 * 60 * 60 * 1000));
 
                                     if(currentFilteredGame[0] == currentGame._id) {
@@ -119,18 +120,18 @@ module.exports = function(app) {
 
                                         currentGame.save(function(err) {
                                             if (err) {
-                                                winston.info("Error updating game:" + currentFilteredGame[0]);
+                                                winston.info("Error updating game:" + currentFilteredGame["eid"]);
                                             } else {
-                                                winston.info("Successfully updated game: " + currentFilteredGame[0]);
+                                                winston.info("Successfully updated game: " + ccurrentFilteredGame["eid"]);
                                             }
                                         });
 
                                     } else {
                                         var newGame = new Game({
-                                            _id: currentFilteredGame[0],
+                                            _id: currentFilteredGame["eid"],
                                             week: req.params.week,
-                                            homeTeam: currentFilteredGame[1].home,
-                                            awayTeam: currentFilteredGame[1].away,
+                                            homeTeam: currentFilteredGame["h"],
+                                            awayTeam: currentFilteredGame["v"],
                                             date: currentTimeInET
                                         });
 
@@ -138,25 +139,32 @@ module.exports = function(app) {
 
                                         newGame.save(function(err) {
                                             if (err) {
-                                                winston.info("Error saving game:" + currentFilteredGame[0]);
+                                                winston.info("Error saving game:" + currentFilteredGame["eid"]);
                                             } else {
-                                                winston.info("Successfully saved game: " + currentFilteredGame[0]);
+                                                winston.info("Successfully saved game: " + currentFilteredGame["eid"]);
                                             }
                                         });
                                     }
-                                })
+                               })
                             });
 
                         } else {
-                            filteredGames.forEach(function(currentGame, index) {
-                                var currentTimeInET = new Date(currentGame[1].year + "-" + currentGame[1].month + "-" + currentGame[1].day + " " + currentGame[1].time);
+                            filteredGames.forEach(function(currentFilteredGame, index) {
+
+                                currentFilteredGame.date = {
+                                    year: currentFilteredGame["eid"].slice(0,4),
+                                    month: currentFilteredGame["eid"].slice(4,6),
+                                    day: currentFilteredGame["eid"].slice(6,8)
+                                }
+
+                                var currentTimeInET = new Date(currentFilteredGame.date.year + "-" + currentFilteredGame.date.month + "-" + currentFilteredGame.date.day + " " + currentFilteredGame["t"]);
                                 currentTimeInET.setTime(currentTimeInET.getTime() + (17 * 60 * 60 * 1000));
 
                                 var newGame = new Game({
-                                    _id: currentGame[0],
+                                    _id: currentFilteredGame["eid"],
                                     week: req.params.week,
-                                    homeTeam: currentGame[1].home,
-                                    awayTeam: currentGame[1].away,
+                                    homeTeam: currentFilteredGame["h"],
+                                    awayTeam: currentFilteredGame["v"],
                                     date: currentTimeInET
                                 });
 
@@ -164,9 +172,9 @@ module.exports = function(app) {
 
                                 newGame.save(function(err) {
                                     if (err) {
-                                        winston.info("Error saving game:" + currentGame[0]);
+                                        winston.info("Error saving game:" + currentFilteredGame["eid"]);
                                     } else {
-                                        winston.info("Successfully saved game: " + currentGame[0]);
+                                        winston.info("Successfully saved game: " + currentFilteredGame["eid"]);
                                     }
                                 });
                             })
