@@ -99,7 +99,9 @@ header {
     height: 100%;
     width: 100%;
     background-image: url(../images/nfl-logo.min.svg);
-    background-size: 100% 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
 }
 
 nav {

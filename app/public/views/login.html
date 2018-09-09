@@ -26,11 +26,13 @@
     </form>
 </div>
 
+<!-- <div class="heading-container">
+    <span class="heading">Need to sign up?</span>
+</div> -->
+
 <div class="registration-container hidden">
 
     <form name="form" ng-submit="register()" role="form" autocomplete="off">
-
-        <div class="title">Need to sign up?</div>
 
         <div class="input-container">
 
@@ -53,7 +55,10 @@
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password" class="form-control" ng-model="registerPassword" required autocomplete="off" />
             </fieldset>
-            <button class="submit-form" type="submit" ng-disabled="form.$invalid || dataLoading">Register</button>
+            <fieldset>
+                <button class="submit-form" type="submit" ng-disabled="form.$invalid || dataLoading">Register</button>
+            </fieldset>
+            
 
         </div>
 

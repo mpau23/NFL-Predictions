@@ -19,11 +19,11 @@ NflPredictionsApp.factory('AuthenticationService', ['Base64', '$http', '$cookies
             },
 
             register: function(username, password, user, email, callback) {
-
                 $http.post('/api/post/user', {
                         "fullName": user,
                         "email": email,
                         "id": Base64.encode(username + ':' + password),
+                        "username": username
                     })
                     .then(function(response) {
                         if (!response.data._id) {
