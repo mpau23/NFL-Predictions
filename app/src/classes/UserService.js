@@ -26,7 +26,7 @@ NflPredictionsApp.factory('UserService', ['$http', '$q', 'User', 'LocalStorageWr
                         .then(function(response) {
                             if (response.data) {
 
-                                LocalStorageWrapperService.set('getAllUsers', response.data, 10080);
+                                LocalStorageWrapperService.set('getAllUsers', response.data, 720);
 
                                 var userArray = new Array();
                                 angular.forEach(response.data, function(user, key) {
