@@ -111,7 +111,7 @@ app.get('/api/import/game/week/:week', function(req, res) {
                                     }
 
                                     var currentTimeInET = new Date(currentFilteredGame.date.year + "-" + currentFilteredGame.date.month + "-" + currentFilteredGame.date.day + " " + currentFilteredGame["t"]);
-                                    currentTimeInET.setTime(currentTimeInET.getTime() + (16 * 60 * 60 * 1000));
+                                    currentTimeInET.setTime(currentTimeInET.getTime() + (15 * 60 * 60 * 1000));
 
                                     if(currentFilteredGame[0] == currentGame._id) {
                                         currentGame.date = currentTimeInET;
