@@ -99,67 +99,33 @@ app.get('/api/import/game/week/:week', function(req, res) {
                        res.send(err);
                     } else {
 
-                        if(weekGames.length > 0) {
+                        filteredGames.forEach(function(currentFilteredGame, filteredIndex) {
+                            var found = false;
+                            
+                            currentFilteredGame.date = {
+                                year: currentFilteredGame["eid"].slice(0,4),
+                                month: currentFilteredGame["eid"].slice(4,6),
+                                day: currentFilteredGame["eid"].slice(6,8)
+                            }
+                            var currentTimeInET = new Date(currentFilteredGame.date.year + "-" + currentFilteredGame.date.month + "-" + currentFilteredGame.date.day + " " + currentFilteredGame["t"]);
+                            currentTimeInET.setTime(currentTimeInET.getTime() + (16 * 60 * 60 * 1000));
 
-                           weekGames.forEach(function(currentGame, index) {
-                                filteredGames.forEach(function(currentFilteredGame, filteredIndex) {
-                                    
-                                    currentFilteredGame.date = {
-                                        year: currentFilteredGame["eid"].slice(0,4),
-                                        month: currentFilteredGame["eid"].slice(4,6),
-                                        day: currentFilteredGame["eid"].slice(6,8)
-                                    }
-
-                                    var currentTimeInET = new Date(currentFilteredGame.date.year + "-" + currentFilteredGame.date.month + "-" + currentFilteredGame.date.day + " " + currentFilteredGame["t"]);
-                                    currentTimeInET.setTime(currentTimeInET.getTime() + (15 * 60 * 60 * 1000));
-
-                                    if(currentFilteredGame[0] == currentGame._id) {
-                                        currentGame.date = currentTimeInET;
-
-                                        winston.info("Attempting to update game:" + newGame);
-
-                                        currentGame.save(function(err) {
-                                            if (err) {
-                                                winston.info("Error updating game:" + currentFilteredGame["eid"]);
-                                            } else {
-                                                winston.info("Successfully updated game: " + ccurrentFilteredGame["eid"]);
-                                            }
-                                        });
-
-                                    } else {
-                                        var newGame = new Game({
-                                            _id: currentFilteredGame["eid"],
-                                            week: req.params.week,
-                                            homeTeam: currentFilteredGame["h"],
-                                            awayTeam: currentFilteredGame["v"],
-                                            date: currentTimeInET
-                                        });
-
-                                        winston.info("Attempting to save game:" + newGame);
-
-                                        newGame.save(function(err) {
-                                            if (err) {
-                                                winston.info("Error saving game:" + currentFilteredGame["eid"]);
-                                            } else {
-                                                winston.info("Successfully saved game: " + currentFilteredGame["eid"]);
-                                            }
-                                        });
-                                    }
-                               })
+                            weekGames.forEach(function(currentGame, index) {
+                                if(currentFilteredGame["eid"] == currentGame._id) {
+                                    currentGame.date = currentTimeInET;
+                                    winston.info("Attempting to update game:" + currentFilteredGame["eid"]);
+                                    currentGame.save(function(err) {
+                                        if (err) {
+                                            winston.info("Error updating game:" + currentFilteredGame["eid"]);
+                                        } else {
+                                            winston.info("Successfully updated game: " + currentFilteredGame["eid"]);
+                                        }
+                                    });
+                                    found = true;                                  
+                                }
                             });
 
-                        } else {
-                            filteredGames.forEach(function(currentFilteredGame, index) {
-
-                                currentFilteredGame.date = {
-                                    year: currentFilteredGame["eid"].slice(0,4),
-                                    month: currentFilteredGame["eid"].slice(4,6),
-                                    day: currentFilteredGame["eid"].slice(6,8)
-                                }
-
-                                var currentTimeInET = new Date(currentFilteredGame.date.year + "-" + currentFilteredGame.date.month + "-" + currentFilteredGame.date.day + " " + currentFilteredGame["t"]);
-                                currentTimeInET.setTime(currentTimeInET.getTime() + (17 * 60 * 60 * 1000));
-
+                            if(found = false) {
                                 var newGame = new Game({
                                     _id: currentFilteredGame["eid"],
                                     week: req.params.week,
@@ -167,18 +133,18 @@ app.get('/api/import/game/week/:week', function(req, res) {
                                     awayTeam: currentFilteredGame["v"],
                                     date: currentTimeInET
                                 });
-
-                                winston.info("Attempting to save game:" + newGame);
-
+                                winston.info("Attempting to create game:" + newGame);
                                 newGame.save(function(err) {
                                     if (err) {
-                                        winston.info("Error saving game:" + currentFilteredGame["eid"]);
+                                        winston.info("Error creating game:" + currentFilteredGame["eid"]);
                                     } else {
-                                        winston.info("Successfully saved game: " + currentFilteredGame["eid"]);
+                                        winston.info("Successfully creating game: " + currentFilteredGame["eid"]);
                                     }
-                                });
-                            })
-                        }
+                                });                                
+                            }
+                            
+                        });
+
                         res.send(filteredGames);
                     }
                 });
