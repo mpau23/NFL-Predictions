@@ -108,7 +108,7 @@ app.get('/api/import/game/week/:week', function(req, res) {
                                 day: currentFilteredGame["eid"].slice(6,8)
                             }
                             var currentTimeInET = new Date(currentFilteredGame.date.year + "-" + currentFilteredGame.date.month + "-" + currentFilteredGame.date.day + " " + currentFilteredGame["t"]);
-                            currentTimeInET.setTime(currentTimeInET.getTime() + (16 * 60 * 60 * 1000));
+                            currentTimeInET.setTime(currentTimeInET.getTime() + (17 * 60 * 60 * 1000));
 
                             weekGames.forEach(function(currentGame, index) {
                                 if(currentFilteredGame["eid"] == currentGame._id) {
