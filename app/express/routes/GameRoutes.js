@@ -125,7 +125,7 @@ app.get('/api/import/game/week/:week', function(req, res) {
                                 }
                             });
 
-                            if(found = false) {
+                            if(found == false) {
                                 var newGame = new Game({
                                     _id: currentFilteredGame["eid"],
                                     week: req.params.week,
