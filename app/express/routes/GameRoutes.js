@@ -88,7 +88,7 @@ app.get('/api/import/game/week/:week', function(req, res) {
             seasonType = 'POST';
         }
 
-        request("http://www.nfl.com/ajax/scorestrip?season=2018&seasonType=" + seasonType + "&week=" + req.params.week, function(requestError, response, body) {
+        request("http://www.nfl.com/ajax/scorestrip?season=2019&seasonType=" + seasonType + "&week=" + req.params.week, function(requestError, response, body) {
 
             if (requestError) {
                 res.send(requestError);
